@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>German Grammar Reference - Option B</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .subtitle {
+            text-align: center;
+            color: rgba(255,255,255,0.9);
+            font-size: 1.2em;
+            margin-bottom: 40px;
+        }
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 35px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        .card-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+            margin-bottom: 20px;
+            color: white;
+        }
+        .card-title {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        .card-description {
+            color: #7f8c8d;
+            line-height: 1.7;
+            font-size: 1.05em;
+        }
+        .card-content-list {
+            margin-top: 20px;
+            padding-left: 20px;
+            color: #34495e;
+        }
+        .card-content-list li {
+            margin: 8px 0;
+        }
+
+        /* Color themes for each card */
+        .articles .card-icon { background-color: #3498db; }
+        .pronouns .card-icon { background-color: #27ae60; }
+
+        .footer {
+            text-align: center;
+            color: rgba(255,255,255,0.8);
+            margin-top: 50px;
+            padding: 20px;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            h1, .subtitle, .footer {
+                color: #2c3e50;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>German Grammar Reference</h1>
+        <p class="subtitle">Compact Organization - Option B &#11088; <strong>Empfohlen</strong></p>
+
+        <div class="cards-grid">
+            <a href="articles-and-determiners.html" class="card articles">
+                <div class="card-icon">📚</div>
+                <div class="card-title">Articles & Determiners</div>
+                <div class="card-description">
+                    Complete reference for all German articles and determiners in one comprehensive page.
+                </div>
+                <ul class="card-content-list">
+                    <li><strong>Articles:</strong> der/das/die, ein/eine, kein/keine</li>
+                    <li><strong>Demonstrative:</strong> dieser, jener, welcher</li>
+                    <li><strong>Quantifiers:</strong> jeder, mancher, solcher</li>
+                </ul>
+            </a>
+
+            <a href="pronouns.html" class="card pronouns">
+                <div class="card-icon">👥</div>
+                <div class="card-title">Pronouns</div>
+                <div class="card-description">
+                    All types of pronouns with complete declension tables consolidated on one page.
+                </div>
+                <ul class="card-content-list">
+                    <li><strong>Personal:</strong> ich, du, er, sie, es, wir, ihr, sie, Sie</li>
+                    <li><strong>Possessive:</strong> mein, dein, sein, ihr, unser, euer, Ihr</li>
+                    <li><strong>Reflexive:</strong> mich, dich, sich, uns, euch</li>
+                </ul>
+            </a>
+        </div>
+
+        <div class="footer">
+            <p><strong>&#11088; Option B: Compact Organization (Empfohlen)</strong></p>
+            <p>Related content grouped together for quick comparison and reference</p>
+        </div>
+    </div>
+</body>
+</html>
