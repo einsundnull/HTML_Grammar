@@ -51,7 +51,7 @@
         table {
             width: 100%;
             max-width: 950px;
-            table-layout: fixed;
+            table-layout: auto;
             border-collapse: collapse;
             margin: 20px auto;
             background-color: white;
@@ -120,16 +120,10 @@
 
         
         /* Extra Compact Mode */
-                body.extra-compact-mode table {
+        body.extra-compact-mode table {
             margin: 5px auto;
-            font-size: 0.75em;
-            overflow-x: auto;
-            display: block;
-            width: 100%;
-        }
-        body.extra-compact-mode th, body.extra-compact-mode td {
-            padding: 4px 6px;
-            min-width: 60px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         body.extra-compact-mode th, body.extra-compact-mode td {
             padding: 3px 5px;
@@ -196,7 +190,7 @@
         body.newspaper-style table {
             width: 100%;
             max-width: 950px;
-            table-layout: fixed;
+            table-layout: auto;
             border-collapse: collapse;
             margin: 20px auto;
             background-color: white;
@@ -254,16 +248,16 @@
         }
 
         /* Print Layout Adjustments */
-        /* Unified cell widths for consistent tables */
-        th, td {
-            width: auto;
-            min-width: 80px;
-        }
-        
+        @media print {
+            h2, h3 {
+                margin-left: 0 !important;
+                margin-right: auto !important;
+                text-align: left !important;
+            }
             table {
             width: 100%;
             max-width: 950px;
-            table-layout: fixed;
+            table-layout: auto;
             border-collapse: collapse;
             margin: 20px auto;
             background-color: white;
@@ -278,23 +272,23 @@
             table {
             width: 100%;
             max-width: 950px;
-            table-layout: fixed;
+            table-layout: auto;
             border-collapse: collapse;
             margin: 20px auto;
             background-color: white;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         }
-        /* Unified cell widths for consistent tables */
-        th, td {
-            width: auto;
-            min-width: 80px;
-        }
-        
+        @media print {
+            h2, h3 {
+                margin-left: 0 !important;
+                margin-right: auto !important;
+                text-align: left !important;
+            }
             table {
             width: 100%;
             max-width: 950px;
-            table-layout: fixed;
+            table-layout: auto;
             border-collapse: collapse;
             margin: 20px auto;
             background-color: white;
@@ -306,7 +300,7 @@
             table {
             width: 100%;
             max-width: 950px;
-            table-layout: fixed;
+            table-layout: auto;
             border-collapse: collapse;
             margin: 20px auto;
             background-color: white;
@@ -320,53 +314,8 @@
                 page-break-inside: avoid;
             }
         }
-        /* Print Buttons */
-        .print-buttons {
-            text-align: center;
-            margin: 15px 0;
-            padding: 10px;
-            background-color: #f8f9fa;
-            border-radius: 5px;
-        }
-        .print-btn {
-            background-color: #6c757d;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 4px;
-            cursor: pointer;
-            margin: 0 5px;
-            transition: background-color 0.3s;
-            font-size: 0.9em;
-        }
-        .print-btn:hover {
-            background-color: #5a6268;
-        }
-        .print-btn.normal {
-            background-color: #007bff;
-        }
-        .print-btn.normal:hover {
-            background-color: #0056b3;
-        }
-        .print-btn.compact {
-            background-color: #28a745;
-        }
-        .print-btn.compact:hover {
-            background-color: #218838;
-        }
-        .print-btn.extra-compact {
-            background-color: #dc3545;
-        }
-        .print-btn.extra-compact:hover {
-            background-color: #c82333;
-        }
-        @media print {
-            .print-buttons {
-                display: none !important;
-            }
-        }
 
-        /* Enhanced Print Layout - keep related elements together */
+        /* Enhanced print layout - keep related elements together */
         h1, h2, h3 {
             page-break-after: avoid;
             page-break-inside: avoid;
@@ -374,7 +323,7 @@
         table {
             width: 100%;
             max-width: 950px;
-            table-layout: fixed;
+            table-layout: auto;
             border-collapse: collapse;
             margin: 20px auto;
             background-color: white;
@@ -445,7 +394,7 @@
         body.newspaper-style table {
             width: 100%;
             max-width: 950px;
-            table-layout: fixed;
+            table-layout: auto;
             border-collapse: collapse;
             margin: 20px auto;
             background-color: white;
@@ -503,16 +452,16 @@
         }
 
         /* Print Layout Adjustments */
-        /* Unified cell widths for consistent tables */
-        th, td {
-            width: auto;
-            min-width: 80px;
-        }
-        
+        @media print {
+            h2, h3 {
+                margin-left: 0 !important;
+                margin-right: auto !important;
+                text-align: left !important;
+            }
             table {
             width: 100%;
             max-width: 950px;
-            table-layout: fixed;
+            table-layout: auto;
             border-collapse: collapse;
             margin: 20px auto;
             background-color: white;
@@ -527,23 +476,23 @@
             table {
             width: 100%;
             max-width: 950px;
-            table-layout: fixed;
+            table-layout: auto;
             border-collapse: collapse;
             margin: 20px auto;
             background-color: white;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         }
-        /* Unified cell widths for consistent tables */
-        th, td {
-            width: auto;
-            min-width: 80px;
-        }
-        
+        @media print {
+            h2, h3 {
+                margin-left: 0 !important;
+                margin-right: auto !important;
+                text-align: left !important;
+            }
             table {
             width: 100%;
             max-width: 950px;
-            table-layout: fixed;
+            table-layout: auto;
             border-collapse: collapse;
             margin: 20px auto;
             background-color: white;
@@ -551,320 +500,6 @@
         }
             .global-nav {
                 display: none !important;
-            }
-        }
-        /* Optimized Print Layout */
-        
-
-            body {
-                background: white !important;
-                color: black !important;
-                margin: 0;
-                padding: 20px;
-            }
-
-            /* Headers - Black and White */
-            h1 {
-                color: black !important;
-                background: white !important;
-                border-bottom: 2px solid black !important;
-                page-break-after: avoid !important;
-                page-break-inside: avoid !important;
-                margin-left: 0 !important;
-                margin-right: 0 !important;
-                text-align: left !important;
-            }
-
-            h2 {
-                color: black !important;
-                background-color: #e0e0e0 !important;
-                border-left: 4px solid black !important;
-                page-break-after: avoid !important;
-                page-break-inside: avoid !important;
-                margin-left: 0 !important;
-                margin-right: 0 !important;
-                text-align: left !important;
-                padding: 8px !important;
-            }
-
-            h3 {
-                color: black !important;
-                background-color: #f0f0f0 !important;
-                border-left: 3px solid #666666 !important;
-                page-break-after: avoid !important;
-                page-break-inside: avoid !important;
-                margin-left: 0 !important;
-                margin-right: 0 !important;
-                text-align: left !important;
-                padding: 6px !important;
-            }
-
-            /* Tables - Optimized for printing */
-            table {
-                width: 100% !important;
-                max-width: 100% !important;
-                margin: 10px 0 !important;
-                border: 2px solid black !important;
-                border-collapse: collapse !important;
-                page-break-inside: avoid !important;
-                page-break-before: auto !important;
-                table-layout: auto !important;
-            }
-
-            /* Table cells - Prevent text overflow and cutting */
-            th, td {
-                border: 1px solid black !important;
-                padding: 8px 6px !important;
-                color: black !important;
-                word-wrap: break-word !important;
-                word-break: break-word !important;
-                overflow-wrap: break-word !important;
-                white-space: normal !important;
-                vertical-align: top !important;
-                line-height: 1.4 !important;
-                min-height: 20px !important;
-            }
-
-            th {
-                background-color: #d0d0d0 !important;
-                font-weight: bold !important;
-            }
-
-            /* Prevent row breaks */
-            tr {
-                page-break-inside: avoid !important;
-                page-break-after: auto !important;
-            }
-
-            /* Table header repeat on each page */
-            thead {
-                display: table-header-group !important;
-            }
-
-            tbody {
-                display: table-row-group !important;
-            }
-
-            /* Info boxes and notes */
-            .note, .info-box, .example-box {
-                background-color: #f5f5f5 !important;
-                border-left: 3px solid #666666 !important;
-                color: black !important;
-                page-break-inside: avoid !important;
-                padding: 10px !important;
-                margin: 10px 0 !important;
-            }
-
-            /* Hide navigation and buttons */
-            .nav, .global-nav, .toggle-btn, .style-toggle-btn {
-                display: none !important;
-            }
-
-            /* Ensure proper spacing */
-            * {
-                box-sizing: border-box !important;
-            }
-        }
-        /* Print Buttons */
-        .print-buttons {
-            text-align: center;
-            margin: 15px 0;
-            padding: 10px;
-            background-color: #f8f9fa;
-            border-radius: 5px;
-        }
-        .print-btn {
-            background-color: #6c757d;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 4px;
-            cursor: pointer;
-            margin: 0 5px;
-            transition: background-color 0.3s;
-            font-size: 0.9em;
-        }
-        .print-btn:hover {
-            background-color: #5a6268;
-        }
-        .print-btn.normal {
-            background-color: #007bff;
-        }
-        .print-btn.normal:hover {
-            background-color: #0056b3;
-        }
-        .print-btn.compact {
-            background-color: #28a745;
-        }
-        .print-btn.compact:hover {
-            background-color: #218838;
-        }
-        .print-btn.extra-compact {
-            background-color: #dc3545;
-        }
-        .print-btn.extra-compact:hover {
-            background-color: #c82333;
-        }
-        @media print {
-            .print-buttons {
-                display: none !important;
-            }
-        }
-        /* Enhanced Print Layout - Prevent Table Breaks */
-        @media print {
-            /* Remove all colors - Black, White, Gray only */
-            * {
-                -webkit-print-color-adjust: exact !important;
-                color-adjust: exact !important;
-            }
-
-            body {
-                background: white !important;
-                color: black !important;
-                margin: 0;
-                padding: 20px;
-            }
-
-            /* Headers - Must stay with following content */
-            h1 {
-                color: black !important;
-                background: white !important;
-                border-bottom: 2px solid black !important;
-                page-break-after: avoid !important;
-                page-break-inside: avoid !important;
-                break-after: avoid !important;
-                break-inside: avoid !important;
-                margin-left: 0 !important;
-                margin-right: 0 !important;
-                text-align: left !important;
-                orphans: 3;
-                widows: 3;
-            }
-
-            h2 {
-                color: black !important;
-                background-color: #e0e0e0 !important;
-                border-left: 4px solid black !important;
-                page-break-after: avoid !important;
-                page-break-inside: avoid !important;
-                break-after: avoid-page !important;
-                break-inside: avoid !important;
-                margin-left: 0 !important;
-                margin-right: 0 !important;
-                text-align: left !important;
-                padding: 8px !important;
-                orphans: 3;
-                widows: 3;
-                display: block !important;
-            }
-
-            h3 {
-                color: black !important;
-                background-color: #f0f0f0 !important;
-                border-left: 3px solid #666666 !important;
-                page-break-after: avoid !important;
-                page-break-inside: avoid !important;
-                break-after: avoid-page !important;
-                break-inside: avoid !important;
-                margin-left: 0 !important;
-                margin-right: 0 !important;
-                text-align: left !important;
-                padding: 6px !important;
-                orphans: 3;
-                widows: 3;
-            }
-
-            /* Tables - MUST NOT BREAK */
-            table {
-                width: 100% !important;
-                max-width: 100% !important;
-                margin: 10px 0 20px 0 !important;
-                border: 2px solid black !important;
-                border-collapse: collapse !important;
-                page-break-inside: avoid !important;
-                page-break-before: auto !important;
-                page-break-after: auto !important;
-                break-inside: avoid-page !important;
-                break-before: auto !important;
-                break-after: auto !important;
-                table-layout: fixed !important;
-                display: table !important;
-            }
-
-            /* Table cells - Prevent text overflow and cutting */
-            th, td {
-                border: 1px solid black !important;
-                padding: 8px 6px !important;
-                color: black !important;
-                word-wrap: break-word !important;
-                word-break: break-word !important;
-                overflow-wrap: break-word !important;
-                white-space: normal !important;
-                vertical-align: top !important;
-                line-height: 1.4 !important;
-                min-height: 20px !important;
-                page-break-inside: avoid !important;
-            }
-
-            th {
-                background-color: #d0d0d0 !important;
-                font-weight: bold !important;
-            }
-
-            /* Prevent row breaks - CRITICAL */
-            tr {
-                page-break-inside: avoid !important;
-                page-break-after: auto !important;
-                break-inside: avoid-page !important;
-                break-after: auto !important;
-            }
-
-            /* Table sections */
-            thead {
-                display: table-header-group !important;
-                page-break-inside: avoid !important;
-                page-break-after: avoid !important;
-            }
-
-            tbody {
-                display: table-row-group !important;
-                page-break-inside: avoid !important;
-            }
-
-            tfoot {
-                display: table-footer-group !important;
-            }
-
-            /* Info boxes and notes */
-            .note, .info-box, .example-box {
-                background-color: #f5f5f5 !important;
-                border-left: 3px solid #666666 !important;
-                color: black !important;
-                page-break-inside: avoid !important;
-                break-inside: avoid !important;
-                padding: 10px !important;
-                margin: 10px 0 !important;
-            }
-
-            /* Hide navigation and buttons */
-            .nav, .global-nav, .toggle-btn, .style-toggle-btn {
-                display: none !important;
-            }
-
-            /* Global orphans and widows control */
-            p, div, li {
-                orphans: 3;
-                widows: 3;
-            }
-
-            /* Ensure proper spacing */
-            * {
-                box-sizing: border-box !important;
-            }
-
-            /* Force page breaks only before h2 if needed */
-            h2 {
-                page-break-before: auto !important;
             }
         }
     </style>
@@ -1161,44 +796,8 @@
             document.body.classList.toggle('newspaper-style');
             const button = document.querySelector('.style-toggle-btn');
             if (document.body.classList.contains('newspaper-style')) {
-                button.innerHTML = '&#127912; Farb-Modus';
-            }
-
-        function printMode(mode) {
-            const body = document.body;
-            const wasCompact = body.classList.contains('compact-mode');
-            const wasExtraCompact = body.classList.contains('extra-compact-mode');
-
-            // Remove all mode classes
-            body.classList.remove('compact-mode');
-            body.classList.remove('extra-compact-mode');
-
-            // Apply requested mode
-            if (mode === 'compact') {
-                body.classList.add('compact-mode');
-            } else if (mode === 'extra-compact') {
-                body.classList.add('extra-compact-mode');
-            }
-
-            // Print
-            setTimeout(function() {
-                window.print();
-
-                // Restore original state after print dialog closes
-                setTimeout(function() {
-                    body.classList.remove('compact-mode');
-                    body.classList.remove('extra-compact-mode');
-                    if (wasCompact) {
-                        body.classList.add('compact-mode');
-                    } else if (wasExtraCompact) {
-                        body.classList.add('extra-compact-mode');
-                    }
-                }, 100);
-            }, 100);
-        } else {
-                button.innerHTML = '&#128214; Buch-Modus';
-            }
-        } else {
+                button.textContent = 'ðŸŽ¨ Farb-Modus';
+            } else {
                 button.textContent = 'ðŸ“– Buch-Modus';
             }
         }
