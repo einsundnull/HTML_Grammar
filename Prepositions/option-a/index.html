@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>German Prepositions Reference - Option A</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .subtitle {
+            text-align: center;
+            color: rgba(255,255,255,0.9);
+            font-size: 1.2em;
+            margin-bottom: 40px;
+        }
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: white;
+        }
+        .card-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        .card-description {
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+        .card-examples {
+            margin-top: 15px;
+            font-size: 0.9em;
+            color: #95a5a6;
+            font-style: italic;
+        }
+
+        /* Color themes for each card */
+        .wo .card-icon { background-color: #3498db; }
+        .woher .card-icon { background-color: #9b59b6; }
+        .wohin .card-icon { background-color: #e67e22; }
+        .temporal .card-icon { background-color: #27ae60; }
+        .quantifiers .card-icon { background-color: #f39c12; }
+        .causal .card-icon { background-color: #e74c3c; }
+        .instrumental .card-icon { background-color: #e74c3c; }
+        .reference .card-icon { background-color: #95a5a6; }
+
+        .footer {
+            text-align: center;
+            color: rgba(255,255,255,0.8);
+            margin-top: 50px;
+            padding: 20px;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            h1, .subtitle, .footer {
+                color: #2c3e50;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>German Prepositions Reference</h1>
+        <p class="subtitle">Thematic Organization - Option A</p>
+
+        <div class="cards-grid">
+            <a href="local-wo.html" class="card wo">
+                <div class="card-icon">📍</div>
+                <div class="card-title">Wo / Where</div>
+                <div class="card-description">
+                    Prepositions indicating location or position. Learn where something is located.
+                </div>
+                <div class="card-examples">in, auf, an, bei, neben, über, unter, zwischen...</div>
+            </a>
+
+            <a href="local-woher.html" class="card woher">
+                <div class="card-icon">⬅️</div>
+                <div class="card-title">Woher / Where From</div>
+                <div class="card-description">
+                    Prepositions indicating origin or source. Learn where something comes from.
+                </div>
+                <div class="card-examples">aus, von, von außerhalb, von innerhalb...</div>
+            </a>
+
+            <a href="local-wohin.html" class="card wohin">
+                <div class="card-icon">➡️</div>
+                <div class="card-title">Wohin / Where To</div>
+                <div class="card-description">
+                    Prepositions indicating direction or destination. Learn where something is going.
+                </div>
+                <div class="card-examples">zu, in, nach, an, auf, durch, gegen...</div>
+            </a>
+
+            <a href="temporal.html" class="card temporal">
+                <div class="card-icon">🕐</div>
+                <div class="card-title">Temporal</div>
+                <div class="card-description">
+                    Prepositions indicating time, duration, or sequence. Learn when something happens.
+                </div>
+                <div class="card-examples">während, nach, seit, vor, um, am, im...</div>
+            </a>
+
+            <a href="miscellaneous-quantifiers.html" class="card quantifiers">
+                <div class="card-icon">🔢</div>
+                <div class="card-title">Quantifiers</div>
+                <div class="card-description">
+                    Prepositions for expressing quantities and amounts. Learn how to express "some of", "more of", etc.
+                </div>
+                <div class="card-examples">einige (der), ein paar von, mehr von, wenige von...</div>
+            </a>
+
+            <a href="miscellaneous-causal.html" class="card causal">
+                <div class="card-icon">❓</div>
+                <div class="card-title">Causal</div>
+                <div class="card-description">
+                    Prepositions expressing cause, reason, or result. Learn how to explain why something happens.
+                </div>
+                <div class="card-examples">wegen, aufgrund, infolge, dank, mittels...</div>
+            </a>
+
+            <a href="miscellaneous-instrumental.html" class="card instrumental">
+                <div class="card-icon">🔧</div>
+                <div class="card-title">Instrumental & Other</div>
+                <div class="card-description">
+                    Prepositions expressing means, company, exception, and purpose.
+                </div>
+                <div class="card-examples">mit, außer, durch, für...</div>
+            </a>
+
+            <a href="reference-guide.html" class="card reference">
+                <div class="card-icon">📚</div>
+                <div class="card-title">Reference Guide</div>
+                <div class="card-description">
+                    Comprehensive reference guide with dual-function prepositions, contractions, and key abbreviations.
+                </div>
+                <div class="card-examples">L/D prepositions, article mergers (am, beim, im, zum...)</div>
+            </a>
+        </div>
+
+        <div class="footer">
+            <p><strong>Option A: Thematic Organization</strong></p>
+            <p>Each category on a separate page for focused learning and easy printing</p><p style="margin-top:15px;"><em>Tipp: Option B (Compact) ist Ã¼bersichtlicher und wird empfohlen!</em></p>
+        </div>
+    </div>
+</body>
+</html>

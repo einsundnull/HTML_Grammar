@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>German Learning Hub</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; }
+        .container { max-width: 1400px; margin: 0 auto; }
+        h1 { text-align: center; color: white; font-size: 3em; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .subtitle { text-align: center; color: rgba(255,255,255,0.9); font-size: 1.3em; margin-bottom: 50px; }
+        .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin-top: 30px; }
+        .card { background: white; border-radius: 15px; padding: 35px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; text-decoration: none; color: inherit; display: block; }
+        .card:hover { transform: translateY(-8px); box-shadow: 0 15px 40px rgba(0,0,0,0.3); }
+        .card-icon { width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 40px; margin-bottom: 20px; color: white; }
+        .card-title { font-size: 2em; font-weight: bold; margin-bottom: 15px; color: #2c3e50; }
+        .card-description { color: #7f8c8d; line-height: 1.7; font-size: 1.1em; margin-bottom: 20px; }
+        .card-links { margin-top: 20px; }
+        .card-link { display: inline-block; margin-right: 15px; color: #3498db; text-decoration: none; font-weight: 500; transition: color 0.3s; }
+        .card-link:hover { color: #2980b9; text-decoration: underline; }
+        .articles .card-icon { background: linear-gradient(135deg, #3498db, #2980b9); }
+        .prepositions .card-icon { background: linear-gradient(135deg, #27ae60, #229954); }
+        .numbers .card-icon { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
+        .directions .card-icon { background: linear-gradient(135deg, #e67e22, #d35400); }
+        .time .card-icon { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+        .footer { text-align: center; color: rgba(255,255,255,0.9); margin-top: 60px; padding: 30px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🇩🇪 German Learning Hub</h1>
+        <p class="subtitle">Comprehensive German Grammar Reference</p>
+        <div class="cards-grid">
+            <a href="Article/option-a/index.html" class="card articles">
+                <div class="card-icon">📝</div>
+                <div class="card-title">Articles & Pronouns</div>
+                <div class="card-description">Articles, determiners, and all types of pronouns (demonstrative, possessive, personal, reflexive)</div>
+                <div class="card-links">
+                    <span class="card-link">→ Option A (Thematic)</span>
+                    <span class="card-link">→ <a href="Article/option-b/index.html" style="color:#3498db"><strong>&#11088; Option B (Empfohlen)</a></strong></span>
+                </div>
+            </a>
+            <a href="Prepositions/option-a/index.html" class="card prepositions">
+                <div class="card-icon">🗺️</div>
+                <div class="card-title">Prepositions</div>
+                <div class="card-description">Local (Wo/Woher/Wohin), temporal, quantifiers, causal, instrumental, and reference guide</div>
+                <div class="card-links">
+                    <span class="card-link">→ Option A (Thematic)</span>
+                    <span class="card-link">→ <a href="Prepositions/option-b/index.html" style="color:#27ae60"><strong>&#11088; Option B (Empfohlen)</a></strong></span>
+                </div>
+            </a>
+            <a href="Numbers/option-a/index.html" class="card numbers">
+                <div class="card-icon">🔢</div>
+                <div class="card-title">Numbers</div>
+                <div class="card-description">Ordinal numbers (first, second, third...) and fractions (half, third, quarter...)</div>
+                <div class="card-links">
+                    <span class="card-link">→ Option A (Thematic)</span>
+                    <span class="card-link">→ <a href="Numbers/option-b/index.html" style="color:#9b59b6"><strong>&#11088; Option B (Empfohlen)</a></strong></span>
+                </div>
+            </a>
+            <a href="Directions/option-a/index.html" class="card directions">
+                <div class="card-icon">🧭</div>
+                <div class="card-title">Directions</div>
+                <div class="card-description">Directional expressions for persons, animals, plants, and places (zu/bei/von)</div>
+                <div class="card-links">
+                    <span class="card-link">→ Option A (Thematic)</span>
+                    <span class="card-link">→ <a href="Directions/option-b/index.html" style="color:#e67e22"><strong>&#11088; Option B (Empfohlen)</a></strong></span>
+                </div>
+            </a>
+            <a href="Time/option-a/index.html" class="card time">
+                <div class="card-icon">⏰</div>
+                <div class="card-title">Time</div>
+                <div class="card-description">Time vocabulary, clock expressions, calendar, seasons, and months</div>
+                <div class="card-links">
+                    <span class="card-link">→ Option A (Thematic)</span>
+                    <span class="card-link">→ <a href="Time/option-b/index.html" style="color:#e74c3c"><strong>&#11088; Option B (Empfohlen)</a></strong></span>
+                </div>
+            </a>
+        </div>
+        <div class="footer">
+            <p><strong>📚 Complete German Grammar Reference</strong></p>
+            <p>All pages feature: 3-level compact mode • Print-friendly layout • Organized tables • Clear examples</p>
+        </div>
+    </div>
+</body>
+</html>

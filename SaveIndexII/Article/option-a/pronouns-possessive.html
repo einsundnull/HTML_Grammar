@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Possessive Pronouns - Possessivpronomen</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .nav {
+            background-color: #2c3e50;
+            padding: 15px;
+            margin: 0 -20px 20px -20px;
+            text-align: center;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .nav a:hover {
+            background-color: #34495e;
+        }
+        .nav a.active {
+            background-color: #3498db;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-top: 20px;
+        }
+        h2 {
+            background-color: #3498db;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin-top: 30px;
+            width: 100%;
+            max-width: 950px;
+            margin-left: auto;
+            margin-right: auto;
+            box-sizing: border-box;
+        }
+        table {
+            width: 100%;
+            max-width: 950px;
+            table-layout: fixed;
+            border-collapse: collapse;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background-color: #3498db;
+            font-weight: bold;
+        }
+        .case-label {
+            background-color: #bdc3c7;
+            font-weight: bold;
+            text-align: left;
+            padding-left: 15px;
+        }
+        .ending {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        /* Compact Mode */
+        body.compact-mode table {
+            margin: 10px auto;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        body.compact-mode th, body.compact-mode td {
+            padding: 6px 8px;
+        }
+        body.compact-mode h1 {
+            font-size: 1.8em;
+            margin-top: 10px;
+        }
+        body.compact-mode h2 {
+            padding: 6px;
+            margin-top: 15px;
+            font-size: 1.2em;
+        }
+        body.compact-mode h3 {
+            padding: 4px;
+            margin-top: 12px;
+            font-size: 1.1em;
+        }
+
+        
+        /* Extra Compact Mode */
+                body.extra-compact-mode table {
+            margin: 5px auto;
+            font-size: 0.75em;
+            overflow-x: auto;
+            display: block;
+            width: 100%;
+        }
+        body.extra-compact-mode th, body.extra-compact-mode td {
+            padding: 4px 6px;
+            min-width: 60px;
+        }
+        body.extra-compact-mode th, body.extra-compact-mode td {
+            padding: 3px 5px;
+        }
+        body.extra-compact-mode h1 {
+            font-size: 1.5em;
+            margin-top: 5px;
+        }
+        body.extra-compact-mode h2 {
+            padding: 4px;
+            margin-top: 10px;
+            font-size: 1em;
+        }
+        body.extra-compact-mode h3 {
+            padding: 3px;
+            margin-top: 8px;
+            font-size: 0.95em;
+        }
+        body.extra-compact-mode .info-box, body.extra-compact-mode .note {
+            padding: 8px;
+            margin: 20px auto;
+            max-width: 950px;
+            font-size: 0.85em;
+        }
+
+        .toggle-btn {
+            background-color: #95a5a6;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 15px;
+            transition: background-color 0.3s;
+        }
+        .toggle-btn:hover {
+            background-color: #7f8c8d;
+        }
+
+        /* Print-friendly layout */        /* Book/Newspaper Style - Black & White */
+        body.newspaper-style {
+            background-color: #ffffff;
+        }
+        body.newspaper-style h1 {
+            color: #000000;
+            border-bottom: 3px solid #000000;
+            padding-bottom: 10px;
+        }
+        body.newspaper-style h2 {
+            background-color: #3498db;
+            color: #000000;
+            border-left: 5px solid #000000;
+            width: 100%;
+            max-width: 950px;
+            margin-left: auto;
+            margin-right: auto;
+            box-sizing: border-box;
+        }
+        body.newspaper-style h3 {
+            background-color: #f8f8f8;
+            color: #000000;
+            border-left: 3px solid #666666;
+        }
+        body.newspaper-style table {
+            width: 100%;
+            max-width: 950px;
+            table-layout: fixed;
+            border-collapse: collapse;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        body.newspaper-style th {
+            background-color: #3498db;
+            color: #000000;
+            border: 1px solid #000000;
+        }
+        body.newspaper-style td {
+            border: 1px solid #666666;
+        }
+        body.newspaper-style .nav {
+            background-color: #2c2c2c;
+        }
+        body.newspaper-style .nav a.active {
+            background-color: #3498db;
+        }
+        body.newspaper-style .case-gen {
+            background-color: #f5f5f5;
+        }
+        body.newspaper-style .case-dat {
+            background-color: #ebebeb;
+        }
+        body.newspaper-style .case-akk {
+            background-color: #e0e0e0;
+        }
+        body.newspaper-style .note {
+            background-color: #f8f8f8;
+            border-left: 4px solid #666666;
+        }
+        body.newspaper-style .info-box {
+            background-color: #f0f0f0;
+            border-left: 4px solid #000000;
+        }
+        body.newspaper-style .example-box {
+            background-color: #fafafa;
+            border-left: 4px solid #333333;
+        }
+
+        /* Style Toggle Button */
+        .style-toggle-btn {
+            background-color: #444444;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 15px;
+            transition: background-color 0.3s;
+        }
+        .style-toggle-btn:hover {
+            background-color: #222222;
+        }
+
+        /* Print Layout Adjustments */
+        /* Unified cell widths for consistent tables */
+        th, td {
+            width: auto;
+            min-width: 80px;
+        }
+        
+            table {
+            width: 100%;
+            max-width: 950px;
+            table-layout: fixed;
+            border-collapse: collapse;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+            body.newspaper-style h2,
+            h2 {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+            body.newspaper-style table,
+            table {
+            width: 100%;
+            max-width: 950px;
+            table-layout: fixed;
+            border-collapse: collapse;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        }
+        /* Unified cell widths for consistent tables */
+        th, td {
+            width: auto;
+            min-width: 80px;
+        }
+        
+            table {
+            width: 100%;
+            max-width: 950px;
+            table-layout: fixed;
+            border-collapse: collapse;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+            .nav, .toggle-btn {
+                display: none;
+            }
+            table {
+            width: 100%;
+            max-width: 950px;
+            table-layout: fixed;
+            border-collapse: collapse;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+            h2 {
+                page-break-after: avoid;
+                page-break-inside: avoid;
+            }
+            tr {
+                page-break-inside: avoid;
+            }
+        }
+        /* Print Buttons */
+        .print-buttons {
+            text-align: center;
+            margin: 15px 0;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+        .print-btn {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0 5px;
+            transition: background-color 0.3s;
+            font-size: 0.9em;
+        }
+        .print-btn:hover {
+            background-color: #5a6268;
+        }
+        .print-btn.normal {
+            background-color: #007bff;
+        }
+        .print-btn.normal:hover {
+            background-color: #0056b3;
+        }
+        .print-btn.compact {
+            background-color: #28a745;
+        }
+        .print-btn.compact:hover {
+            background-color: #218838;
+        }
+        .print-btn.extra-compact {
+            background-color: #dc3545;
+        }
+        .print-btn.extra-compact:hover {
+            background-color: #c82333;
+        }
+        @media print {
+            .print-buttons {
+                display: none !important;
+            }
+        }
+
+        /* Enhanced Print Layout - keep related elements together */
+        h1, h2, h3 {
+            page-break-after: avoid;
+            page-break-inside: avoid;
+        }
+        table {
+            width: 100%;
+            max-width: 950px;
+            table-layout: fixed;
+            border-collapse: collapse;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        tr {
+            page-break-inside: avoid;
+        }
+        thead {
+            display: table-header-group;
+        }
+        .info-box, .note {
+            page-break-inside: avoid;
+        }
+    
+        /* Global Navigation Header */
+        .global-nav {
+            background-color: #1a252f;
+            padding: 10px 0;
+            margin: -20px -20px 0 -20px;
+            text-align: center;
+            border-bottom: 3px solid #34495e;
+        }
+        .global-nav a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 6px 12px;
+            border-radius: 3px;
+            transition: all 0.3s;
+            font-size: 0.95em;
+            font-weight: 500;
+        }
+        .global-nav a:hover {
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+        }
+        .global-nav .home-link {
+            font-weight: bold;
+            color: #3498db;
+        }
+        .global-nav .home-link:hover {
+            color: #5dade2;
+        }        /* Book/Newspaper Style - Black & White */
+        body.newspaper-style {
+            background-color: #ffffff;
+        }
+        body.newspaper-style h1 {
+            color: #000000;
+            border-bottom: 3px solid #000000;
+            padding-bottom: 10px;
+        }
+        body.newspaper-style h2 {
+            background-color: #3498db;
+            color: #000000;
+            border-left: 5px solid #000000;
+            width: 100%;
+            max-width: 950px;
+            margin-left: auto;
+            margin-right: auto;
+            box-sizing: border-box;
+        }
+        body.newspaper-style h3 {
+            background-color: #f8f8f8;
+            color: #000000;
+            border-left: 3px solid #666666;
+        }
+        body.newspaper-style table {
+            width: 100%;
+            max-width: 950px;
+            table-layout: fixed;
+            border-collapse: collapse;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        body.newspaper-style th {
+            background-color: #3498db;
+            color: #000000;
+            border: 1px solid #000000;
+        }
+        body.newspaper-style td {
+            border: 1px solid #666666;
+        }
+        body.newspaper-style .nav {
+            background-color: #2c2c2c;
+        }
+        body.newspaper-style .nav a.active {
+            background-color: #3498db;
+        }
+        body.newspaper-style .case-gen {
+            background-color: #f5f5f5;
+        }
+        body.newspaper-style .case-dat {
+            background-color: #ebebeb;
+        }
+        body.newspaper-style .case-akk {
+            background-color: #e0e0e0;
+        }
+        body.newspaper-style .note {
+            background-color: #f8f8f8;
+            border-left: 4px solid #666666;
+        }
+        body.newspaper-style .info-box {
+            background-color: #f0f0f0;
+            border-left: 4px solid #000000;
+        }
+        body.newspaper-style .example-box {
+            background-color: #fafafa;
+            border-left: 4px solid #333333;
+        }
+
+        /* Style Toggle Button */
+        .style-toggle-btn {
+            background-color: #444444;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 15px;
+            transition: background-color 0.3s;
+        }
+        .style-toggle-btn:hover {
+            background-color: #222222;
+        }
+
+        /* Print Layout Adjustments */
+        /* Unified cell widths for consistent tables */
+        th, td {
+            width: auto;
+            min-width: 80px;
+        }
+        
+            table {
+            width: 100%;
+            max-width: 950px;
+            table-layout: fixed;
+            border-collapse: collapse;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+            body.newspaper-style h2,
+            h2 {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+            body.newspaper-style table,
+            table {
+            width: 100%;
+            max-width: 950px;
+            table-layout: fixed;
+            border-collapse: collapse;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        }
+        /* Unified cell widths for consistent tables */
+        th, td {
+            width: auto;
+            min-width: 80px;
+        }
+        
+            table {
+            width: 100%;
+            max-width: 950px;
+            table-layout: fixed;
+            border-collapse: collapse;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+            .global-nav {
+                display: none !important;
+            }
+        }
+        /* Optimized Print Layout */
+        
+
+            body {
+                background: white !important;
+                color: black !important;
+                margin: 0;
+                padding: 20px;
+            }
+
+            /* Headers - Black and White */
+            h1 {
+                color: black !important;
+                background: white !important;
+                border-bottom: 2px solid black !important;
+                page-break-after: avoid !important;
+                page-break-inside: avoid !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                text-align: left !important;
+            }
+
+            h2 {
+                color: black !important;
+                background-color: #e0e0e0 !important;
+                border-left: 4px solid black !important;
+                page-break-after: avoid !important;
+                page-break-inside: avoid !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                text-align: left !important;
+                padding: 8px !important;
+            }
+
+            h3 {
+                color: black !important;
+                background-color: #f0f0f0 !important;
+                border-left: 3px solid #666666 !important;
+                page-break-after: avoid !important;
+                page-break-inside: avoid !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                text-align: left !important;
+                padding: 6px !important;
+            }
+
+            /* Tables - Optimized for printing */
+            table {
+                width: 100% !important;
+                max-width: 100% !important;
+                margin: 10px 0 !important;
+                border: 2px solid black !important;
+                border-collapse: collapse !important;
+                page-break-inside: avoid !important;
+                page-break-before: auto !important;
+                table-layout: auto !important;
+            }
+
+            /* Table cells - Prevent text overflow and cutting */
+            th, td {
+                border: 1px solid black !important;
+                padding: 8px 6px !important;
+                color: black !important;
+                word-wrap: break-word !important;
+                word-break: break-word !important;
+                overflow-wrap: break-word !important;
+                white-space: normal !important;
+                vertical-align: top !important;
+                line-height: 1.4 !important;
+                min-height: 20px !important;
+            }
+
+            th {
+                background-color: #d0d0d0 !important;
+                font-weight: bold !important;
+            }
+
+            /* Prevent row breaks */
+            tr {
+                page-break-inside: avoid !important;
+                page-break-after: auto !important;
+            }
+
+            /* Table header repeat on each page */
+            thead {
+                display: table-header-group !important;
+            }
+
+            tbody {
+                display: table-row-group !important;
+            }
+
+            /* Info boxes and notes */
+            .note, .info-box, .example-box {
+                background-color: #f5f5f5 !important;
+                border-left: 3px solid #666666 !important;
+                color: black !important;
+                page-break-inside: avoid !important;
+                padding: 10px !important;
+                margin: 10px 0 !important;
+            }
+
+            /* Hide navigation and buttons */
+            .nav, .global-nav, .toggle-btn, .style-toggle-btn {
+                display: none !important;
+            }
+
+            /* Ensure proper spacing */
+            * {
+                box-sizing: border-box !important;
+            }
+        }
+        /* Print Buttons */
+        .print-buttons {
+            text-align: center;
+            margin: 15px 0;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+        .print-btn {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0 5px;
+            transition: background-color 0.3s;
+            font-size: 0.9em;
+        }
+        .print-btn:hover {
+            background-color: #5a6268;
+        }
+        .print-btn.normal {
+            background-color: #007bff;
+        }
+        .print-btn.normal:hover {
+            background-color: #0056b3;
+        }
+        .print-btn.compact {
+            background-color: #28a745;
+        }
+        .print-btn.compact:hover {
+            background-color: #218838;
+        }
+        .print-btn.extra-compact {
+            background-color: #dc3545;
+        }
+        .print-btn.extra-compact:hover {
+            background-color: #c82333;
+        }
+        @media print {
+            .print-buttons {
+                display: none !important;
+            }
+        }
+        /* Enhanced Print Layout - Prevent Table Breaks */
+        @media print {
+            /* Remove all colors - Black, White, Gray only */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            body {
+                background: white !important;
+                color: black !important;
+                margin: 0;
+                padding: 20px;
+            }
+
+            /* Headers - Must stay with following content */
+            h1 {
+                color: black !important;
+                background: white !important;
+                border-bottom: 2px solid black !important;
+                page-break-after: avoid !important;
+                page-break-inside: avoid !important;
+                break-after: avoid !important;
+                break-inside: avoid !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                text-align: left !important;
+                orphans: 3;
+                widows: 3;
+            }
+
+            h2 {
+                color: black !important;
+                background-color: #e0e0e0 !important;
+                border-left: 4px solid black !important;
+                page-break-after: avoid !important;
+                page-break-inside: avoid !important;
+                break-after: avoid-page !important;
+                break-inside: avoid !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                text-align: left !important;
+                padding: 8px !important;
+                orphans: 3;
+                widows: 3;
+                display: block !important;
+            }
+
+            h3 {
+                color: black !important;
+                background-color: #f0f0f0 !important;
+                border-left: 3px solid #666666 !important;
+                page-break-after: avoid !important;
+                page-break-inside: avoid !important;
+                break-after: avoid-page !important;
+                break-inside: avoid !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                text-align: left !important;
+                padding: 6px !important;
+                orphans: 3;
+                widows: 3;
+            }
+
+            /* Tables - MUST NOT BREAK */
+            table {
+                width: 100% !important;
+                max-width: 100% !important;
+                margin: 10px 0 20px 0 !important;
+                border: 2px solid black !important;
+                border-collapse: collapse !important;
+                page-break-inside: avoid !important;
+                page-break-before: auto !important;
+                page-break-after: auto !important;
+                break-inside: avoid-page !important;
+                break-before: auto !important;
+                break-after: auto !important;
+                table-layout: fixed !important;
+                display: table !important;
+            }
+
+            /* Table cells - Prevent text overflow and cutting */
+            th, td {
+                border: 1px solid black !important;
+                padding: 8px 6px !important;
+                color: black !important;
+                word-wrap: break-word !important;
+                word-break: break-word !important;
+                overflow-wrap: break-word !important;
+                white-space: normal !important;
+                vertical-align: top !important;
+                line-height: 1.4 !important;
+                min-height: 20px !important;
+                page-break-inside: avoid !important;
+            }
+
+            th {
+                background-color: #d0d0d0 !important;
+                font-weight: bold !important;
+            }
+
+            /* Prevent row breaks - CRITICAL */
+            tr {
+                page-break-inside: avoid !important;
+                page-break-after: auto !important;
+                break-inside: avoid-page !important;
+                break-after: auto !important;
+            }
+
+            /* Table sections */
+            thead {
+                display: table-header-group !important;
+                page-break-inside: avoid !important;
+                page-break-after: avoid !important;
+            }
+
+            tbody {
+                display: table-row-group !important;
+                page-break-inside: avoid !important;
+            }
+
+            tfoot {
+                display: table-footer-group !important;
+            }
+
+            /* Info boxes and notes */
+            .note, .info-box, .example-box {
+                background-color: #f5f5f5 !important;
+                border-left: 3px solid #666666 !important;
+                color: black !important;
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+                padding: 10px !important;
+                margin: 10px 0 !important;
+            }
+
+            /* Hide navigation and buttons */
+            .nav, .global-nav, .toggle-btn, .style-toggle-btn {
+                display: none !important;
+            }
+
+            /* Global orphans and widows control */
+            p, div, li {
+                orphans: 3;
+                widows: 3;
+            }
+
+            /* Ensure proper spacing */
+            * {
+                box-sizing: border-box !important;
+            }
+
+            /* Force page breaks only before h2 if needed */
+            h2 {
+                page-break-before: auto !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="global-nav">
+        <a href="../../index.html" class="home-link">&#127968; Home</a>
+        <a href="../../Article/option-a/index.html">&#128221; Articles</a>
+        <a href="../../Prepositions/option-a/index.html">&#128506;&#65039; Prepositions</a>
+        <a href="../../Numbers/option-a/index.html">&#128290; Numbers</a>
+        <a href="../../Directions/option-a/index.html">&#129517; Directions</a>
+        <a href="../../Time/option-a/index.html">&#9200; Time</a>
+    </div>
+    <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="articles.html">Articles</a>
+        <a href="pronouns-demonstrative.html">Demonstrative</a>
+        <a href="pronouns-possessive.html" class="active">Possessive</a>
+        <a href="pronouns-personal.html">Personal</a>
+        <a href="pronouns-reflexive.html">Reflexive</a>
+    </div>
+
+    <h1>Possessive Pronouns - Possessivpronomen</h1>
+    <div style="text-align: center; margin: 15px 0;">
+        <button class="toggle-btn" onclick="toggleCompactMode()">&#128202; Kompakt-Modus</button>
+    </div>
+
+    <h2>mein - my (1st Person Singular)</h2>
+    <table>
+        <tr>
+            <th></th>
+            <th>Masculine</th>
+            <th></th>
+            <th>Neutral</th>
+            <th></th>
+            <th>Feminine</th>
+            <th></th>
+            <th>Plural</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td class="case-label">Nominative</td>
+            <td>mein</td>
+            <td class="ending">-er</td>
+            <td>mein</td>
+            <td class="ending">-es</td>
+            <td>meine</td>
+            <td class="ending">-e</td>
+            <td>meine</td>
+            <td class="ending">-en</td>
+        </tr>
+        <tr>
+            <td class="case-label">Accusative</td>
+            <td>meinen</td>
+            <td class="ending">-en</td>
+            <td>mein</td>
+            <td class="ending">-es</td>
+            <td>meine</td>
+            <td class="ending">-e</td>
+            <td>meine</td>
+            <td class="ending">-en</td>
+        </tr>
+        <tr>
+            <td class="case-label">Dative</td>
+            <td>meinem</td>
+            <td class="ending">-en</td>
+            <td>meinem</td>
+            <td class="ending">-en</td>
+            <td>meiner</td>
+            <td class="ending">-en</td>
+            <td>meinen</td>
+            <td class="ending">-en</td>
+        </tr>
+        <tr>
+            <td class="case-label">Genitive</td>
+            <td>meines</td>
+            <td class="ending">-en</td>
+            <td>meines</td>
+            <td class="ending">-en</td>
+            <td>meiner</td>
+            <td class="ending">-en</td>
+            <td>meiner</td>
+            <td class="ending">-en</td>
+        </tr>
+    </table>
+
+    <h2>dein - your (2nd Person Singular, informal)</h2>
+    <table>
+        <tr>
+            <th></th>
+            <th>Masculine</th>
+            <th></th>
+            <th>Neutral</th>
+            <th></th>
+            <th>Feminine</th>
+            <th></th>
+            <th>Plural</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td class="case-label">Nominative</td>
+            <td>dein</td>
+            <td class="ending">-er</td>
+            <td>dein</td>
+            <td class="ending">-es</td>
+            <td>deine</td>
+            <td class="ending">-e</td>
+            <td>deine</td>
+            <td class="ending">-en</td>
+        </tr>
+        <tr>
+            <td class="case-label">Accusative</td>
+            <td>deinen</td>
+            <td class="ending">-en</td>
+            <td>dein</td>
+            <td class="ending">-es</td>
+            <td>deine</td>
+            <td class="ending">-e</td>
+            <td>deine</td>
+            <td class="ending">-en</td>
+        </tr>
+        <tr>
+            <td class="case-label">Dative</td>
+            <td>deinem</td>
+            <td class="ending">-en</td>
+            <td>deinem</td>
+            <td class="ending">-en</td>
+            <td>deiner</td>
+            <td class="ending">-en</td>
+            <td>deinen</td>
+            <td class="ending">-en</td>
+        </tr>
+        <tr>
+            <td class="case-label">Genitive</td>
+            <td>deines</td>
+            <td class="ending">-en</td>
+            <td>deines</td>
+            <td class="ending">-en</td>
+            <td>deiner</td>
+            <td class="ending">-en</td>
+            <td>deiner</td>
+            <td class="ending">-en</td>
+        </tr>
+    </table>
+
+    <h2>sein - his/its (3rd Person Singular, masculine/neutral)</h2>
+    <table>
+        <tr>
+            <th></th>
+            <th>Masculine</th>
+            <th></th>
+            <th>Neutral</th>
+            <th></th>
+            <th>Feminine</th>
+            <th></th>
+            <th>Plural</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td class="case-label">Nominative</td>
+            <td>sein</td>
+            <td class="ending">-er</td>
+            <td>sein</td>
+            <td class="ending">-es</td>
+            <td>seine</td>
+            <td class="ending">-e</td>
+            <td>seine</td>
+            <td class="ending">-en</td>
+        </tr>
+        <tr>
+            <td class="case-label">Accusative</td>
+            <td>seinen</td>
+            <td class="ending">-en</td>
+            <td>sein</td>
+            <td class="ending">-es</td>
+            <td>seine</td>
+            <td class="ending">-e</td>
+            <td>seine</td>
+            <td class="ending">-en</td>
+        </tr>
+        <tr>
+            <td class="case-label">Dative</td>
+            <td>seinem</td>
+            <td class="ending">-en</td>
+            <td>seinem</td>
+            <td class="ending">-en</td>
+            <td>seiner</td>
+            <td class="ending">-en</td>
+            <td>seinen</td>
+            <td class="ending">-en</td>
+        </tr>
+        <tr>
+            <td class="case-label">Genitive</td>
+            <td>seines</td>
+            <td class="ending">-en</td>
+            <td>seines</td>
+            <td class="ending">-en</td>
+            <td>seiner</td>
+            <td class="ending">-en</td>
+            <td>seiner</td>
+            <td class="ending">-en</td>
+        </tr>
+    </table>
+
+    <h2>ihr - her/its (3rd Person Singular, feminine)</h2>
+    <table>
+        <tr>
+            <th></th>
+            <th>Masculine</th>
+            <th></th>
+            <th>Neutral</th>
+            <th></th>
+            <th>Feminine</th>
+            <th></th>
+            <th>Plural</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td class="case-label">Nominative</td>
+            <td>ihr</td>
+            <td class="ending">-er</td>
+            <td>ihr</td>
+            <td class="ending">-es</td>
+            <td>ihre</td>
+            <td class="ending">-e</td>
+            <td>ihre</td>
+            <td class="ending">-en</td>
+        </tr>
+        <tr>
+            <td class="case-label">Accusative</td>
+            <td>ihren</td>
+            <td class="ending">-en</td>
+            <td>ihr</td>
+            <td class="ending">-es</td>
+            <td>ihre</td>
+            <td class="ending">-e</td>
+            <td>ihre</td>
+            <td class="ending">-en</td>
+        </tr>
+        <tr>
+            <td class="case-label">Dative</td>
+            <td>ihrem</td>
+            <td class="ending">-en</td>
+            <td>ihrem</td>
+            <td class="ending">-en</td>
+            <td>ihrer</td>
+            <td class="ending">-en</td>
+            <td>ihren</td>
+            <td class="ending">-en</td>
+        </tr>
+        <tr>
+            <td class="case-label">Genitive</td>
+            <td>ihres</td>
+            <td class="ending">-en</td>
+            <td>ihres</td>
+            <td class="ending">-en</td>
+            <td>ihrer</td>
+            <td class="ending">-en</td>
+            <td>ihrer</td>
+            <td class="ending">-en</td>
+        </tr>
+    </table>
+
+    <h2>unser - our (1st Person Plural)</h2>
+    <table>
+        <tr>
+            <th></th>
+            <th>Masculine</th>
+            <th></th>
+            <th>Neutral</th>
+            <th></th>
+            <th>Feminine</th>
+            <th></th>
+            <th>Plural</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td class="case-label">Nominative</td>
+            <td>unser</td>
+            <td class="ending">-er</td>
+            <td>unser</td>
+            <td class="ending">-es</td>
+            <td>unsere</td>
+            <td class="ending">-e</td>
+            <td>unsere</td>
+            <td class="ending">-en</td>
+        </tr>
+        <tr>
+            <td class="case-label">Accusative</td>
+            <td>unseren</td>
+            <td class="ending">-en</td>
+            <td>unser</td>
+            <td class="ending">-es</td>
+            <td>unsere</td>
+            <td class="ending">-e</td>
+            <td>unsere</td>
+            <td class="ending">-en</td>
+        </tr>
+        <tr>
+            <td class="case-label">Dative</td>
+            <td>unserem</td>
+            <td class="ending">-en</td>
+            <td>unserem</td>
+            <td class="ending">-en</td>
+            <td>unserer</td>
+            <td class="ending">-en</td>
+            <td>unseren</td>
+            <td class="ending">-en</td>
+        </tr>
+        <tr>
+            <td class="case-label">Genitive</td>
+            <td>unseres</td>
+            <td class="ending">-en</td>
+            <td>unseres</td>
+            <td class="ending">-en</td>
+            <td>unserer</td>
+            <td class="ending">-en</td>
+            <td>unserer</td>
+            <td class="ending">-en</td>
+        </tr>
+    </table>
+
+    <h2>euer - your (2nd Person Plural, informal)</h2>
+    <table>
+        <tr>
+            <th></th>
+            <th>Masculine</th>
+            <th></th>
+            <th>Neutral</th>
+            <th></th>
+            <th>Feminine</th>
+            <th></th>
+            <th>Plural</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td class="case-label">Nominative</td>
+            <td>euer</td>
+            <td class="ending">-er</td>
+            <td>euer</td>
+            <td class="ending">-es</td>
+            <td>eure</td>
+            <td class="ending">-e</td>
+            <td>eure</td>
+            <td class="ending">-en</td>
+        </tr>
+        <tr>
+            <td class="case-label">Accusative</td>
+            <td>euren</td>
+            <td class="ending">-en</td>
+            <td>euer</td>
+            <td class="ending">-es</td>
+            <td>eure</td>
+            <td class="ending">-e</td>
+            <td>eure</td>
+            <td class="ending">-en</td>
+        </tr>
+        <tr>
+            <td class="case-label">Dative</td>
+            <td>eurem</td>
+            <td class="ending">-en</td>
+            <td>eurem</td>
+            <td class="ending">-en</td>
+            <td>eurer</td>
+            <td class="ending">-en</td>
+            <td>euren</td>
+            <td class="ending">-en</td>
+        </tr>
+        <tr>
+            <td class="case-label">Genitive</td>
+            <td>eures</td>
+            <td class="ending">-en</td>
+            <td>eures</td>
+            <td class="ending">-en</td>
+            <td>eurer</td>
+            <td class="ending">-en</td>
+            <td>eurer</td>
+            <td class="ending">-en</td>
+        </tr>
+    </table>
+
+    <h2>ihr - their (3rd Person Plural)</h2>
+    <table>
+        <tr>
+            <th></th>
+            <th>Masculine</th>
+            <th></th>
+            <th>Neutral</th>
+            <th></th>
+            <th>Feminine</th>
+            <th></th>
+            <th>Plural</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td class="case-label">Nominative</td>
+            <td>ihr</td>
+            <td class="ending">-er</td>
+            <td>ihr</td>
+            <td class="ending">-es</td>
+            <td>ihre</td>
+            <td class="ending">-e</td>
+            <td>ihre</td>
+            <td class="ending">-en</td>
+        </tr>
+        <tr>
+            <td class="case-label">Accusative</td>
+            <td>ihren</td>
+            <td class="ending">-en</td>
+            <td>ihr</td>
+            <td class="ending">-es</td>
+            <td>ihre</td>
+            <td class="ending">-e</td>
+            <td>ihre</td>
+            <td class="ending">-en</td>
+        </tr>
+        <tr>
+            <td class="case-label">Dative</td>
+            <td>ihrem</td>
+            <td class="ending">-en</td>
+            <td>ihrem</td>
+            <td class="ending">-en</td>
+            <td>ihrer</td>
+            <td class="ending">-en</td>
+            <td>ihren</td>
+            <td class="ending">-en</td>
+        </tr>
+        <tr>
+            <td class="case-label">Genitive</td>
+            <td>ihres</td>
+            <td class="ending">-en</td>
+            <td>ihres</td>
+            <td class="ending">-en</td>
+            <td>ihrer</td>
+            <td class="ending">-en</td>
+            <td>ihrer</td>
+            <td class="ending">-en</td>
+        </tr>
+    </table>
+
+    <h2>Ihr - your (2nd Person formal, Sie-Form)</h2>
+    <table>
+        <tr>
+            <th></th>
+            <th>Masculine</th>
+            <th></th>
+            <th>Neutral</th>
+            <th></th>
+            <th>Feminine</th>
+            <th></th>
+            <th>Plural</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td class="case-label">Nominative</td>
+            <td>Ihr</td>
+            <td class="ending">-er</td>
+            <td>Ihr</td>
+            <td class="ending">-es</td>
+            <td>Ihre</td>
+            <td class="ending">-e</td>
+            <td>Ihre</td>
+            <td class="ending">-en</td>
+        </tr>
+        <tr>
+            <td class="case-label">Accusative</td>
+            <td>Ihren</td>
+            <td class="ending">-en</td>
+            <td>Ihr</td>
+            <td class="ending">-es</td>
+            <td>Ihre</td>
+            <td class="ending">-e</td>
+            <td>Ihre</td>
+            <td class="ending">-en</td>
+        </tr>
+        <tr>
+            <td class="case-label">Dative</td>
+            <td>Ihrem</td>
+            <td class="ending">-en</td>
+            <td>Ihrem</td>
+            <td class="ending">-en</td>
+            <td>Ihrer</td>
+            <td class="ending">-en</td>
+            <td>Ihren</td>
+            <td class="ending">-en</td>
+        </tr>
+        <tr>
+            <td class="case-label">Genitive</td>
+            <td>Ihres</td>
+            <td class="ending">-en</td>
+            <td>Ihres</td>
+            <td class="ending">-en</td>
+            <td>Ihrer</td>
+            <td class="ending">-en</td>
+            <td>Ihrer</td>
+            <td class="ending">-en</td>
+        </tr>
+    </table>
+
+
+    <script>
+                function toggleCompactMode() {
+            const body = document.body;
+            const button = document.querySelector('.toggle-btn');
+
+            if (!body.classList.contains('compact-mode') && !body.classList.contains('extra-compact-mode')) {
+                // Normal -> Compact
+                body.classList.add('compact-mode');
+                button.textContent = '&#128202; Extra-Kompakt';
+            } else if (body.classList.contains('compact-mode')) {
+                // Compact -> Extra-Compact
+                body.classList.remove('compact-mode');
+                body.classList.add('extra-compact-mode');
+                button.textContent = '&#128202; Normal-Modus';
+            } else {
+                // Extra-Compact -> Normal
+                body.classList.remove('extra-compact-mode');
+                button.textContent = '&#128202; Kompakt-Modus';
+            }
+        }
+        function toggleStyle() {
+            document.body.classList.toggle('newspaper-style');
+            const button = document.querySelector('.style-toggle-btn');
+            if (document.body.classList.contains('newspaper-style')) {
+                button.innerHTML = '&#127912; Farb-Modus';
+            }
+
+        function printMode(mode) {
+            const body = document.body;
+            const wasCompact = body.classList.contains('compact-mode');
+            const wasExtraCompact = body.classList.contains('extra-compact-mode');
+
+            // Remove all mode classes
+            body.classList.remove('compact-mode');
+            body.classList.remove('extra-compact-mode');
+
+            // Apply requested mode
+            if (mode === 'compact') {
+                body.classList.add('compact-mode');
+            } else if (mode === 'extra-compact') {
+                body.classList.add('extra-compact-mode');
+            }
+
+            // Print
+            setTimeout(function() {
+                window.print();
+
+                // Restore original state after print dialog closes
+                setTimeout(function() {
+                    body.classList.remove('compact-mode');
+                    body.classList.remove('extra-compact-mode');
+                    if (wasCompact) {
+                        body.classList.add('compact-mode');
+                    } else if (wasExtraCompact) {
+                        body.classList.add('extra-compact-mode');
+                    }
+                }, 100);
+            }, 100);
+        } else {
+                button.innerHTML = '&#128214; Buch-Modus';
+            }
+        } else {
+                button.textContent = 'ðŸ“– Buch-Modus';
+            }
+        }
+    </script></body>
+</html>
