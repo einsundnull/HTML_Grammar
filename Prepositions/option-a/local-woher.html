@@ -235,6 +235,22 @@
 
         /* Print Layout Adjustments */
         @media print {
+            table {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+                table-layout: fixed !important;
+            }
+
+            tr {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+            }
+
+            h1, h2, h3 {
+                page-break-after: avoid !important;
+                break-after: avoid-page !important;
+                page-break-inside: avoid !important;
+            }
             h2, h3 {
                 margin-left: 0 !important;
                 margin-right: auto !important;
@@ -266,6 +282,22 @@
         }
         }
         @media print {
+            table {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+                table-layout: fixed !important;
+            }
+
+            tr {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+            }
+
+            h1, h2, h3 {
+                page-break-after: avoid !important;
+                break-after: avoid-page !important;
+                page-break-inside: avoid !important;
+            }
             h2, h3 {
                 margin-left: 0 !important;
                 margin-right: auto !important;
@@ -439,6 +471,22 @@
 
         /* Print Layout Adjustments */
         @media print {
+            table {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+                table-layout: fixed !important;
+            }
+
+            tr {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+            }
+
+            h1, h2, h3 {
+                page-break-after: avoid !important;
+                break-after: avoid-page !important;
+                page-break-inside: avoid !important;
+            }
             h2, h3 {
                 margin-left: 0 !important;
                 margin-right: auto !important;
@@ -470,6 +518,22 @@
         }
         }
         @media print {
+            table {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+                table-layout: fixed !important;
+            }
+
+            tr {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+            }
+
+            h1, h2, h3 {
+                page-break-after: avoid !important;
+                break-after: avoid-page !important;
+                page-break-inside: avoid !important;
+            }
             h2, h3 {
                 margin-left: 0 !important;
                 margin-right: auto !important;
@@ -488,9 +552,67 @@
                 display: none !important;
             }
         }
-    </style>
+    
+        /* Print Buttons */
+        .print-buttons {
+            text-align: center;
+            margin: 15px 0;
+            padding: 10px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .print-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+            font-weight: 500;
+        }
+        .print-btn:hover {
+            background-color: #2980b9;
+        }
+        .print-btn.compact {
+            background-color: #27ae60;
+        }
+        .print-btn.compact:hover {
+            background-color: #229954;
+        }
+        .print-btn.extra-compact {
+            background-color: #e67e22;
+        }
+        .print-btn.extra-compact:hover {
+            background-color: #d35400;
+        }
+        @media print {
+            table {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+                table-layout: fixed !important;
+            }
+
+            tr {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+            }
+
+            h1, h2, h3 {
+                page-break-after: avoid !important;
+                break-after: avoid-page !important;
+                page-break-inside: avoid !important;
+            }
+            .print-buttons {
+                display: none !important;
+            }
+        }
+</style>
 </head>
-<body>
+<body class="extra-compact-mode">
     <div class="global-nav">
         <a href="../../index.html" class="home-link">&#127968; Home</a>
         <a href="../../Article/option-a/index.html">&#128221; Articles</a>
@@ -512,7 +634,7 @@
 
     <h1>Local Prepositions: Woher / Where From</h1>
     <div style="text-align: center; margin: 15px 0;">
-        <button class="toggle-btn" onclick="toggleCompactMode()">&#128202; Kompakt-Modus</button>
+        <button class="print-btn" onclick="window.print()">&#128424; Drucken</button>
     </div>
     <p style="text-align: center; color: #7f8c8d;">Prepositions indicating origin or source</p>
 
@@ -610,15 +732,12 @@
 
 
     <script>
-                function toggleCompactMode() {
-            const body = document.body;
-            const button = document.querySelector('.toggle-btn');
-
-            if (!body.classList.contains('compact-mode') && !body.classList.contains('extra-compact-mode')) {
-                // Normal -> Compact
-                body.classList.add('compact-mode');
-                button.textContent = '&#128202; Extra-Kompakt';
-            } else if (body.classList.contains('compact-mode')) {
+                         else {
+                // Normal -> Extra-Compact
+                body.classList.add('extra-compact-mode');
+                button.innerHTML = '&#128202; Normal-Modus';
+            }
+        } else if (body.classList.contains('compact-mode')) {
                 // Compact -> Extra-Compact
                 body.classList.remove('compact-mode');
                 body.classList.add('extra-compact-mode');
@@ -638,5 +757,13 @@
                 button.textContent = 'ðŸ“– Buch-Modus';
             }
         }
-    </script></body>
+    
+         else if (mode === 'extra-compact') {
+                document.body.classList.add('extra-compact-mode');
+            }
+
+            // Print
+            window.print();
+        }
+</script></body>
 </html>

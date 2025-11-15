@@ -256,6 +256,22 @@
 
         /* Print Layout - No Page Breaks */
         @media print {
+            table {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+                table-layout: fixed !important;
+            }
+
+            tr {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+            }
+
+            h1, h2, h3 {
+                page-break-after: avoid !important;
+                break-after: avoid-page !important;
+                page-break-inside: avoid !important;
+            }
             body {
                 background-color: white;
                 color: black;
@@ -345,6 +361,22 @@
             background-color: #d35400;
         }
         @media print {
+            table {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+                table-layout: fixed !important;
+            }
+
+            tr {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+            }
+
+            h1, h2, h3 {
+                page-break-after: avoid !important;
+                break-after: avoid-page !important;
+                page-break-inside: avoid !important;
+            }
             .print-buttons {
                 display: none !important;
             }
@@ -381,7 +413,7 @@
         }
 </style>
 </head>
-<body>
+<body class="extra-compact-mode">
     <div class="global-nav">
         <a href="../index.html" class="home-link">&#127968; Home</a>
         <a href="../Article/option-a/index.html">&#128221; Articles</a>
@@ -397,32 +429,16 @@
     </div>
 
     <h1>Dual-Function Prepositions - Wechselpräpositionen</h1>
-    <div style="text-align: center; margin: 15px 0;">
-        <button class="toggle-btn" onclick="toggleCompactMode()">&#128202; Kompakt-Modus</button>
-        <button class="style-toggle-btn" onclick="toggleStyle()">&#128214; Buch-Modus</button>
-        <div class="print-buttons">
-            <button class="print-btn normal" onclick="printMode('normal')">&#128424; Drucken Normal</button>
-            <button class="print-btn compact" onclick="printMode('compact')">&#128424; Drucken Kompakt</button>
-            <button class="print-btn extra-compact" onclick="printMode('extra-compact')">&#128424; Drucken Extra-Kompakt</button>
-        </div>
+    <div style="text-align: center; margin: 15px 0;"><button class="style-toggle-btn" onclick="toggleStyle()">&#128214; Buch-Modus</button>
+        <button class="print-btn" onclick="window.print()">&#128424; Drucken</button>
     </div>
 
     <div class="diagram-container">
         <img src="images/dual-function-diagram.png" alt="Orte und Richtungen - Dual Function Prepositions Diagram">
         <p class="diagram-caption">Orte und Richtungen - Visual representation of dual-function prepositions</p>
     </div>
-
-    <div class="explanation">
-        <p><strong>What are Dual-Function Prepositions?</strong></p>
-        <p>Dual-function prepositions (Wechselpräpositionen) are prepositions that can take either the <strong>Dative</strong> or <strong>Accusative</strong> case, depending on whether they indicate a location (Wo? - Where?) or a direction (Wohin? - Where to?).</p>
-        <ul>
-            <li><strong>Dative (Wo?)</strong> - Indicates a static location or position</li>
-            <li><strong>Accusative (Wohin?)</strong> - Indicates movement or direction toward a destination</li>
-            <li><strong>Dative (Woher?)</strong> - Indicates origin or source (where from?)</li>
-        </ul>
-    </div>
-
-    <h2>Dual Function Prepositions Table</h2>
+    
+      <h2>Dual Function Prepositions Table</h2>
     <table>
         <thead>
             <tr>
@@ -485,6 +501,18 @@
         </tbody>
     </table>
 
+    <div class="explanation">
+        <p><strong>What are Dual-Function Prepositions?</strong></p>
+        <p>Dual-function prepositions (Wechselpräpositionen) are prepositions that can take either the <strong>Dative</strong> or <strong>Accusative</strong> case, depending on whether they indicate a location (Wo? - Where?) or a direction (Wohin? - Where to?).</p>
+        <ul>
+            <li><strong>Dative (Wo?)</strong> - Indicates a static location or position</li>
+            <li><strong>Accusative (Wohin?)</strong> - Indicates movement or direction toward a destination</li>
+            <li><strong>Dative (Woher?)</strong> - Indicates origin or source (where from?)</li>
+        </ul>
+    </div>
+
+  
+
     <div class="note">
         <div class="note-title">&#128221; Important Notes:</div>
         <p><strong>Contracted Forms:</strong></p>
@@ -527,15 +555,12 @@
     </div>
 
     <script>
-        function toggleCompactMode() {
-            const body = document.body;
-            const button = document.querySelector('.toggle-btn');
-
-            if (!body.classList.contains('compact-mode') && !body.classList.contains('extra-compact-mode')) {
-                // Normal -> Compact
-                body.classList.add('compact-mode');
-                button.innerHTML = '&#128202; Extra-Kompakt-Modus';
-            } else if (body.classList.contains('compact-mode')) {
+                 else {
+                // Normal -> Extra-Compact
+                body.classList.add('extra-compact-mode');
+                button.innerHTML = '&#128202; Normal-Modus';
+            }
+        } else if (body.classList.contains('compact-mode')) {
                 // Compact -> Extra-Compact
                 body.classList.remove('compact-mode');
                 body.classList.add('extra-compact-mode');
@@ -556,14 +581,7 @@
             }
         }
 
-        function printMode(mode) {
-            // Remove all mode classes
-            document.body.classList.remove('compact-mode', 'extra-compact-mode');
-
-            // Apply the requested mode
-            if (mode === 'compact') {
-                document.body.classList.add('compact-mode');
-            } else if (mode === 'extra-compact') {
+         else if (mode === 'extra-compact') {
                 document.body.classList.add('extra-compact-mode');
             }
 

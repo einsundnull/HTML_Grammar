@@ -53,6 +53,22 @@
         /* Print-friendly layout */
         @media print {
             table {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+                table-layout: fixed !important;
+            }
+
+            tr {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+            }
+
+            h1, h2, h3 {
+                page-break-after: avoid !important;
+                break-after: avoid-page !important;
+                page-break-inside: avoid !important;
+            }
+            table {
                 page-break-inside: avoid;
             }
             h2 {
@@ -101,9 +117,128 @@
         .global-nav .home-link:hover {
             color: #5dade2;
         }
+
+        .toggle-btn {
+            background-color: #95a5a6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+        .toggle-btn:hover {
+            background-color: #7f8c8d;
+        }
+
+        /* Compact Mode */
+        body.compact-mode table {
+            font-size: 0.9em;
+        }
+        body.compact-mode th, body.compact-mode td {
+            padding: 8px;
+        }
+
+        /* Extra Compact Mode */
+        body.extra-compact-mode table {
+            font-size: 0.75em;
+        }
+        body.extra-compact-mode th, body.extra-compact-mode td {
+            padding: 4px 6px;
+        }
+
+        /* Style Toggle Button */
+        .style-toggle-btn {
+            background-color: #444444;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-left: 15px;
+            transition: background-color 0.3s;
+        }
+        .style-toggle-btn:hover {
+            background-color: #222222;
+        }
+
+        /* Newspaper Style */
+        body.newspaper-style {
+            background-color: #f8f8f8;
+            color: #1a1a1a;
+        }
+        body.newspaper-style h1, body.newspaper-style h2, body.newspaper-style h3 {
+            color: #000000;
+        }
+        body.newspaper-style th {
+            background-color: #444444;
+        }
+        body.newspaper-style td {
+            border: 1px solid #666666;
+        }
+
+        /* Print Buttons */
+        .print-buttons {
+            text-align: center;
+            margin: 15px 0;
+            padding: 10px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .print-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+            font-weight: 500;
+        }
+        .print-btn:hover {
+            background-color: #2980b9;
+        }
+        .print-btn.compact {
+            background-color: #27ae60;
+        }
+        .print-btn.compact:hover {
+            background-color: #229954;
+        }
+        .print-btn.extra-compact {
+            background-color: #e67e22;
+        }
+        .print-btn.extra-compact:hover {
+            background-color: #d35400;
+        }
+        @media print {
+            table {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+                table-layout: fixed !important;
+            }
+
+            tr {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+            }
+
+            h1, h2, h3 {
+                page-break-after: avoid !important;
+                break-after: avoid-page !important;
+                page-break-inside: avoid !important;
+            }
+            .print-buttons {
+                display: none !important;
+            }
+        }
 </style>
 </head>
-<body>
+<body class="extra-compact-mode">
     <div class="global-nav">
         <a href="../index.html" class="home-link">&#127968; Home</a>
         <a href="../Article/option-a/index.html">&#128221; Articles</a>
@@ -113,6 +248,9 @@
         <a href="../Time/option-a/index.html">&#9200; Time</a>
     </div>
     <h1>Declension of Articles und Adjectives</h1>
+    <div style="text-align: center; margin: 15px 0;"><button class="style-toggle-btn" onclick="toggleStyle()">&#128214; Buch-Modus</button>
+        <button class="print-btn" onclick="window.print()">&#128424; Drucken</button>
+    </div>
     
     <h2>Direct Article: der/das/die - the</h2>
     <table>
@@ -350,5 +488,38 @@
         </tr>
     </table>
 
+
+    <script>
+                 else {
+                // Normal -> Extra-Compact
+                body.classList.add('extra-compact-mode');
+                button.innerHTML = '&#128202; Normal-Modus';
+            }
+        } else if (body.classList.contains('compact-mode')) {
+                body.classList.remove('compact-mode');
+                body.classList.add('extra-compact-mode');
+                button.innerHTML = '&#128202; Normal-Modus';
+            } else {
+                body.classList.remove('extra-compact-mode');
+                button.innerHTML = '&#128202; Kompakt-Modus';
+            }
+        }
+    
+        function toggleStyle() {
+            document.body.classList.toggle('newspaper-style');
+            const button = document.querySelector('.style-toggle-btn');
+            if (document.body.classList.contains('newspaper-style')) {
+                button.innerHTML = '&#127912; Farb-Modus';
+            } else {
+                button.innerHTML = '&#128214; Buch-Modus';
+            }
+        }
+
+         else if (mode === 'extra-compact') {
+                document.body.classList.add('extra-compact-mode');
+            }
+            window.print();
+        }
+</script>
 </body>
 </html>

@@ -132,6 +132,22 @@
 
         /* Print Layout Adjustments */
         @media print {
+            table {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+                table-layout: fixed !important;
+            }
+
+            tr {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+            }
+
+            h1, h2, h3 {
+                page-break-after: avoid !important;
+                break-after: avoid-page !important;
+                page-break-inside: avoid !important;
+            }
             h2, h3 {
                 margin-left: 0 !important;
                 margin-right: auto !important;
@@ -163,6 +179,22 @@
         }
         }
         @media print {
+            table {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+                table-layout: fixed !important;
+            }
+
+            tr {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+            }
+
+            h1, h2, h3 {
+                page-break-after: avoid !important;
+                break-after: avoid-page !important;
+                page-break-inside: avoid !important;
+            }
             h2, h3 {
                 margin-left: 0 !important;
                 margin-right: auto !important;
@@ -304,6 +336,22 @@
 
         /* Print Layout Adjustments */
         @media print {
+            table {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+                table-layout: fixed !important;
+            }
+
+            tr {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+            }
+
+            h1, h2, h3 {
+                page-break-after: avoid !important;
+                break-after: avoid-page !important;
+                page-break-inside: avoid !important;
+            }
             h2, h3 {
                 margin-left: 0 !important;
                 margin-right: auto !important;
@@ -335,6 +383,22 @@
         }
         }
         @media print {
+            table {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+                table-layout: fixed !important;
+            }
+
+            tr {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+            }
+
+            h1, h2, h3 {
+                page-break-after: avoid !important;
+                break-after: avoid-page !important;
+                page-break-inside: avoid !important;
+            }
             h2, h3 {
                 margin-left: 0 !important;
                 margin-right: auto !important;
@@ -353,9 +417,67 @@
                 display: none !important;
             }
         }
-    </style>
+    
+        /* Print Buttons */
+        .print-buttons {
+            text-align: center;
+            margin: 15px 0;
+            padding: 10px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .print-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+            font-weight: 500;
+        }
+        .print-btn:hover {
+            background-color: #2980b9;
+        }
+        .print-btn.compact {
+            background-color: #27ae60;
+        }
+        .print-btn.compact:hover {
+            background-color: #229954;
+        }
+        .print-btn.extra-compact {
+            background-color: #e67e22;
+        }
+        .print-btn.extra-compact:hover {
+            background-color: #d35400;
+        }
+        @media print {
+            table {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+                table-layout: fixed !important;
+            }
+
+            tr {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+            }
+
+            h1, h2, h3 {
+                page-break-after: avoid !important;
+                break-after: avoid-page !important;
+                page-break-inside: avoid !important;
+            }
+            .print-buttons {
+                display: none !important;
+            }
+        }
+</style>
 </head>
-<body>
+<body class="extra-compact-mode">
     <div class="global-nav">
         <a href="../../index.html" class="home-link">&#127968; Home</a>
         <a href="../../Article/option-a/index.html">&#128221; Articles</a>
@@ -370,7 +492,7 @@
         <a href="clock.html">Clock</a>
     </div>
     <h1>Time Vocabulary</h1>
-    <div style="text-align: center; margin: 15px 0;"><button class="toggle-btn" onclick="toggleCompactMode()">=� Kompakt-Modus</button></div>
+        <button class="print-btn" onclick="window.print()">&#128424; Drucken</button>
 
     <h2>Basic Time Terms</h2>
     <table>
@@ -410,7 +532,7 @@
     <h2>Seasons</h2>
     <table>
         <tr><th>German</th><th>English</th></tr>
-        <tr><td class="german">der Fr�hling</td><td>the spring</td></tr>
+        <tr><td class="german">der Frï¿½hling</td><td>the spring</td></tr>
         <tr><td class="german">der Sommer</td><td>the summer</td></tr>
         <tr><td class="german">der Herbst</td><td>the autumn / fall</td></tr>
         <tr><td class="german">der Winter</td><td>the winter</td></tr>
@@ -421,7 +543,7 @@
         <tr><th>German</th><th>English</th></tr>
         <tr><td class="german">der Januar</td><td>January</td></tr>
         <tr><td class="german">der Februar</td><td>February</td></tr>
-        <tr><td class="german">der M�rz</td><td>March</td></tr>
+        <tr><td class="german">der MÃ¤rz</td><td>March</td></tr>
         <tr><td class="german">der April</td><td>April</td></tr>
         <tr><td class="german">der Mai</td><td>May</td></tr>
         <tr><td class="german">der Juni</td><td>June</td></tr>
@@ -442,7 +564,7 @@
         <tr><td class="german">unterbrechen</td><td>to interrupt</td></tr>
         <tr><td class="german">warten</td><td>to wait</td></tr>
         <tr><td class="german">bleiben</td><td>to stay, to remain</td></tr>
-        <tr><td class="german">aufh�ren</td><td>to stop, to cease</td></tr>
+        <tr><td class="german">aufhï¿½ren</td><td>to stop, to cease</td></tr>
         <tr><td class="german">anfangen</td><td>to begin, to start</td></tr>
         <tr><td class="german">beginnen</td><td>to begin, to start</td></tr>
         <tr><td class="german">enden</td><td>to end, to finish</td></tr>
@@ -460,34 +582,41 @@
         <tr><td class="german">bis</td><td>until, by</td></tr>
         <tr><td class="german">von</td><td>from</td></tr>
         <tr><td class="german">von...bis</td><td>from...to/until</td></tr>
-        <tr><td class="german">f�r</td><td>for (duration)</td></tr>
+        <tr><td class="german">fÃ¼r</td><td>for (duration)</td></tr>
     </table>
 
     <script>
-        function toggleCompactMode() {
-            const body = document.body;
-            const button = document.querySelector('.toggle-btn');
-            if (!body.classList.contains('compact-mode') && !body.classList.contains('extra-compact-mode')) {
-                body.classList.add('compact-mode');
-                button.textContent = '=� Extra-Kompakt';
-            } else if (body.classList.contains('compact-mode')) {
+                 else {
+                // Normal -> Extra-Compact
+                body.classList.add('extra-compact-mode');
+                button.innerHTML = '&#128202; Normal-Modus';
+            }
+        } else if (body.classList.contains('compact-mode')) {
                 body.classList.remove('compact-mode');
                 body.classList.add('extra-compact-mode');
-                button.textContent = '=� Normal-Modus';
+                button.textContent = '=ï¿½ Normal-Modus';
             } else {
                 body.classList.remove('extra-compact-mode');
-                button.textContent = '=� Kompakt-Modus';
+                button.textContent = '=ï¿½ Kompakt-Modus';
             }
         }
         function toggleStyle() {
             document.body.classList.toggle('newspaper-style');
             const button = document.querySelector('.style-toggle-btn');
             if (document.body.classList.contains('newspaper-style')) {
-                button.textContent = 'ðŸŽ¨ Farb-Modus';
+                button.textContent = 'Ã°Å¸Å½Â¨ Farb-Modus';
             } else {
-                button.textContent = 'ðŸ“– Buch-Modus';
+                button.textContent = 'Ã°Å¸â€œâ€“ Buch-Modus';
             }
         }
-    </script>
+    
+         else if (mode === 'extra-compact') {
+                document.body.classList.add('extra-compact-mode');
+            }
+
+            // Print
+            window.print();
+        }
+</script>
 </body>
 </html>

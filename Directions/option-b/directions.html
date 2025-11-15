@@ -210,6 +210,22 @@
 
         /* Print Layout Adjustments */
         @media print {
+            table {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+                table-layout: fixed !important;
+            }
+
+            tr {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+            }
+
+            h1, h2, h3 {
+                page-break-after: avoid !important;
+                break-after: avoid-page !important;
+                page-break-inside: avoid !important;
+            }
             h2, h3 {
                 margin-left: 0 !important;
                 margin-right: auto !important;
@@ -241,6 +257,22 @@
         }
         }
         @media print {
+            table {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+                table-layout: fixed !important;
+            }
+
+            tr {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+            }
+
+            h1, h2, h3 {
+                page-break-after: avoid !important;
+                break-after: avoid-page !important;
+                page-break-inside: avoid !important;
+            }
             h2, h3 {
                 margin-left: 0 !important;
                 margin-right: auto !important;
@@ -411,6 +443,22 @@
 
         /* Print Layout Adjustments */
         @media print {
+            table {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+                table-layout: fixed !important;
+            }
+
+            tr {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+            }
+
+            h1, h2, h3 {
+                page-break-after: avoid !important;
+                break-after: avoid-page !important;
+                page-break-inside: avoid !important;
+            }
             h2, h3 {
                 margin-left: 0 !important;
                 margin-right: auto !important;
@@ -442,6 +490,22 @@
         }
         }
         @media print {
+            table {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+                table-layout: fixed !important;
+            }
+
+            tr {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+            }
+
+            h1, h2, h3 {
+                page-break-after: avoid !important;
+                break-after: avoid-page !important;
+                page-break-inside: avoid !important;
+            }
             h2, h3 {
                 margin-left: 0 !important;
                 margin-right: auto !important;
@@ -460,9 +524,67 @@
                 display: none !important;
             }
         }
-    </style>
+    
+        /* Print Buttons */
+        .print-buttons {
+            text-align: center;
+            margin: 15px 0;
+            padding: 10px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .print-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+            font-weight: 500;
+        }
+        .print-btn:hover {
+            background-color: #2980b9;
+        }
+        .print-btn.compact {
+            background-color: #27ae60;
+        }
+        .print-btn.compact:hover {
+            background-color: #229954;
+        }
+        .print-btn.extra-compact {
+            background-color: #e67e22;
+        }
+        .print-btn.extra-compact:hover {
+            background-color: #d35400;
+        }
+        @media print {
+            table {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+                table-layout: fixed !important;
+            }
+
+            tr {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+            }
+
+            h1, h2, h3 {
+                page-break-after: avoid !important;
+                break-after: avoid-page !important;
+                page-break-inside: avoid !important;
+            }
+            .print-buttons {
+                display: none !important;
+            }
+        }
+</style>
 </head>
-<body>
+<body class="extra-compact-mode">
     <div class="global-nav">
         <a href="../../index.html" class="home-link">&#127968; Home</a>
         <a href="../../Article/option-a/index.html">&#128221; Articles</a>
@@ -478,7 +600,7 @@
 
     <h1>Directions - Richtungen</h1>
     <div style="text-align: center; margin: 15px 0;">
-        <button class="toggle-btn" onclick="toggleCompactMode()">=� Kompakt-Modus</button>
+        <button class="print-btn" onclick="window.print()">&#128424; Drucken</button>
     </div>
 
     <!-- PERSONS SECTION -->
@@ -510,7 +632,7 @@
         <tr><th>wohin</th><th>wo</th><th>woher</th></tr>
         <tr><td class="german">zu Freunden</td><td class="german">bei Freunden</td><td class="german">von Freunden</td></tr>
         <tr><td class="german">zu Freundinnen</td><td class="german">bei Freundinnen</td><td class="german">von Freundinnen</td></tr>
-        <tr><td class="german">zu den M�nnern</td><td class="german">bei den M�nnern</td><td class="german">von den M�nnern</td></tr>
+        <tr><td class="german">zu den Mï¿½nnern</td><td class="german">bei den Mï¿½nnern</td><td class="german">von den Mï¿½nnern</td></tr>
         <tr><td class="german">zu den Frauen</td><td class="german">bei den Frauen</td><td class="german">von den Frauen</td></tr>
     </table>
 
@@ -526,7 +648,7 @@
         <tr><td class="german">zu einer Kuh</td><td class="german">bei einer Kuh</td><td class="german">von einer Kuh</td></tr>
         <tr><td class="german">zu einem Hamster</td><td class="german">bei einem Hamster</td><td class="german">von einem Hamster</td></tr>
         <tr><td class="german">zu einem Hasen</td><td class="german">bei einem Hasen</td><td class="german">von einem Hasen</td></tr>
-        <tr><td class="german">zu einem K�fer</td><td class="german">bei einem K�fer</td><td class="german">von einem K�fer</td></tr>
+        <tr><td class="german">zu einem Kï¿½fer</td><td class="german">bei einem Kï¿½fer</td><td class="german">von einem Kï¿½fer</td></tr>
         <tr><td class="german">zu einer Fliege</td><td class="german">bei einer Fliege</td><td class="german">von einer Fliege</td></tr>
         <tr><td class="german">zu einem Wurm</td><td class="german">bei einem Wurm</td><td class="german">von einem Wurm</td></tr>
     </table>
@@ -537,12 +659,12 @@
         <tr><td class="german">zu Hunden</td><td class="german">bei Hunden</td><td class="german">von Hunden</td></tr>
         <tr><td class="german">zu Katzen</td><td class="german">bei Katzen</td><td class="german">von Katzen</td></tr>
         <tr><td class="german">zu Pferden</td><td class="german">bei Pferden</td><td class="german">von Pferden</td></tr>
-        <tr><td class="german">zu K�hen</td><td class="german">bei K�hen</td><td class="german">von K�hen</td></tr>
+        <tr><td class="german">zu Kï¿½hen</td><td class="german">bei Kï¿½hen</td><td class="german">von Kï¿½hen</td></tr>
         <tr><td class="german">zu Hamstern</td><td class="german">bei Hamstern</td><td class="german">von Hamstern</td></tr>
         <tr><td class="german">zu Hasen</td><td class="german">bei Hasen</td><td class="german">von Hasen</td></tr>
-        <tr><td class="german">zu K�fern</td><td class="german">bei K�fern</td><td class="german">von K�fern</td></tr>
+        <tr><td class="german">zu Kï¿½fern</td><td class="german">bei Kï¿½fern</td><td class="german">von Kï¿½fern</td></tr>
         <tr><td class="german">zu Fliegen</td><td class="german">bei Fliegen</td><td class="german">von Fliegen</td></tr>
-        <tr><td class="german">zu W�rmern</td><td class="german">bei W�rmern</td><td class="german">von W�rmern</td></tr>
+        <tr><td class="german">zu Wï¿½rmern</td><td class="german">bei Wï¿½rmern</td><td class="german">von Wï¿½rmern</td></tr>
     </table>
 
     <!-- PLANTS SECTION -->
@@ -562,9 +684,9 @@
     <table>
         <tr><th>wohin</th><th>wo</th><th>woher</th></tr>
         <tr><td class="german">zu Wiesen</td><td class="german">bei Wiesen</td><td class="german">von Wiesen</td></tr>
-        <tr><td class="german">zu B�umen</td><td class="german">bei B�umen</td><td class="german">von B�umen</td></tr>
+        <tr><td class="german">zu Bï¿½umen</td><td class="german">bei Bï¿½umen</td><td class="german">von Bï¿½umen</td></tr>
         <tr><td class="german">zu Blumen</td><td class="german">bei Blumen</td><td class="german">von Blumen</td></tr>
-        <tr><td class="german">zu B�schen</td><td class="german">bei B�schen</td><td class="german">von B�schen</td></tr>
+        <tr><td class="german">zu Bï¿½schen</td><td class="german">bei Bï¿½schen</td><td class="german">von Bï¿½schen</td></tr>
         <tr><td class="german">zu Hecken</td><td class="german">bei Hecken</td><td class="german">von Hecken</td></tr>
     </table>
 
@@ -582,7 +704,7 @@
         <tr><td class="german">zum Park</td><td class="german">im Park</td><td class="german">vom Park</td></tr>
         <tr><td class="german">zum Garten</td><td class="german">im Garten</td><td class="german">vom Garten</td></tr>
         <tr><td class="german">zum Markt</td><td class="german">auf dem Markt</td><td class="german">vom Markt</td></tr>
-        <tr><td class="german">zur Stra�e</td><td class="german">auf der Stra�e</td><td class="german">von der Stra�e</td></tr>
+        <tr><td class="german">zur Straï¿½e</td><td class="german">auf der Straï¿½e</td><td class="german">von der Straï¿½e</td></tr>
         <tr><td class="german">zu einer Party</td><td class="german">auf einer Party</td><td class="german">von einer Party</td></tr>
     </table>
 
@@ -597,39 +719,44 @@
         <tr><td class="german">in den Park</td><td class="german">in dem Park</td><td class="german">von dem Park</td></tr>
         <tr><td class="german">in den Garten</td><td class="german">in dem Garten</td><td class="german">von dem Garten</td></tr>
         <tr><td class="german">auf den Markt</td><td class="german">auf dem Markt</td><td class="german">von dem Markt</td></tr>
-        <tr><td class="german">auf die Stra�e</td><td class="german">auf der Stra�e</td><td class="german">von der Stra�e</td></tr>
+        <tr><td class="german">auf die Straï¿½e</td><td class="german">auf der Straï¿½e</td><td class="german">von der Straï¿½e</td></tr>
         <tr><td class="german">auf eine Party</td><td class="german">auf einer Party</td><td class="german">von einer Party</td></tr>
     </table>
 
     <script>
-        function toggleCompactMode() {
-            const body = document.body;
-            const button = document.querySelector('.toggle-btn');
-
-            if (!body.classList.contains('compact-mode') && !body.classList.contains('extra-compact-mode')) {
-                // Normal -> Compact
-                body.classList.add('compact-mode');
-                button.textContent = '=� Extra-Kompakt';
-            } else if (body.classList.contains('compact-mode')) {
+                 else {
+                // Normal -> Extra-Compact
+                body.classList.add('extra-compact-mode');
+                button.innerHTML = '&#128202; Normal-Modus';
+            }
+        } else if (body.classList.contains('compact-mode')) {
                 // Compact -> Extra-Compact
                 body.classList.remove('compact-mode');
                 body.classList.add('extra-compact-mode');
-                button.textContent = '=� Normal-Modus';
+                button.textContent = '=ï¿½ Normal-Modus';
             } else {
                 // Extra-Compact -> Normal
                 body.classList.remove('extra-compact-mode');
-                button.textContent = '=� Kompakt-Modus';
+                button.textContent = '=ï¿½ Kompakt-Modus';
             }
         }
         function toggleStyle() {
             document.body.classList.toggle('newspaper-style');
             const button = document.querySelector('.style-toggle-btn');
             if (document.body.classList.contains('newspaper-style')) {
-                button.textContent = 'ðŸŽ¨ Farb-Modus';
+                button.textContent = 'Ã°Å¸Å½Â¨ Farb-Modus';
             } else {
-                button.textContent = 'ðŸ“– Buch-Modus';
+                button.textContent = 'Ã°Å¸â€œâ€“ Buch-Modus';
             }
         }
-    </script>
+    
+         else if (mode === 'extra-compact') {
+                document.body.classList.add('extra-compact-mode');
+            }
+
+            // Print
+            window.print();
+        }
+</script>
 </body>
 </html>
