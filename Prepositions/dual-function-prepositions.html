@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dual Function Prepositions - Wechselpräpositionen</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .nav {
+            background-color: #2c3e50;
+            padding: 15px;
+            margin: 0 -20px 20px -20px;
+            text-align: center;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .nav a:hover {
+            background-color: #34495e;
+        }
+        .nav a.active {
+            background-color: #27ae60;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-top: 20px;
+        }
+        h2 {
+            background-color: #27ae60;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin-top: 30px;
+            width: 100%;
+            max-width: 950px;
+            margin-left: auto;
+            margin-right: auto;
+            box-sizing: border-box;
+        }
+        h3 {
+            color: #27ae60;
+            margin-top: 25px;
+            padding-left: 10px;
+            border-left: 4px solid #27ae60;
+        }
+        table {
+            width: 100%;
+            max-width: 950px;
+            table-layout: fixed;
+            border-collapse: collapse;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th {
+            background-color: #27ae60;
+            color: white;
+            font-weight: bold;
+        }
+        .case-dat {
+            background-color: #fef5e7;
+        }
+        .case-akk {
+            background-color: #fadbd8;
+        }
+        .contracted {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .note {
+            background-color: #fff9e6;
+            border-left: 4px solid #f39c12;
+            padding: 15px;
+            margin: 20px auto;
+            max-width: 950px;
+            line-height: 1.6;
+        }
+        .note-title {
+            font-weight: bold;
+            color: #d68910;
+            margin-bottom: 10px;
+        }
+        .example {
+            background-color: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 20px auto;
+            max-width: 950px;
+            line-height: 1.6;
+        }
+        .example-title {
+            font-weight: bold;
+            color: #2874a6;
+            margin-bottom: 10px;
+        }
+        .explanation {
+            max-width: 950px;
+            margin: 20px auto;
+            padding: 15px;
+            background-color: white;
+            line-height: 1.8;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .toggle-btn {
+            background-color: #95a5a6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-left: 15px;
+            transition: background-color 0.3s;
+        }
+        .toggle-btn:hover {
+            background-color: #7f8c8d;
+        }
+
+        /* Compact Mode */
+        body.compact-mode table {
+            font-size: 0.9em;
+        }
+        body.compact-mode th, body.compact-mode td {
+            padding: 8px;
+        }
+        body.compact-mode h2 {
+            font-size: 1.3em;
+            padding: 8px;
+        }
+
+        /* Extra Compact Mode */
+        body.extra-compact-mode table {
+            font-size: 0.75em;
+        }
+        body.extra-compact-mode th, body.extra-compact-mode td {
+            padding: 4px 6px;
+            min-width: 60px;
+        }
+        body.extra-compact-mode h1 {
+            font-size: 1.5em;
+        }
+        body.extra-compact-mode h2 {
+            font-size: 1.1em;
+            padding: 6px;
+        }
+        body.extra-compact-mode .note, body.extra-compact-mode .example, body.extra-compact-mode .explanation {
+            font-size: 0.85em;
+            padding: 10px;
+        }
+        body.extra-compact-mode .diagram-container {
+            margin: 15px auto !important;
+        }
+        body.extra-compact-mode .diagram-container img {
+            max-width: 90% !important;
+        }
+
+        /* Diagram Container */
+        .diagram-container {
+            text-align: center;
+            margin: 30px auto;
+            max-width: 950px;
+        }
+        .diagram-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .diagram-caption {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        /* Book/Newspaper Style - Black & White */
+        body.newspaper-style {
+            background-color: #f8f8f8;
+            color: #1a1a1a;
+        }
+        body.newspaper-style h1, body.newspaper-style h2, body.newspaper-style h3 {
+            color: #000000;
+        }
+        body.newspaper-style h2 {
+            background-color: #333333;
+            color: #ffffff;
+        }
+        body.newspaper-style th {
+            background-color: #444444;
+            color: white;
+        }
+        body.newspaper-style table {
+            background-color: #ffffff;
+        }
+        body.newspaper-style td {
+            border: 1px solid #666666;
+        }
+        body.newspaper-style .nav {
+            background-color: #2c2c2c;
+        }
+        body.newspaper-style .nav a.active {
+            background-color: #555555;
+        }
+        body.newspaper-style .case-dat {
+            background-color: #e8e8e8;
+        }
+        body.newspaper-style .case-akk {
+            background-color: #d4d4d4;
+        }
+        body.newspaper-style .note {
+            background-color: #eeeeee;
+            border-left-color: #666666;
+        }
+        body.newspaper-style .example {
+            background-color: #f0f0f0;
+            border-left-color: #888888;
+        }
+        body.newspaper-style .diagram-container img {
+            filter: grayscale(100%) contrast(1.1);
+        }
+        body.newspaper-style .diagram-caption {
+            color: #333333;
+        }
+
+        /* Style Toggle Button */
+        .style-toggle-btn {
+            background-color: #444444;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-left: 15px;
+            transition: background-color 0.3s;
+        }
+        .style-toggle-btn:hover {
+            background-color: #222222;
+        }
+
+        /* Print Layout - No Page Breaks */
+        @media print {
+            body {
+                background-color: white;
+                color: black;
+            }
+
+            table {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+                table-layout: fixed !important;
+            }
+
+            tr {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+            }
+
+            h1, h2, h3 {
+                page-break-after: avoid !important;
+                break-after: avoid-page !important;
+                page-break-inside: avoid !important;
+            }
+
+            .global-nav, .nav, .toggle-btn, .style-toggle-btn, .print-buttons {
+                display: none !important;
+            }
+
+            th {
+                background-color: #cccccc !important;
+                color: black !important;
+            }
+
+            .case-dat, .case-akk {
+                background-color: #f0f0f0 !important;
+            }
+
+            .diagram-container {
+                page-break-inside: avoid !important;
+                page-break-after: avoid !important;
+                margin: 20px auto !important;
+            }
+
+            .diagram-container img {
+                max-width: 100% !important;
+                box-shadow: none !important;
+                border: 1px solid #cccccc;
+            }
+
+            .diagram-caption {
+                color: #333333 !important;
+            }
+        }
+
+        /* Print Buttons */
+        .print-buttons {
+            text-align: center;
+            margin: 15px 0;
+            padding: 10px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .print-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+            font-weight: 500;
+        }
+        .print-btn:hover {
+            background-color: #2980b9;
+        }
+        .print-btn.compact {
+            background-color: #27ae60;
+        }
+        .print-btn.compact:hover {
+            background-color: #229954;
+        }
+        .print-btn.extra-compact {
+            background-color: #e67e22;
+        }
+        .print-btn.extra-compact:hover {
+            background-color: #d35400;
+        }
+        @media print {
+            .print-buttons {
+                display: none !important;
+            }
+        }
+
+        /* Global Navigation Header */
+        .global-nav {
+            background-color: #1a252f;
+            padding: 10px 0;
+            margin: -20px -20px 0 -20px;
+            text-align: center;
+            border-bottom: 3px solid #34495e;
+        }
+        .global-nav a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: all 0.3s;
+            font-size: 0.95em;
+            font-weight: 500;
+        }
+        .global-nav a:hover {
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+        }
+        .global-nav .home-link {
+            font-weight: bold;
+            color: #3498db;
+        }
+        .global-nav .home-link:hover {
+            color: #5dade2;
+        }
+</style>
+</head>
+<body>
+    <div class="global-nav">
+        <a href="../index.html" class="home-link">&#127968; Home</a>
+        <a href="../Article/option-a/index.html">&#128221; Articles</a>
+        <a href="../Prepositions/option-a/index.html">&#128506;&#65039; Prepositions</a>
+        <a href="../Numbers/option-a/index.html">&#128290; Numbers</a>
+        <a href="../Directions/option-a/index.html">&#129517; Directions</a>
+        <a href="../Time/option-a/index.html">&#9200; Time</a>
+    </div>
+    <div class="nav">
+        <a href="option-a/index.html">Option A (Thematic)</a>
+        <a href="option-b/index.html">Option B (Compact)</a>
+        <a href="dual-function-prepositions.html" class="active">Dual Function</a>
+    </div>
+
+    <h1>Dual-Function Prepositions - Wechselpräpositionen</h1>
+    <div style="text-align: center; margin: 15px 0;">
+        <button class="toggle-btn" onclick="toggleCompactMode()">&#128202; Kompakt-Modus</button>
+        <button class="style-toggle-btn" onclick="toggleStyle()">&#128214; Buch-Modus</button>
+        <div class="print-buttons">
+            <button class="print-btn normal" onclick="printMode('normal')">&#128424; Drucken Normal</button>
+            <button class="print-btn compact" onclick="printMode('compact')">&#128424; Drucken Kompakt</button>
+            <button class="print-btn extra-compact" onclick="printMode('extra-compact')">&#128424; Drucken Extra-Kompakt</button>
+        </div>
+    </div>
+
+    <div class="diagram-container">
+        <img src="images/dual-function-diagram.png" alt="Orte und Richtungen - Dual Function Prepositions Diagram">
+        <p class="diagram-caption">Orte und Richtungen - Visual representation of dual-function prepositions</p>
+    </div>
+
+    <div class="explanation">
+        <p><strong>What are Dual-Function Prepositions?</strong></p>
+        <p>Dual-function prepositions (Wechselpräpositionen) are prepositions that can take either the <strong>Dative</strong> or <strong>Accusative</strong> case, depending on whether they indicate a location (Wo? - Where?) or a direction (Wohin? - Where to?).</p>
+        <ul>
+            <li><strong>Dative (Wo?)</strong> - Indicates a static location or position</li>
+            <li><strong>Accusative (Wohin?)</strong> - Indicates movement or direction toward a destination</li>
+            <li><strong>Dative (Woher?)</strong> - Indicates origin or source (where from?)</li>
+        </ul>
+    </div>
+
+    <h2>Dual Function Prepositions Table</h2>
+    <table>
+        <thead>
+            <tr>
+                <th class="case-dat">Wo? (Dativ)<br><small>Where? - Location</small></th>
+                <th class="case-akk">Wohin? (Akkusativ)<br><small>Where to? - Direction</small></th>
+                <th class="case-dat">Woher? (Dativ)<br><small>Where from? - Origin</small></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="case-dat">über / <span class="contracted">überm</span> (m./n.)</td>
+                <td class="case-akk">über / <span class="contracted">übers</span> (n.)</td>
+                <td class="case-dat">von / über ... weg</td>
+            </tr>
+            <tr>
+                <td class="case-dat">unter / <span class="contracted">unterm</span> (m./n.)</td>
+                <td class="case-akk">unter / <span class="contracted">unters</span> (n.)</td>
+                <td class="case-dat">unter ... hervor</td>
+            </tr>
+            <tr>
+                <td class="case-dat">vor / <span class="contracted">vorm</span> (m./n.)</td>
+                <td class="case-akk">vor / <span class="contracted">vors</span> (n.)</td>
+                <td class="case-dat">vor ... weg</td>
+            </tr>
+            <tr>
+                <td class="case-dat">hinter / <span class="contracted">hinterm</span> (m./n.)</td>
+                <td class="case-akk">hinter / <span class="contracted">hinters</span> (n.)</td>
+                <td class="case-dat">hinter ... hervor</td>
+            </tr>
+            <tr>
+                <td class="case-dat">in / <span class="contracted">im</span> (m./n.)</td>
+                <td class="case-akk">in / <span class="contracted">ins</span> (n.)</td>
+                <td class="case-dat">aus ... / aus ... heraus</td>
+            </tr>
+            <tr>
+                <td class="case-dat">zwischen</td>
+                <td class="case-akk">zwischen</td>
+                <td class="case-dat">zwischen ... hervor</td>
+            </tr>
+            <tr>
+                <td class="case-dat">auf</td>
+                <td class="case-akk">auf / <span class="contracted">aufs</span> (n.)</td>
+                <td class="case-dat">von ... / von ... herunter</td>
+            </tr>
+            <tr>
+                <td class="case-dat">an / <span class="contracted">am</span> (m./n.)</td>
+                <td class="case-akk">an / <span class="contracted">ans</span> (n.)</td>
+                <td class="case-dat">von ...</td>
+            </tr>
+            <tr>
+                <td class="case-dat">neben</td>
+                <td class="case-akk">neben / <span class="contracted">nebens</span> (n.)</td>
+                <td class="case-dat">von ...</td>
+            </tr>
+            <tr>
+                <td class="case-dat">bei</td>
+                <td class="case-akk">[zu / <span class="contracted">zum</span> / <span class="contracted">zur</span>] (m./n./f.)*</td>
+                <td class="case-dat">von / <span class="contracted">vom</span></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="note">
+        <div class="note-title">&#128221; Important Notes:</div>
+        <p><strong>Contracted Forms:</strong></p>
+        <ul>
+            <li><strong>(m./n./f.)</strong> - merges with masculine, neutral and feminine definite articles "der", "das", "die"<br>
+                Example: in dem → im, zu der → zur</li>
+            <li><strong>(m./n.)</strong> - merges with masculine and neutral definite articles "der", "das"<br>
+                Example: in dem → im, an dem → am</li>
+            <li><strong>(n.)</strong> - merges with neutral definite article "das"<br>
+                Example: in das → ins, auf das → aufs</li>
+        </ul>
+        <p><strong>Usage:</strong> The contracted form is mostly used in normal speech. The non-contracted form sounds to Germans as if you want to describe a specific thing more detailed, similar to "the" and "this".</p>
+        <p><strong>Preposition Patterns:</strong> For the questions "wo - where" and "wohin - where to" the prepositions for location and direction are mostly equal. For the question "woher - where from" the prepositions are often a little bit different.</p>
+    </div>
+
+    <div class="example">
+        <div class="example-title">&#128172; Example Conversation:</div>
+        <p><strong>[A]:</strong> Ich bin <span class="contracted">am</span> See. <em>(I am at the lake.)</em></p>
+        <p><strong>[B]:</strong> An welchem See bist du? <em>(At which lake are you?)</em></p>
+        <p><strong>[A]:</strong> Ich bin <strong>an dem</strong> See mit der Insel. <em>(I am at the lake with the island.)</em></p>
+        <p style="margin-top: 15px; padding: 10px; background-color: rgba(255,255,255,0.7); border-left: 3px solid #2874a6;">
+            <strong>Explanation:</strong> Notice how "am" (contracted) is used for general reference, while "an dem" (non-contracted) is used to specify a particular lake.
+        </p>
+    </div>
+
+    <h2>The Nine Core Wechselpräpositionen</h2>
+    <div class="explanation">
+        <p>The nine main dual-function prepositions are:</p>
+        <ol style="columns: 2; -webkit-columns: 2; -moz-columns: 2;">
+            <li><strong>an</strong> - at, on, to</li>
+            <li><strong>auf</strong> - on, upon, onto</li>
+            <li><strong>hinter</strong> - behind</li>
+            <li><strong>in</strong> - in, into</li>
+            <li><strong>neben</strong> - next to, beside</li>
+            <li><strong>über</strong> - over, above, across</li>
+            <li><strong>unter</strong> - under, below, among</li>
+            <li><strong>vor</strong> - in front of, before</li>
+            <li><strong>zwischen</strong> - between</li>
+        </ol>
+    </div>
+
+    <script>
+        function toggleCompactMode() {
+            const body = document.body;
+            const button = document.querySelector('.toggle-btn');
+
+            if (!body.classList.contains('compact-mode') && !body.classList.contains('extra-compact-mode')) {
+                // Normal -> Compact
+                body.classList.add('compact-mode');
+                button.innerHTML = '&#128202; Extra-Kompakt-Modus';
+            } else if (body.classList.contains('compact-mode')) {
+                // Compact -> Extra-Compact
+                body.classList.remove('compact-mode');
+                body.classList.add('extra-compact-mode');
+                button.innerHTML = '&#128202; Normal-Modus';
+            } else {
+                // Extra-Compact -> Normal
+                body.classList.remove('extra-compact-mode');
+                button.innerHTML = '&#128202; Kompakt-Modus';
+            }
+        }
+        function toggleStyle() {
+            document.body.classList.toggle('newspaper-style');
+            const button = document.querySelector('.style-toggle-btn');
+            if (document.body.classList.contains('newspaper-style')) {
+                button.innerHTML = '&#127912; Farb-Modus';
+            } else {
+                button.innerHTML = '&#128214; Buch-Modus';
+            }
+        }
+
+        function printMode(mode) {
+            // Remove all mode classes
+            document.body.classList.remove('compact-mode', 'extra-compact-mode');
+
+            // Apply the requested mode
+            if (mode === 'compact') {
+                document.body.classList.add('compact-mode');
+            } else if (mode === 'extra-compact') {
+                document.body.classList.add('extra-compact-mode');
+            }
+
+            // Print
+            window.print();
+        }
+    </script>
+</body>
+</html>
