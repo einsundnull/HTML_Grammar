@@ -300,6 +300,19 @@
                     color: #000;
                 }
 
+                /* Keep Wechselpräpositionen intro visible and with table */
+                .wechsel-intro {
+                    display: block !important;
+                    page-break-after: avoid !important;
+                    page-break-inside: avoid !important;
+                    margin: 5px 0 3px 0 !important;
+                    font-size: 11px !important;
+                }
+
+                .wechsel-table {
+                    page-break-before: avoid !important;
+                }
+
                 body {
                     background-color: white;
                     margin: 0 !important;
@@ -357,7 +370,8 @@
             organized by case. Use this as a quick reference to find which case each preposition requires.
         </div>
 
-        <h2 class="all2">🎨 Color Legend</h2>
+        <!--<h2 class="all2">🎨 Color Legend</h2>-->
+        <!--
         <div class="legend">
             <div class="legend-item">
                 <div class="legend-color" style="background-color: #e3f2fd; border-left: 4px solid #2196f3"></div>
@@ -376,9 +390,10 @@
                 <div><strong>Dative/Accusative (Dual)</strong></div>
             </div>
         </div>
+        -->
 
         <!-- SECTION 1: ALPHABETICAL QUICK REFERENCE -->
-        <h2 class="all2">📋 Alphabetical Quick Reference</h2>
+        <!--<h2 class="all2">📋 Alphabetical Quick Reference</h2>-->
         <table>
             <tr>
                 <th>Preposition</th>
@@ -1024,12 +1039,12 @@
 
         <!-- SECTION 3: WECHSELPRÄPOSITIONEN COMPARISON -->
         <h2>🟣 Wechselpräpositionen - WO? vs. WOHIN?</h2>
-        <p style="text-align: center; color: #666; margin: 10px 0">
+        <p class="wechsel-intro" style="text-align: center; color: #666; margin: 10px 0">
             These 9 prepositions take <strong style="color: #4caf50">Dative</strong> for location (Wo?) and
             <strong style="color: #ff9800">Accusative</strong> for direction (Wohin?)
         </p>
 
-        <table>
+        <table class="wechsel-table">
             <tr>
                 <th style="width: 15%">Preposition</th>
                 <th style="width: 15%">Contractions</th>
