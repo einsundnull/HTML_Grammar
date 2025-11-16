@@ -36,10 +36,10 @@
             margin-top: 20px;
         }
         h2 {
-            background-color: #27ae60;
-            color: white;
+            background-color: #e0e0e0;
+            color: black;
             padding: 10px;
-            text-align: center;
+            text-align: left;
             margin-top: 30px;
             width: 100%;
             max-width: 950px;
@@ -48,10 +48,10 @@
             box-sizing: border-box;
         }
         h3 {
-            background-color: #52be80;
-            color: white;
+            background-color: #e0e0e0;
+            color: black;
             padding: 8px;
-            text-align: center;
+            text-align: left;
             margin-top: 25px;
             width: 100%;
             max-width: 950px;
@@ -74,18 +74,18 @@
             text-align: left;
         }
         th {
-            background-color: #27ae60;
-            color: white;
+            background-color: #cccccc;
+            color: black;
             font-weight: bold;
         }
         .case-gen {
-            background-color: #e8f4f8;
+            background-color: #eeeeee;
         }
         .case-dat {
-            background-color: #fef5e7;
+            background-color: #f5f5f5;
         }
         .case-akk {
-            background-color: #fadbd8;
+            background-color: #f9f9f9;
         }
         .german {
             font-weight: bold;
@@ -203,7 +203,7 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         body.newspaper-style th {
-            background-color: #27ae60;
+            background-color: #cccccc;
             color: #000000;
             border: 1px solid #000000;
         }
@@ -217,13 +217,13 @@
             background-color: #27ae60;
         }
         body.newspaper-style .case-gen {
-            background-color: #f5f5f5;
+            background-color: #eeeeee;
         }
         body.newspaper-style .case-dat {
-            background-color: #ebebeb;
+            background-color: #f5f5f5;
         }
         body.newspaper-style .case-akk {
-            background-color: #e0e0e0;
+            background-color: #f9f9f9;
         }
         body.newspaper-style .note {
             background-color: #f8f8f8;
@@ -452,7 +452,7 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         body.newspaper-style th {
-            background-color: #27ae60;
+            background-color: #cccccc;
             color: #000000;
             border: 1px solid #000000;
         }
@@ -466,13 +466,13 @@
             background-color: #27ae60;
         }
         body.newspaper-style .case-gen {
-            background-color: #f5f5f5;
+            background-color: #eeeeee;
         }
         body.newspaper-style .case-dat {
-            background-color: #ebebeb;
+            background-color: #f5f5f5;
         }
         body.newspaper-style .case-akk {
-            background-color: #e0e0e0;
+            background-color: #f9f9f9;
         }
         body.newspaper-style .note {
             background-color: #f8f8f8;
@@ -642,6 +642,10 @@
             .print-buttons {
                 display: none !important;
             }
+            
+                   .print-btn {
+                display: none !important;
+            }
         }
 </style>
 </head>
@@ -664,14 +668,14 @@
 
     <h1>Miscellaneous Prepositions</h1>
     <div style="text-align: center; margin: 15px 0;">
-        <button class="print-btn" onclick="window.print()">&#128424; Drucken</button>
+        <button class="print-btn" onclick="window.print()">&#128424; Print</button>
     </div>
     <p style="text-align: center; color: #7f8c8d;">Quantifiers, Causal, Instrumental, and Other Prepositions</p>
 
-    <h2>QUANTIFIERS - MENGENANGABEN</h2>
+    <h2 class = "type">QUANTIFIERS - MENGENANGABEN</h2>
     <p style="text-align: center; color: #7f8c8d; font-style: italic;">Prepositions for expressing quantities and amounts</p>
 
-    <h3>Genitive & Dative Forms</h3>
+    <h3 class = "type">Genitive & Dative Forms</h3>
     <table>
         <tr>
             <th>Preposition</th>
@@ -715,7 +719,7 @@
         <strong>Note:</strong> * These prepositions are commonly used with the plural.
     </div>
 
-    <h2>CAUSAL PREPOSITIONS - KAUSALE PRÄPOSITIONEN</h2>
+    <h2 class = "type">CAUSAL PREPOSITIONS - KAUSALE PRÄPOSITIONEN</h2>
     <p style="text-align: center; color: #7f8c8d; font-style: italic;">Prepositions expressing cause, reason, or result</p>
 
     <h3>Genitive Forms</h3>
@@ -774,7 +778,7 @@
         </tr>
     </table>
 
-    <h2>INSTRUMENTAL & OTHER PREPOSITIONS</h2>
+    <h2 class = "type">INSTRUMENTAL & OTHER PREPOSITIONS</h2>
     <p style="text-align: center; color: #7f8c8d; font-style: italic;">Prepositions expressing means, company, exception, and purpose</p>
 
     <h3>Dative Forms - Companion & Exception</h3>
@@ -799,13 +803,19 @@
         </tr>
     </table>
 
-    <h3>Accusative Forms - Means & Purpose</h3>
+    <h3 class = "type">Accusative Forms - Means & Purpose</h3>
     <table>
         <tr>
             <th>Preposition</th>
             <th>English</th>
             <th>Case</th>
             <th>Example</th>
+        </tr>
+                <tr class="case-akk">
+            <td class="german">ohne</td>
+            <td>ohne</td>
+            <td>+ Akk.</td>
+            <td>ohne dich / ohne meinen Vater</td>
         </tr>
         <tr class="case-akk">
             <td class="german">durch</td>
@@ -821,7 +831,7 @@
         </tr>
     </table>
 
-    <h2>Combined Usage Examples</h2>
+    <h2 class = "type">Combined Usage Examples</h2>
     <table>
         <tr>
             <th>German</th>

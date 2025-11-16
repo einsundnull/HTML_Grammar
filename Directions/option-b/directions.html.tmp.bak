@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directions - Richtungen</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .nav {
+            background-color: #2c3e50;
+            padding: 15px;
+            margin: 0 -20px 20px -20px;
+            text-align: center;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            font-size: 0.9em;
+        }
+        .nav a:hover {
+            background-color: #34495e;
+        }
+        .nav a.active {
+            background-color: #e67e22;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-top: 20px;
+        }
+        h2 {
+            background-color: #e67e22;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin-top: 30px;
+            width: 100%;
+            max-width: 950px;
+            margin-left: auto;
+            margin-right: auto;
+            box-sizing: border-box;
+        }
+        table {
+            width: 100%;
+            max-width: 950px;
+            table-layout: auto;
+            border-collapse: collapse;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #e67e22;
+            color: white;
+            font-weight: bold;
+        }
+        .german {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        /* Compact Mode */
+        body.compact-mode table {
+            margin: 10px auto;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        body.compact-mode th, body.compact-mode td {
+            padding: 6px 8px;
+        }
+        body.compact-mode h1 {
+            font-size: 1.8em;
+            margin-top: 10px;
+        }
+        body.compact-mode h2 {
+            padding: 6px;
+            margin-top: 15px;
+            font-size: 1.2em;
+        }
+
+        /* Extra Compact Mode */
+        body.extra-compact-mode table {
+            margin: 5px auto;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        body.extra-compact-mode th, body.extra-compact-mode td {
+            padding: 3px 5px;
+        }
+        body.extra-compact-mode h1 {
+            font-size: 1.5em;
+            margin-top: 5px;
+        }
+        body.extra-compact-mode h2 {
+            padding: 4px;
+            margin-top: 10px;
+            font-size: 1em;
+        }
+
+        .toggle-btn {
+            background-color: #95a5a6;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 15px;
+            transition: background-color 0.3s;
+        }
+        .toggle-btn:hover {
+            background-color: #7f8c8d;
+        }
+
+        /* Print-friendly layout */        /* Book/Newspaper Style - Black & White */
+        body.newspaper-style {
+            background-color: #ffffff;
+        }
+        body.newspaper-style h1 {
+            color: #000000;
+            border-bottom: 3px solid #000000;
+            padding-bottom: 10px;
+        }
+        body.newspaper-style h2 {
+            background-color: #e67e22;
+            color: #000000;
+            border-left: 5px solid #000000;
+            width: 100%;
+            max-width: 950px;
+            margin-left: auto;
+            margin-right: auto;
+            box-sizing: border-box;
+        }
+        body.newspaper-style h3 {
+            background-color: #f39c12;
+            color: #000000;
+            border-left: 3px solid #666666;
+        }
+        body.newspaper-style table {
+            width: 100%;
+            max-width: 950px;
+            table-layout: auto;
+            border-collapse: collapse;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        body.newspaper-style th {
+            background-color: #e67e22;
+            color: #000000;
+            border: 1px solid #000000;
+        }
+        body.newspaper-style td {
+            border: 1px solid #666666;
+        }
+        body.newspaper-style .nav {
+            background-color: #2c2c2c;
+        }
+        body.newspaper-style .nav a.active {
+            background-color: #e67e22;
+        }
+        body.newspaper-style .case-gen {
+            background-color: #f5f5f5;
+        }
+        body.newspaper-style .case-dat {
+            background-color: #e0e0e0;
+        }
+        body.newspaper-style .case-akk {
+            background-color: #e0e0e0;
+        }
+        body.newspaper-style .note {
+            background-color: #f8f8f8;
+            border-left: 4px solid #666666;
+        }
+        body.newspaper-style .info-box {
+            background-color: #f0f0f0;
+            border-left: 4px solid #000000;
+        }
+        body.newspaper-style .example-box {
+            background-color: #fafafa;
+            border-left: 4px solid #333333;
+        }
+
+        /* Style Toggle Button */
+        .style-toggle-btn {
+            background-color: #444444;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 15px;
+            transition: background-color 0.3s;
+        }
+        .style-toggle-btn:hover {
+            background-color: #222222;
+        }
+
+        /* Print Layout Adjustments */
+        @media print {
+            table {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+                table-layout: fixed !important;
+            }
+
+            tr {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+            }
+
+            h1, h2, h3 {
+                page-break-after: avoid !important;
+                break-after: avoid-page !important;
+                page-break-inside: avoid !important;
+            }
+            h2, h3 {
+                margin-left: 0 !important;
+                margin-right: auto !important;
+                text-align: left !important;
+            }
+            table {
+            width: 100%;
+            max-width: 950px;
+            table-layout: auto;
+            border-collapse: collapse;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+            body.newspaper-style h2,
+            h2 {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+            body.newspaper-style table,
+            table {
+            width: 100%;
+            max-width: 950px;
+            table-layout: auto;
+            border-collapse: collapse;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        }
+        @media print {
+            table {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+                table-layout: fixed !important;
+            }
+
+            tr {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+            }
+
+            h1, h2, h3 {
+                page-break-after: avoid !important;
+                break-after: avoid-page !important;
+                page-break-inside: avoid !important;
+            }
+            h2, h3 {
+                margin-left: 0 !important;
+                margin-right: auto !important;
+                text-align: left !important;
+            }
+            table {
+            width: 100%;
+            max-width: 950px;
+            table-layout: auto;
+            border-collapse: collapse;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+            .nav, .toggle-btn {
+                display: none;
+            }
+            table {
+            width: 100%;
+            max-width: 950px;
+            table-layout: auto;
+            border-collapse: collapse;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+            h2 {
+                page-break-after: avoid;
+                page-break-inside: avoid;
+            }
+            tr {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* Enhanced print layout - keep related elements together */
+        h1, h2, h3 {
+            page-break-after: avoid;
+            page-break-inside: avoid;
+        }
+        table {
+            width: 100%;
+            max-width: 950px;
+            table-layout: auto;
+            border-collapse: collapse;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        tr {
+            page-break-inside: avoid;
+        }
+        thead {
+            display: table-header-group;
+        }
+    
+        /* Global Navigation Header */
+        .global-nav {
+            background-color: #1a252f;
+            padding: 10px 0;
+            margin: -20px -20px 0 -20px;
+            text-align: center;
+            border-bottom: 3px solid #34495e;
+        }
+        .global-nav a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 6px 12px;
+            border-radius: 3px;
+            transition: all 0.3s;
+            font-size: 0.95em;
+            font-weight: 500;
+        }
+        .global-nav a:hover {
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+        }
+        .global-nav .home-link {
+            font-weight: bold;
+            color: #3498db;
+        }
+        .global-nav .home-link:hover {
+            color: #5dade2;
+        }        /* Book/Newspaper Style - Black & White */
+        body.newspaper-style {
+            background-color: #ffffff;
+        }
+        body.newspaper-style h1 {
+            color: #000000;
+            border-bottom: 3px solid #000000;
+            padding-bottom: 10px;
+        }
+        body.newspaper-style h2 {
+            background-color: #e67e22;
+            color: #000000;
+            border-left: 5px solid #000000;
+            width: 100%;
+            max-width: 950px;
+            margin-left: auto;
+            margin-right: auto;
+            box-sizing: border-box;
+        }
+        body.newspaper-style h3 {
+            background-color: #f39c12;
+            color: #000000;
+            border-left: 3px solid #666666;
+        }
+        body.newspaper-style table {
+            width: 100%;
+            max-width: 950px;
+            table-layout: auto;
+            border-collapse: collapse;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        body.newspaper-style th {
+            background-color: #e67e22;
+            color: #000000;
+            border: 1px solid #000000;
+        }
+        body.newspaper-style td {
+            border: 1px solid #666666;
+        }
+        body.newspaper-style .nav {
+            background-color: #2c2c2c;
+        }
+        body.newspaper-style .nav a.active {
+            background-color: #e67e22;
+        }
+        body.newspaper-style .case-gen {
+            background-color: #f5f5f5;
+        }
+        body.newspaper-style .case-dat {
+            background-color: #e0e0e0;
+        }
+        body.newspaper-style .case-akk {
+            background-color: #e0e0e0;
+        }
+        body.newspaper-style .note {
+            background-color: #f8f8f8;
+            border-left: 4px solid #666666;
+        }
+        body.newspaper-style .info-box {
+            background-color: #f0f0f0;
+            border-left: 4px solid #000000;
+        }
+        body.newspaper-style .example-box {
+            background-color: #fafafa;
+            border-left: 4px solid #333333;
+        }
+
+        /* Style Toggle Button */
+        .style-toggle-btn {
+            background-color: #444444;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 15px;
+            transition: background-color 0.3s;
+        }
+        .style-toggle-btn:hover {
+            background-color: #222222;
+        }
+
+        /* Print Layout Adjustments */
+        @media print {
+            table {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+                table-layout: fixed !important;
+            }
+
+            tr {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+            }
+
+            h1, h2, h3 {
+                page-break-after: avoid !important;
+                break-after: avoid-page !important;
+                page-break-inside: avoid !important;
+            }
+            h2, h3 {
+                margin-left: 0 !important;
+                margin-right: auto !important;
+                text-align: left !important;
+            }
+            table {
+            width: 100%;
+            max-width: 950px;
+            table-layout: auto;
+            border-collapse: collapse;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+            body.newspaper-style h2,
+            h2 {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+            body.newspaper-style table,
+            table {
+            width: 100%;
+            max-width: 950px;
+            table-layout: auto;
+            border-collapse: collapse;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        }
+        @media print {
+            table {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+                table-layout: fixed !important;
+            }
+
+            tr {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+            }
+
+            h1, h2, h3 {
+                page-break-after: avoid !important;
+                break-after: avoid-page !important;
+                page-break-inside: avoid !important;
+            }
+            h2, h3 {
+                margin-left: 0 !important;
+                margin-right: auto !important;
+                text-align: left !important;
+            }
+            table {
+            width: 100%;
+            max-width: 950px;
+            table-layout: auto;
+            border-collapse: collapse;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+            .global-nav {
+                display: none !important;
+            }
+        }
+    
+        /* Print Buttons */
+        .print-buttons {
+            text-align: center;
+            margin: 15px 0;
+            padding: 10px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .print-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+            font-weight: 500;
+        }
+        .print-btn:hover {
+            background-color: #2980b9;
+        }
+        .print-btn.compact {
+            background-color: #cccccc;
+        }
+        .print-btn.compact:hover {
+            background-color: #229954;
+        }
+        .print-btn.extra-compact {
+            background-color: #e67e22;
+        }
+        .print-btn.extra-compact:hover {
+            background-color: #d35400;
+        }
+        @media print {
+            table {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+                table-layout: fixed !important;
+            }
+
+            tr {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+            }
+
+            h1, h2, h3 {
+                page-break-after: avoid !important;
+                break-after: avoid-page !important;
+                page-break-inside: avoid !important;
+            }
+            .print-buttons {
+                display: none !important;
+            }
+        }
+</style>
+</head>
+<body class="extra-compact-mode">
+    <div class="global-nav">
+        <a href="../../index.html" class="home-link">&#127968; Home</a>
+        <a href="../../Article/option-a/index.html">&#128221; Articles</a>
+        <a href="../../Prepositions/option-a/index.html">&#128506;&#65039; Prepositions</a>
+        <a href="../../Numbers/option-a/index.html">&#128290; Numbers</a>
+        <a href="../../Directions/option-a/index.html">&#129517; Directions</a>
+        <a href="../../Time/option-a/index.html">&#9200; Time</a>
+    </div>
+    <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="directions.html" class="active">Directions</a>
+    </div>
+
+    <h1>Directions - Richtungen</h1>
+    <div style="text-align: center; margin: 15px 0;">
+        <button class="print-btn" onclick="window.print()">&#128424; Drucken</button>
+    </div>
+
+    <!-- PERSONS SECTION -->
+    <h2>Persons - Pronouns</h2>
+
+    <h2>Pronouns - Pronomen</h2>
+    <table>
+        <tr><th>wohin (to)</th><th>wo (at)</th><th>woher (from)</th></tr>
+        <tr><td class="german">zu mir</td><td class="german">bei mir</td><td class="german">von mir</td></tr>
+        <tr><td class="german">zu dir</td><td class="german">bei dir</td><td class="german">von dir</td></tr>
+        <tr><td class="german">zu ihm</td><td class="german">bei ihm</td><td class="german">von ihm</td></tr>
+        <tr><td class="german">zu ihr</td><td class="german">bei ihr</td><td class="german">von ihr</td></tr>
+        <tr><td class="german">zu uns</td><td class="german">bei uns</td><td class="german">von uns</td></tr>
+        <tr><td class="german">zu euch</td><td class="german">bei euch</td><td class="german">von euch</td></tr>
+        <tr><td class="german">zu ihnen</td><td class="german">bei ihnen</td><td class="german">von ihnen</td></tr>
+    </table>
+
+    <h2>Persons - Singular</h2>
+    <table>
+        <tr><th>wohin</th><th>wo</th><th>woher</th></tr>
+        <tr><td class="german">zu einem Freund</td><td class="german">bei einem Freund</td><td class="german">von einem Freund</td></tr>
+        <tr><td class="german">zu einer Freundin</td><td class="german">bei einer Freundin</td><td class="german">von einer Freundin</td></tr>
+        <tr><td class="german">zu dem Mann</td><td class="german">bei dem Mann</td><td class="german">von dem Mann</td></tr>
+        <tr><td class="german">zu der Frau</td><td class="german">bei der Frau</td><td class="german">von der Frau</td></tr>
+    </table>
+
+    <h2>Persons - Plural</h2>
+    <table>
+        <tr><th>wohin</th><th>wo</th><th>woher</th></tr>
+        <tr><td class="german">zu Freunden</td><td class="german">bei Freunden</td><td class="german">von Freunden</td></tr>
+        <tr><td class="german">zu Freundinnen</td><td class="german">bei Freundinnen</td><td class="german">von Freundinnen</td></tr>
+        <tr><td class="german">zu den Mï¿½nnern</td><td class="german">bei den Mï¿½nnern</td><td class="german">von den Mï¿½nnern</td></tr>
+        <tr><td class="german">zu den Frauen</td><td class="german">bei den Frauen</td><td class="german">von den Frauen</td></tr>
+    </table>
+
+    <!-- ANIMALS SECTION -->
+    <h2>Animals</h2>
+
+    <h2>Animals - Singular</h2>
+    <table>
+        <tr><th>wohin (to)</th><th>wo (at)</th><th>woher (from)</th></tr>
+        <tr><td class="german">zu einem Hund</td><td class="german">bei einem Hund</td><td class="german">von einem Hund</td></tr>
+        <tr><td class="german">zu einer Katze</td><td class="german">bei einer Katze</td><td class="german">von einer Katze</td></tr>
+        <tr><td class="german">zu einem Pferd</td><td class="german">bei einem Pferd</td><td class="german">von einem Pferd</td></tr>
+        <tr><td class="german">zu einer Kuh</td><td class="german">bei einer Kuh</td><td class="german">von einer Kuh</td></tr>
+        <tr><td class="german">zu einem Hamster</td><td class="german">bei einem Hamster</td><td class="german">von einem Hamster</td></tr>
+        <tr><td class="german">zu einem Hasen</td><td class="german">bei einem Hasen</td><td class="german">von einem Hasen</td></tr>
+        <tr><td class="german">zu einem Kï¿½fer</td><td class="german">bei einem Kï¿½fer</td><td class="german">von einem Kï¿½fer</td></tr>
+        <tr><td class="german">zu einer Fliege</td><td class="german">bei einer Fliege</td><td class="german">von einer Fliege</td></tr>
+        <tr><td class="german">zu einem Wurm</td><td class="german">bei einem Wurm</td><td class="german">von einem Wurm</td></tr>
+    </table>
+
+    <h2>Animals - Plural</h2>
+    <table>
+        <tr><th>wohin</th><th>wo</th><th>woher</th></tr>
+        <tr><td class="german">zu Hunden</td><td class="german">bei Hunden</td><td class="german">von Hunden</td></tr>
+        <tr><td class="german">zu Katzen</td><td class="german">bei Katzen</td><td class="german">von Katzen</td></tr>
+        <tr><td class="german">zu Pferden</td><td class="german">bei Pferden</td><td class="german">von Pferden</td></tr>
+        <tr><td class="german">zu Kï¿½hen</td><td class="german">bei Kï¿½hen</td><td class="german">von Kï¿½hen</td></tr>
+        <tr><td class="german">zu Hamstern</td><td class="german">bei Hamstern</td><td class="german">von Hamstern</td></tr>
+        <tr><td class="german">zu Hasen</td><td class="german">bei Hasen</td><td class="german">von Hasen</td></tr>
+        <tr><td class="german">zu Kï¿½fern</td><td class="german">bei Kï¿½fern</td><td class="german">von Kï¿½fern</td></tr>
+        <tr><td class="german">zu Fliegen</td><td class="german">bei Fliegen</td><td class="german">von Fliegen</td></tr>
+        <tr><td class="german">zu Wï¿½rmern</td><td class="german">bei Wï¿½rmern</td><td class="german">von Wï¿½rmern</td></tr>
+    </table>
+
+    <!-- PLANTS SECTION -->
+    <h2>Plants</h2>
+
+    <h2>Plants - Singular</h2>
+    <table>
+        <tr><th>wohin (to)</th><th>wo (at)</th><th>woher (from)</th></tr>
+        <tr><td class="german">zu einer Wiese</td><td class="german">bei einer Wiese</td><td class="german">von einer Wiese</td></tr>
+        <tr><td class="german">zu einem Baum</td><td class="german">bei einem Baum</td><td class="german">von einem Baum</td></tr>
+        <tr><td class="german">zu einer Blume</td><td class="german">bei einer Blume</td><td class="german">von einer Blume</td></tr>
+        <tr><td class="german">zu einem Busch</td><td class="german">bei einem Busch</td><td class="german">von einem Busch</td></tr>
+        <tr><td class="german">zu einer Hecke</td><td class="german">bei einer Hecke</td><td class="german">von einer Hecke</td></tr>
+    </table>
+
+    <h2>Plants - Plural</h2>
+    <table>
+        <tr><th>wohin</th><th>wo</th><th>woher</th></tr>
+        <tr><td class="german">zu Wiesen</td><td class="german">bei Wiesen</td><td class="german">von Wiesen</td></tr>
+        <tr><td class="german">zu Bï¿½umen</td><td class="german">bei Bï¿½umen</td><td class="german">von Bï¿½umen</td></tr>
+        <tr><td class="german">zu Blumen</td><td class="german">bei Blumen</td><td class="german">von Blumen</td></tr>
+        <tr><td class="german">zu Bï¿½schen</td><td class="german">bei Bï¿½schen</td><td class="german">von Bï¿½schen</td></tr>
+        <tr><td class="german">zu Hecken</td><td class="german">bei Hecken</td><td class="german">von Hecken</td></tr>
+    </table>
+
+    <!-- PLACES SECTION -->
+    <h2>Places</h2>
+
+    <h2>Places - Colloquial Form</h2>
+    <table>
+        <tr><th>wohin (to)</th><th>wo (at)</th><th>woher (from)</th></tr>
+        <tr><td class="german">zum Meer</td><td class="german">am Meer</td><td class="german">vom Meer</td></tr>
+        <tr><td class="german">zum See</td><td class="german">am See</td><td class="german">vom See</td></tr>
+        <tr><td class="german">zum Teich</td><td class="german">am Teich</td><td class="german">vom Teich</td></tr>
+        <tr><td class="german">zum Fluss</td><td class="german">am Fluss</td><td class="german">vom Fluss</td></tr>
+        <tr><td class="german">zum Wasser</td><td class="german">am Wasser</td><td class="german">vom Wasser</td></tr>
+        <tr><td class="german">zum Park</td><td class="german">im Park</td><td class="german">vom Park</td></tr>
+        <tr><td class="german">zum Garten</td><td class="german">im Garten</td><td class="german">vom Garten</td></tr>
+        <tr><td class="german">zum Markt</td><td class="german">auf dem Markt</td><td class="german">vom Markt</td></tr>
+        <tr><td class="german">zur Straï¿½e</td><td class="german">auf der Straï¿½e</td><td class="german">von der Straï¿½e</td></tr>
+        <tr><td class="german">zu einer Party</td><td class="german">auf einer Party</td><td class="german">von einer Party</td></tr>
+    </table>
+
+    <h2>Places - Exact Form</h2>
+    <table>
+        <tr><th>wohin (to)</th><th>wo (at)</th><th>woher (from)</th></tr>
+        <tr><td class="german">an das Meer</td><td class="german">an dem Meer</td><td class="german">von dem Meer</td></tr>
+        <tr><td class="german">an den See</td><td class="german">an dem See</td><td class="german">von dem See</td></tr>
+        <tr><td class="german">an den Teich</td><td class="german">an dem Teich</td><td class="german">von dem Teich</td></tr>
+        <tr><td class="german">an den Fluss</td><td class="german">an dem Fluss</td><td class="german">von dem Fluss</td></tr>
+        <tr><td class="german">an das Wasser</td><td class="german">an dem Wasser</td><td class="german">von dem Wasser</td></tr>
+        <tr><td class="german">in den Park</td><td class="german">in dem Park</td><td class="german">von dem Park</td></tr>
+        <tr><td class="german">in den Garten</td><td class="german">in dem Garten</td><td class="german">von dem Garten</td></tr>
+        <tr><td class="german">auf den Markt</td><td class="german">auf dem Markt</td><td class="german">von dem Markt</td></tr>
+        <tr><td class="german">auf die Straï¿½e</td><td class="german">auf der Straï¿½e</td><td class="german">von der Straï¿½e</td></tr>
+        <tr><td class="german">auf eine Party</td><td class="german">auf einer Party</td><td class="german">von einer Party</td></tr>
+    </table>
+
+    <script>
+                 else {
+                // Normal -> Extra-Compact
+                body.classList.add('extra-compact-mode');
+                button.innerHTML = '&#128202; Normal-Modus';
+            }
+        } else if (body.classList.contains('compact-mode')) {
+                // Compact -> Extra-Compact
+                body.classList.remove('compact-mode');
+                body.classList.add('extra-compact-mode');
+                button.textContent = '=ï¿½ Normal-Modus';
+            } else {
+                // Extra-Compact -> Normal
+                body.classList.remove('extra-compact-mode');
+                button.textContent = '=ï¿½ Kompakt-Modus';
+            }
+        }
+        function toggleStyle() {
+            document.body.classList.toggle('newspaper-style');
+            const button = document.querySelector('.style-toggle-btn');
+            if (document.body.classList.contains('newspaper-style')) {
+                button.textContent = 'Ã°Å¸Å½Â¨ Farb-Modus';
+            } else {
+                button.textContent = 'Ã°Å¸â€œâ€“ Buch-Modus';
+            }
+        }
+    
+         else if (mode === 'extra-compact') {
+                document.body.classList.add('extra-compact-mode');
+            }
+
+            // Print
+            window.print();
+        }
+</script>
+</body>
+</html>

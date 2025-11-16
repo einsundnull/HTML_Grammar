@@ -36,10 +36,11 @@
             margin-top: 20px;
         }
         h2 {
-            background-color: #3498db;
-            color: white;
+            background-color: #cecece;
+            color: black;
             padding: 10px;
-            text-align: center;
+            text-align: left;
+            font-size: smaller;
             margin-top: 30px;
             width: 100%;
             max-width: 950px;
@@ -62,11 +63,11 @@
             text-align: center;
         }
         th {
-            background-color: #3498db;
+            background-color: #cccccc;
             font-weight: bold;
         }
         .case-label {
-            background-color: #bdc3c7;
+            background-color: #d9d9d9;
             font-weight: bold;
             text-align: left;
             padding-left: 15px;
@@ -178,7 +179,7 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         body.newspaper-style th {
-            background-color: #3498db;
+            background-color: #cccccc;
             color: #000000;
             border: 1px solid #000000;
         }
@@ -192,13 +193,13 @@
             background-color: #3498db;
         }
         body.newspaper-style .case-gen {
-            background-color: #f5f5f5;
+            background-color: #eeeeee;
         }
         body.newspaper-style .case-dat {
-            background-color: #ebebeb;
+            background-color: #f5f5f5;
         }
         body.newspaper-style .case-akk {
-            background-color: #e0e0e0;
+            background-color: #f9f9f9;
         }
         body.newspaper-style .note {
             background-color: #f8f8f8;
@@ -414,7 +415,7 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         body.newspaper-style th {
-            background-color: #3498db;
+            background-color: #cccccc;
             color: #000000;
             border: 1px solid #000000;
         }
@@ -428,13 +429,13 @@
             background-color: #3498db;
         }
         body.newspaper-style .case-gen {
-            background-color: #f5f5f5;
+            background-color: #eeeeee;
         }
         body.newspaper-style .case-dat {
-            background-color: #ebebeb;
+            background-color: #f5f5f5;
         }
         body.newspaper-style .case-akk {
-            background-color: #e0e0e0;
+            background-color: #f9f9f9;
         }
         body.newspaper-style .note {
             background-color: #f8f8f8;
@@ -594,14 +595,20 @@
             tr {
                 page-break-inside: avoid !important;
                 break-inside: avoid-page !important;
+                 font-size: small;
             }
 
             h1, h2, h3 {
                 page-break-after: avoid !important;
                 break-after: avoid-page !important;
                 page-break-inside: avoid !important;
+                font-size: small;
             }
             .print-buttons {
+                display: none !important;
+            }
+            
+            .print-btn{
                 display: none !important;
             }
         }
@@ -627,7 +634,7 @@
 
     <h1>Demonstrative & Interrogative Pronouns</h1>
     <div style="text-align: center; margin: 15px 0;">
-        <button class="print-btn" onclick="window.print()">&#128424; Drucken</button>
+        <button class="print-btn" onclick="window.print()">&#128424; Print</button>
     </div>
 
     <h2>dieser/dieses/diese - this</h2>
