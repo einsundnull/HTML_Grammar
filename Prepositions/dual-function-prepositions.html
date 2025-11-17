@@ -10,6 +10,16 @@
             margin: 20px;
             background-color: #f5f5f5;
         }
+        
+        .case-dat {
+            color: black;
+            font-size: medium;
+        }
+        
+             .case-akk {
+            color: black;
+                   font-size: medium;
+        }
         .nav {
             background-color: #2c3e50;
             padding: 15px;
@@ -37,7 +47,7 @@
         }
         h2 {
             background-color: #cccccc;
-            color: white;
+            color: black;
             padding: 10px;
             text-align: center;
             margin-top: 30px;
@@ -68,6 +78,12 @@
             text-align: left;
             vertical-align: top;
         }
+        
+               .num {
+                color: black;
+                width: 40px;
+                background-color: #cccccc;
+            }
         th {
             background-color: #cccccc;
             color: white;
@@ -282,6 +298,12 @@
                 break-inside: avoid-page !important;
                 table-layout: fixed !important;
             }
+            
+            .num {
+                color: black !important;
+                width: 40px;
+                background-color: #cccccc !important;
+            }
 
             tr {
                 page-break-inside: avoid !important;
@@ -383,6 +405,10 @@
             .print-btn {
                 display: none !important;
             }
+            
+            .headExplain {
+               page-break-after: avoid !important;
+            }
         }
 
         /* Global Navigation Header */
@@ -432,8 +458,8 @@
         <a href="dual-function-prepositions.html" class="active">Dual Function</a>
     </div>
 
-    <h1>Dual-Function Prepositions - Wechselpräpositionen</h1>
-    <div style="text-align: center; margin: 15px 0;"><button class="style-toggle-btn" onclick="toggleStyle()">&#128214; Buch-Modus</button>
+    <h1 class ="imageHeadline">Dual-Function Prepositions - Wechselpräpositionen</h1>
+    <div style="text-align: center; margin: 15px 0;">
         <button class="print-btn" onclick="window.print()">&#128424; Print</button>
     </div>
 
@@ -446,6 +472,7 @@
     <table>
         <thead>
             <tr>
+            <th class="num"><small>No.</small></th>
                 <th class="case-dat">Wo? (Dativ)<br><small>Where? - Location</small></th>
                 <th class="case-akk">Wohin? (Akkusativ)<br><small>Where to? - Direction</small></th>
                 <th class="case-dat">Woher? (Dativ)<br><small>Where from? - Origin</small></th>
@@ -453,51 +480,61 @@
         </thead>
         <tbody>
             <tr>
+                  <th class="num"><small>1</small></th>
                 <td class="case-dat">über / <span class="contracted">überm</span> (m./n.)</td>
                 <td class="case-akk">über / <span class="contracted">übers</span> (n.)</td>
                 <td class="case-dat">von / über ... weg</td>
             </tr>
             <tr>
+                 <th class="num"><small>2</small></th>
                 <td class="case-dat">unter / <span class="contracted">unterm</span> (m./n.)</td>
                 <td class="case-akk">unter / <span class="contracted">unters</span> (n.)</td>
                 <td class="case-dat">unter ... hervor</td>
             </tr>
             <tr>
+                 <th class="num"><small>3</small></th>
                 <td class="case-dat">vor / <span class="contracted">vorm</span> (m./n.)</td>
                 <td class="case-akk">vor / <span class="contracted">vors</span> (n.)</td>
                 <td class="case-dat">vor ... weg</td>
             </tr>
             <tr>
+                 <th class="num"><small>4</small></th>
                 <td class="case-dat">hinter / <span class="contracted">hinterm</span> (m./n.)</td>
                 <td class="case-akk">hinter / <span class="contracted">hinters</span> (n.)</td>
                 <td class="case-dat">hinter ... hervor</td>
             </tr>
             <tr>
+                 <th class="num"><small>5</small></th>
                 <td class="case-dat">in / <span class="contracted">im</span> (m./n.)</td>
                 <td class="case-akk">in / <span class="contracted">ins</span> (n.)</td>
                 <td class="case-dat">aus ... / aus ... heraus</td>
             </tr>
             <tr>
+                 <th class="num"><small>6</small></th>
                 <td class="case-dat">zwischen</td>
                 <td class="case-akk">zwischen</td>
                 <td class="case-dat">zwischen ... hervor</td>
             </tr>
             <tr>
+                 <th class="num"><small>7</small></th>
                 <td class="case-dat">auf</td>
                 <td class="case-akk">auf / <span class="contracted">aufs</span> (n.)</td>
                 <td class="case-dat">von ... / von ... herunter</td>
             </tr>
             <tr>
+                 <th class="num"><small>8</small></th>
                 <td class="case-dat">an / <span class="contracted">am</span> (m./n.)</td>
                 <td class="case-akk">an / <span class="contracted">ans</span> (n.)</td>
                 <td class="case-dat">von ...</td>
             </tr>
             <tr>
+                 <th class="num"><small>9</small></th>
                 <td class="case-dat">neben</td>
                 <td class="case-akk">neben / <span class="contracted">nebens</span> (n.)</td>
                 <td class="case-dat">von ...</td>
             </tr>
             <tr>
+                 <th class="num"><small>9/10</small></th>
                 <td class="case-dat">bei</td>
                 <td class="case-akk">[zu / <span class="contracted">zum</span> / <span class="contracted">zur</span>] (m./n./f.)*</td>
                 <td class="case-dat">von / <span class="contracted">vom</span></td>
@@ -506,7 +543,7 @@
     </table>
 
     <div class="explanation">
-        <p><strong>What are Dual-Function Prepositions?</strong></p>
+        <p class ="headExplain"><strong>What are Dual-Function Prepositions?</strong></p>
         <p>Dual-function prepositions (Wechselpräpositionen) are prepositions that can take either the <strong>Dative</strong> or <strong>Accusative</strong> case, depending on whether they indicate a location (Wo? - Where?) or a direction (Wohin? - Where to?).</p>
         <ul>
             <li><strong>Dative (Wo?)</strong> - Indicates a static location or position</li>
@@ -522,14 +559,14 @@
         <p><strong>Contracted Forms:</strong></p>
         <ul>
             <li><strong>(m./n./f.)</strong> - merges with masculine, neutral and feminine definite articles "der", "das", "die"<br>
-                Example: in dem → im, zu der → zur</li>
+                Example: zu dem → zum, zu der → zur</li>
             <li><strong>(m./n.)</strong> - merges with masculine and neutral definite articles "der", "das"<br>
                 Example: in dem → im, an dem → am</li>
             <li><strong>(n.)</strong> - merges with neutral definite article "das"<br>
                 Example: in das → ins, auf das → aufs</li>
         </ul>
         <p><strong>Usage:</strong> The contracted form is mostly used in normal speech. The non-contracted form sounds to Germans as if you want to describe a specific thing more detailed, similar to "the" and "this".</p>
-        <p><strong>Preposition Patterns:</strong> For the questions "wo - where" and "wohin - where to" the prepositions for location and direction are mostly equal. For the question "woher - where from" the prepositions are often a little bit different.</p>
+        <!--<p><strong>Preposition Patterns:</strong> For the questions "wo - where" and "wohin - where to" the prepositions for location and direction are mostly equal. For the question "woher - where from" the prepositions are often a little bit different.</p>-->
     </div>
 
     <div class="example">
@@ -542,6 +579,7 @@
         </p>
     </div>
 
+    <!--
     <h2>The Nine Core Wechselpräpositionen</h2>
     <div class="explanation">
         <p>The nine main dual-function prepositions are:</p>
@@ -557,6 +595,7 @@
             <li><strong>zwischen</strong> - between</li>
         </ol>
     </div>
+    -->
 
     <script>
                  else {
