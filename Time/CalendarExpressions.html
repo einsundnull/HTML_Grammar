@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deutsche Zeitausdrücke - Calendar Expressions</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f5f5f5; }
+        .nav { background-color: #2c3e50; padding: 15px; margin: 0 -20px 20px -20px; text-align: center; }
+        .nav a { color: white; text-decoration: none; margin: 0 10px; padding: 8px 12px; border-radius: 4px; transition: background-color 0.3s; font-size: 0.9em; }
+        .nav a:hover { background-color: #34495e; }
+        .nav a.active { background-color: #e74c3c; }
+        h1 { text-align: center; color: #2c3e50; margin-top: 20px; }
+        h2 { background-color: #e74c3c; color: white; padding: 10px; text-align: center;
+            width: auto;
+            max-width: 100%;
+            display: table;
+            margin-left: auto;
+            margin-right: auto; margin-top: 30px; }
+        table {
+            width: 100%;
+            max-width: 950px;
+            table-layout: auto;
+            border-collapse: collapse;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #e74c3c; color: white; font-weight: bold; }
+        .german { font-weight: bold; color: #2c3e50; }
+        body.compact-mode table {
+            margin: 10px auto;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        body.compact-mode th, body.compact-mode td { padding: 6px 8px; }
+        body.compact-mode h1 { font-size: 1.8em; margin-top: 10px; }
+        body.compact-mode h2 { padding: 6px; margin-top: 15px; font-size: 1.2em; }
+        body.extra-compact-mode table {
+            margin: 5px auto;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        body.extra-compact-mode th, body.extra-compact-mode td { padding: 3px 5px; }
+        body.extra-compact-mode h1 { font-size: 1.5em; margin-top: 5px; }
+        body.extra-compact-mode h2 { padding: 4px; margin-top: 10px; font-size: 1em; }
+        .toggle-btn { background-color: #95a5a6; color: white; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer; margin-left: 15px; transition: background-color 0.3s; }
+        .toggle-btn:hover { background-color: #7f8c8d; }
+        @media print {
+            .nav, .toggle-btn, .print-btn { display: none !important; }
+            body { background: white; }
+            h2 { page-break-after: avoid !important; }
+            table { page-break-inside: avoid !important; }
+        }
+        .print-btn { background-color: #3498db; color: white; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer; margin-left: 15px; transition: background-color 0.3s; }
+        .print-btn:hover { background-color: #2980b9; }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <a href="option-a/index.html">← Back to Overview (Option A)</a>
+        <a href="option-b/index.html">← Back to Overview (Option B)</a>
+        <a href="CalendarExpressions-DE-EN.html">View with Translations</a>
+        <button class="toggle-btn" onclick="toggleCompactMode()">Toggle Compact Mode</button>
+        <button class="print-btn" onclick="window.print()">🖨️ Print</button>
+    </div>
+
+    <h1>Deutsche Zeitausdrücke</h1>
+<h2>Kurzformen der Zeitausdrücke</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Kurzform</th>
+        <th>gestern</th>
+        <th>heute</th>
+        <th>morgen</th>
+        <th>täglich</th>
+        <th>den ganzen Tag</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td class=""></td>
+        <td class="">vorhin</td>
+        <td class="">gerade</td>
+        <td class="">später</td>
+        <td class="">immer</td>
+        <td class="">ständig</td>
+    </tr>
+    <tr>
+        <td class=""></td>
+        <td class="">früher</td>
+        <td class="">jetzt</td>
+        <td class="">bald</td>
+        <td class="">immer</td>
+        <td class="">ständig</td>
+    </tr>
+    </tbody>
+</table>
+<h2>Grundlegende Zeitausdrücke</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Zeiteinheit</th>
+        <th>letzt/en/es/e</th>
+        <th>dies/en/es/e</th>
+        <th>nächst/en/es/e</th>
+        <th>jed/en/es/e</th>
+        <th> ganz/e/en</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td class="german">der Tag / Tage</td>
+        <td class="">gestern</td>
+        <td class="">heute</td>
+        <td class="">morgen</td>
+        <td class="">jeden Tag</td>
+        <td class="">den ganzen Tag</td>
+    </tr>
+    <tr>
+        <td class="german">die Woche / Wochen</td>
+        <td class="">letzte Woche</td>
+        <td class="">diese Woche</td>
+        <td class="">nächste Woche</td>
+        <td class="">jede Woche</td>
+        <td class="">die ganze Woche</td>
+    </tr>
+    <tr>
+        <td class="german">der Monat / Monate</td>
+        <td class="">letzten Monat</td>
+        <td class="">diesen Monat</td>
+        <td class="">nächsten Monat</td>
+        <td class="">jeden Monat</td>
+        <td class="">den ganzen Monat</td>
+    </tr>
+    <tr>
+        <td class="german">das Jahr / Jahre</td>
+        <td class="">letztes Jahr</td>
+        <td class="">dieses Jahr</td>
+        <td class="">nächstes Jahr</td>
+        <td class="">jedes Jahr</td>
+        <td class="">das ganze Jahr</td>
+    </tr>
+    </tbody>
+</table>
+<h2>Ausführliche Formen</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Zeiteinheit</th>
+        <th>letzt/en/es/e</th>
+        <th>dies/en/es/e</th>
+        <th>nächst/en/es/e</th>
+        <th>jed/en/es/e</th>
+        <th> ganz/e/en</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td class="german">der Tag / Tage</td>
+        <td class="">am letzten Tag</td>
+        <td class="">an diesem Tag</td>
+        <td class="">am nächtsten Tag</td>
+        <td class="">jeden Tag</td>
+        <td class="">den ganzen Tag</td>
+    </tr>
+    <tr>
+        <td class="german">die Woche / Wochen</td>
+        <td class="">in der letzten Woche</td>
+        <td class="">in dieser Woche</td>
+        <td class="">in der nächsten Woche</td>
+        <td class="">jede Woche</td>
+        <td class="">die ganze Woche</td>
+    </tr>
+    <tr>
+        <td class="german">der Monat / Monate</td>
+        <td class="">im letzten Monat</td>
+        <td class="">in diesem Monat</td>
+        <td class="">im nächsten Monat</td>
+        <td class="">jeden Monat</td>
+        <td class="">den ganzen Monat</td>
+    </tr>
+    <tr>
+        <td class="german">das Jahr / Jahre</td>
+        <td class="">im letzten Jahr</td>
+        <td class="">in diesem Jahr</td>
+        <td class="">im nächsten Jahr</td>
+        <td class="">jedes Jahr</td>
+        <td class="">das ganze Jahr</td>
+    </tr>
+    </tbody>
+</table>
+<h2>Pluralformen</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Zeiteinheit</th>
+        <th>letzt/en/es/e</th>
+        <th>dies/en/es/e</th>
+        <th>nächst/en/es/e</th>
+        <th>jed/en/es/e</th>
+        <th> ganz/e/en</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td class="german">der Tag / Tage</td>
+        <td class="">in den letzten Tagen</td>
+        <td class="">in diesen Tagen</td>
+        <td class="">in den nächsten Tagen</td>
+        <td class="">-</td>
+        <td class="">-</td>
+    </tr>
+    <tr>
+        <td class="german">die Woche / Wochen</td>
+        <td class="">in den letzten Wochen</td>
+        <td class="">in diesen Wochen</td>
+        <td class="">in den nächsten Wochen</td>
+        <td class="">-</td>
+        <td class="">-</td>
+    </tr>
+    <tr>
+        <td class="german">der Monat / Monate</td>
+        <td class="">in den letzten Monaten</td>
+        <td class="">in diesen Monaten</td>
+        <td class="">in den nächsten Monaten</td>
+        <td class="">-</td>
+        <td class="">-</td>
+    </tr>
+    <tr>
+        <td class="german">das Jahr / Jahre</td>
+        <td class="">in den letzten Jahren</td>
+        <td class="">in diesen Jahren</td>
+        <td class="">in den nächsten Jahren</td>
+        <td class="">-</td>
+        <td class="">-</td>
+    </tr>
+    </tbody>
+</table>
+<h2>Tageszeiten</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Tageszeit</th>
+        <th>letzt/en/es/e</th>
+        <th>dies/en/es/e</th>
+        <th>nächst/en/es/e</th>
+        <th>jed/en/es/e</th>
+        <th> ganz/e/en</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td class="german">der Morgen / Morgen</td>
+        <td class="">gestern Morgen</td>
+        <td class="">heute Morgen</td>
+        <td class="">morgen früh</td>
+        <td class="">jeden Morgen</td>
+        <td class="">den ganzen Morgen</td>
+    </tr>
+    <tr>
+        <td class="german">der Vormittag / Vormittage</td>
+        <td class="">gestern Vormittag</td>
+        <td class="">heute Vormittag</td>
+        <td class="">morgen Vormittag</td>
+        <td class="">jeden Vormittag</td>
+        <td class="">den ganzen Vormittag</td>
+    </tr>
+    <tr>
+        <td class="german">der Mittag / Mittage</td>
+        <td class="">gestern Mittag</td>
+        <td class="">heute Mittag</td>
+        <td class="">morgen Mittag</td>
+        <td class="">jeden Mittag</td>
+        <td class="">den ganzen Mittag</td>
+    </tr>
+    <tr>
+        <td class="german">der Nachmittag / Nachmittage</td>
+        <td class="">gestern Nachmittag</td>
+        <td class="">heute Nachmittag</td>
+        <td class="">morgen Nachmittag</td>
+        <td class="">jeden Nachmittag</td>
+        <td class="">den ganzen Nachmittag</td>
+    </tr>
+    <tr>
+        <td class="german">der Abend / Abende</td>
+        <td class="">gestern Abend</td>
+        <td class="">heute Abend</td>
+        <td class="">morgen Abend</td>
+        <td class="">jeden Abend</td>
+        <td class="">den ganzen Abend</td>
+    </tr>
+    <tr>
+        <td class="german">die Nacht / Nächte</td>
+        <td class="">gestern Nacht</td>
+        <td class="">heute Nacht</td>
+        <td class="">morgen Nacht</td>
+        <td class="">jede Nacht</td>
+        <td class="">die ganze Nacht</td>
+    </tr>
+    </tbody>
+</table>
+<h2>Jahreszeiten</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Jahreszeit</th>
+        <th>letzt/en/es/e</th>
+        <th>dies/en/es/e</th>
+        <th>nächst/en/es/e</th>
+        <th>jed/en/es/e</th>
+        <th> ganz/e/en</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td class="german">der Frühling / Frühlinge</td>
+        <td class="">letzten Frühling</td>
+        <td class="">diesen Frühling</td>
+        <td class="">nächsten Frühling</td>
+        <td class="">jeden Frühling</td>
+        <td class="">den ganzen Frühling</td>
+    </tr>
+    <tr>
+        <td class="german">der Sommer / Sommer</td>
+        <td class="">letzten Sommer</td>
+        <td class="">diesen Sommer</td>
+        <td class="">nächsten Sommer</td>
+        <td class="">jeden Sommer</td>
+        <td class="">den ganzen Sommer</td>
+    </tr>
+    <tr>
+        <td class="german">der Herbst / Herbste</td>
+        <td class="">letzten Herbst</td>
+        <td class="">diesen Herbst</td>
+        <td class="">nächsten Herbst</td>
+        <td class="">jeden Herbst</td>
+        <td class="">den ganzen Herbst</td>
+    </tr>
+    <tr>
+        <td class="german">der Winter / Winter</td>
+        <td class="">letzten Winter</td>
+        <td class="">diesen Winter</td>
+        <td class="">nächsten Winter</td>
+        <td class="">jeden Winter</td>
+        <td class="">den ganzen Winter</td>
+    </tr>
+    </tbody>
+</table>
+<h2>Wochentage</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Wochentag</th>
+        <th>letzt/en/es/e</th>
+        <th>dies/en/es/e</th>
+        <th>nächst/en/es/e</th>
+        <th>jed/en/es/e</th>
+        <th> ganz/e/en</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td class="german">der Montag / Montage</td>
+        <td class="">letzten Montag</td>
+        <td class="">diesen Montag</td>
+        <td class="">nächsten Montag</td>
+        <td class="">jeden Montag</td>
+        <td class="">den ganzen Montag</td>
+    </tr>
+    <tr>
+        <td class="german">der Dienstag / Dienstage</td>
+        <td class="">letzten Dienstag</td>
+        <td class="">diesen Dienstag</td>
+        <td class="">nächsten Dienstag</td>
+        <td class="">jeden Dienstag</td>
+        <td class="">den ganzen Dienstag</td>
+    </tr>
+    <tr>
+        <td class="german">der Mittwoch / Mittwoche</td>
+        <td class="">letzten Mittwoch</td>
+        <td class="">diesen Mittwoch</td>
+        <td class="">nächsten Mittwoch</td>
+        <td class="">jeden Mittwoch</td>
+        <td class="">den ganzen Mittwoch</td>
+    </tr>
+    <tr>
+        <td class="german">der Donnerstag / Donnerstage</td>
+        <td class="">letzten Donnerstag</td>
+        <td class="">diesen Donnerstag</td>
+        <td class="">nächsten Donnerstag</td>
+        <td class="">jeden Donnerstag</td>
+        <td class="">den ganzen Donnerstag</td>
+    </tr>
+    <tr>
+        <td class="german">der Freitag / Freitage</td>
+        <td class="">letzten Freitag</td>
+        <td class="">diesen Freitag</td>
+        <td class="">nächsten Freitag</td>
+        <td class="">jeden Freitag</td>
+        <td class="">den ganzen Freitag</td>
+    </tr>
+    <tr>
+        <td class="german">der Samstag / Samstage</td>
+        <td class="">letzten Samstag</td>
+        <td class="">diesen Samstag</td>
+        <td class="">nächsten Samstag</td>
+        <td class="">jeden Samstag</td>
+        <td class="">den ganzen Samstag</td>
+    </tr>
+    <tr>
+        <td class="german">der Sonntag / Sonntage</td>
+        <td class="">letzte Woche</td>
+        <td class="">diese Woche</td>
+        <td class="">nächste Woche</td>
+        <td class="">jede Woche</td>
+        <td class="">die ganze Woche</td>
+    </tr>
+    </tbody>
+</table>
+<h2>Zeitausdrücke</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Zeiteinheit</th>
+        <th>letzte Zeit</th>
+        <th>diese Zeit</th>
+        <th>nächste Zeit</th>
+        <th>jede Zeit</th>
+        <th>ganze Zeit</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td class="german">die Zeit / Zeiten</td>
+        <td class="">die letzte Zeit</td>
+        <td class="">jetzt</td>
+        <td class="">die nächste Zeit</td>
+        <td class="">zu jeder Zeit</td>
+        <td class="">die ganze Zeit</td>
+    </tr>
+    <tr>
+        <td class="german">die Zeit / Zeiten</td>
+        <td class="">in der letzten Zeit</td>
+        <td class="">zur Zeit</td>
+        <td class="">in der nächsten Zeit</td>
+        <td class="">zu jeder Zeit</td>
+        <td class="">die ganze Zeit</td>
+    </tr>
+    <tr>
+        <td class="german">die Millisekunde / Millisekunden</td>
+        <td class="">letzte ms</td>
+        <td class="">diese ms</td>
+        <td class="">nächste ms</td>
+        <td class="">jede ms</td>
+        <td class="">die ganze Millisekunde</td>
+    </tr>
+    <tr>
+        <td class="german">die Sekunde / Sekunden</td>
+        <td class="">letzte Sekunde</td>
+        <td class="">diese Sekunde</td>
+        <td class="">nächste Sekunde</td>
+        <td class="">jede Sekunde</td>
+        <td class="">die ganze Sekunde</td>
+    </tr>
+    <tr>
+        <td class="german">die Minute / Minuten</td>
+        <td class="">letzte Minute</td>
+        <td class="">diese Minute</td>
+        <td class="">nächste Minute</td>
+        <td class="">jede Minute</td>
+        <td class="">die ganze Minute</td>
+    </tr>
+    <tr>
+        <td class="german">die Stunde / Stunden</td>
+        <td class="">letzte Stunde</td>
+        <td class="">diese Stunde</td>
+        <td class="">nächste Stunde</td>
+        <td class="">jede Stunde</td>
+        <td class="">die ganze Stunde</td>
+    </tr>
+    </tbody>
+</table>
+<h2>Sonstige Ausdrücke</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Ausdruck</th>
+        <th>letztes</th>
+        <th>dieses</th>
+        <th>nächstes</th>
+        <th>jedes Mal</th>
+        <th>ganz/immer</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td class="german">das Mal / Male</td>
+        <td class="">letztes Mal</td>
+        <td class="">dieses Mal</td>
+        <td class="">nächstes Mal</td>
+        <td class="">jedes Mal</td>
+        <td class="">-</td>
+    </tr>
+    <tr>
+        <td class=""></td>
+        <td class="">das letzte Mal</td>
+        <td class="">dieses Mal</td>
+        <td class="">beim nächsten Mal</td>
+        <td class="">jedes Mal</td>
+        <td class="">-</td>
+    </tr>
+    </tbody>
+</table>
+<h2>Zahlen</h2>
+<table>
+    <tbody>
+    <tr>
+        <td class="german">0 – null</td>
+        <td class="">10 – zehn</td>
+        <td class="">20 - zwanzig</td>
+        <td class="">30 - dreißig</td>
+    </tr>
+    <tr>
+        <td class="german">1 – eins</td>
+        <td class="">11 - elf</td>
+        <td class="">21 - einundzwanzig</td>
+        <td class="">31 - einunddreißig</td>
+    </tr>
+    <tr>
+        <td class="german">2 – zwei</td>
+        <td class="">12 - zwölf</td>
+        <td class="">22 - zweiundzwanzig</td>
+        <td class="">32 - zweiunddreißig</td>
+    </tr>
+    <tr>
+        <td class="german">3 – drei</td>
+        <td class="">13 - dreizehn</td>
+        <td class="">23 - dreiundzwanzig</td>
+        <td class="">33 - dreiunddreißig</td>
+    </tr>
+    <tr>
+        <td class="german">4 – vier</td>
+        <td class="">14 - vierzehn</td>
+        <td class="">24 - vierundzwanzig</td>
+        <td class="">34 - vierunddreißig</td>
+    </tr>
+    <tr>
+        <td class="german">5 – fünf</td>
+        <td class="">15 - fünfzehn</td>
+        <td class="">25 - fünfundzwanzig</td>
+        <td class="">35 - fünfunddreißig</td>
+    </tr>
+    <tr>
+        <td class="german">6 – sechs</td>
+        <td class="">16 - sechzehn</td>
+        <td class="">26 - sechsundzwanzig</td>
+        <td class="">36 - sechsunddreißig</td>
+    </tr>
+    <tr>
+        <td class="german">7 – sieben</td>
+        <td class="">17 - siebzehn</td>
+        <td class="">27 - siebenundzwanzig</td>
+        <td class="">37 - siebenunddreißig</td>
+    </tr>
+    <tr>
+        <td class="german">8 – acht</td>
+        <td class="">18 - achtzehn</td>
+        <td class="">28 - achtundzwanzig</td>
+        <td class="">38 - achtunddreißig</td>
+    </tr>
+    <tr>
+        <td class="german">9 – neun</td>
+        <td class="">19 - neunzehn</td>
+        <td class="">29 - neunundzwanzig</td>
+        <td class="">39 - neununddreißig</td>
+    </tr>
+    </tbody>
+</table>
+<h2>Wiederkehrende Zeitangaben und Monate</h2>
+<table>
+    <thead>
+    <tr>
+        <th>morges/frühs</th>
+        <th>montags</th>
+        <th>Januar</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td class="german">vormittags</td>
+        <td class="">dienstags</td>
+        <td class="">Februar</td>
+    </tr>
+    <tr>
+        <td class="german">mittags</td>
+        <td class="">mittwochs</td>
+        <td class="">März</td>
+    </tr>
+    <tr>
+        <td class="german">nachmittags</td>
+        <td class="">donnerstags</td>
+        <td class="">April</td>
+    </tr>
+    <tr>
+        <td class="german">abends</td>
+        <td class="">freitags</td>
+        <td class="">Mai</td>
+    </tr>
+    <tr>
+        <td class="german">nachts</td>
+        <td class="">samstags</td>
+        <td class="">Juni</td>
+    </tr>
+    <tr>
+        <td class="german">mitternachts</td>
+        <td class="">sonntags</td>
+        <td class="">Juli</td>
+    </tr>
+    <tr>
+        <td class="">August</td>
+    </tr>
+    <tr>
+        <td class="">September</td>
+    </tr>
+    <tr>
+        <td class="">Oktober</td>
+    </tr>
+    <tr>
+        <td class="">November</td>
+    </tr>
+    <tr>
+        <td class="">Dezember</td>
+    </tr>
+    </tbody>
+</table>
+
+
+    <script>
+        let compactMode = 0;
+        function toggleCompactMode() {
+            document.body.classList.remove('compact-mode', 'extra-compact-mode');
+            compactMode = (compactMode + 1) % 3;
+            if (compactMode === 1) document.body.classList.add('compact-mode');
+            if (compactMode === 2) document.body.classList.add('extra-compact-mode');
+        }
+    </script>
+</body>
+</html>
