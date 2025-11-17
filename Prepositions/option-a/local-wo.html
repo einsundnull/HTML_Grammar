@@ -37,9 +37,9 @@
         }
         h2 {
             background-color: #cccccc;
-            color: white;
+            color: black;
             padding: 10px;
-            text-align: center;
+            text-align: left;
             margin-top: 30px;
             width: 100%;
             max-width: 950px;
@@ -63,7 +63,7 @@
         }
         th {
             background-color: #cccccc;
-            color: white;
+            color: black;
             font-weight: bold;
         }
         .case-gen {
@@ -550,9 +550,17 @@
             margin: 20px auto;
             background-color: white;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                font-size: small;
         }
             .global-nav {
                 display: none !important;
+            }
+            
+                       .head {
+                page-break-after: avoid !important;
+            }
+            .head {
+                page-break-before: avoid !important;
             }
         }
     
@@ -615,6 +623,8 @@
             .print-btn {
                 display: none !important;
             }
+            
+ 
         }
 </style>
 </head>
@@ -639,13 +649,12 @@
         <a href="reference-guide.html">Reference</a>
     </div>
 
-    <h1>Local Prepositions: Wo / Where</h1>
+    <h1 id="head1">Local Prepositions: Wo / Where</h1>
     <div style="text-align: center; margin: 15px 0;">
         <button class="print-btn" onclick="window.print()">&#128424; Print</button>
     </div>
-    <p style="text-align: center; color: #7f8c8d;">Prepositions indicating location or position</p>
+    <p class = "head" style="text-align: center; color: #7f8c8d;">Prepositions indicating location or position</p>
 
-    <h2>Genitive Prepositions</h2>
     <table>
         <tr>
             <th>Contracted</th>
@@ -702,17 +711,6 @@
             <td>in close distance to</td>
             <td>+ Gen.</td>
             <td>in der Nähe des Parks</td>
-        </tr>
-    </table>
-
-    <h2>Dative Prepositions</h2>
-    <table>
-        <tr>
-            <th>Contracted</th>
-            <th>Preposition</th>
-            <th>English</th>
-            <th>Case</th>
-            <th>Example</th>
         </tr>
         <tr class="case-dat">
             <td class="contracted">am</td>
@@ -818,17 +816,6 @@
             <td>in close distance to</td>
             <td>+ Dat. (m)</td>
             <td>in der Nähe vom Bahnhof</td>
-        </tr>
-    </table>
-
-    <h2>Accusative Prepositions</h2>
-    <table>
-        <tr>
-            <th>Contracted</th>
-            <th>Preposition</th>
-            <th>English</th>
-            <th>Case</th>
-            <th>Example</th>
         </tr>
         <tr class="case-akk">
             <td>—</td>

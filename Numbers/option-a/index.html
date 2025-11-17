@@ -81,6 +81,23 @@
         /* Color themes for each card */
         .ordinal .card-icon { background-color: #9b59b6; }
         .fractions .card-icon { background-color: #e056fd; }
+        .overview .card-icon { background-color: #3498db; }
+
+        /* Highlighted full-width card */
+        .card[style*="grid-column"] {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            border: 3px solid #5dade2;
+        }
+        .card[style*="grid-column"] .card-title {
+            color: white;
+        }
+        .card[style*="grid-column"] .card-description {
+            color: rgba(255,255,255,0.95);
+        }
+        .card[style*="grid-column"] .card-examples {
+            color: rgba(255,255,255,0.85);
+        }
 
         .footer {
             text-align: center;
@@ -144,6 +161,24 @@
         <p class="subtitle">Separate Organization - Option A</p>
 
         <div class="cards-grid">
+            <a href="../numbers-overview.html" class="card overview" style="grid-column: 1 / -1;">
+                <div class="card-icon">📚</div>
+                <div class="card-title">⭐ Complete Overview - All Numbers at a Glance</div>
+                <div class="card-description">
+                    <strong>NEW!</strong> Comprehensive reference guide covering cardinal numbers, ordinal numbers, and fractions all on one page. Perfect for quick lookups and printing!
+                </div>
+                <div class="card-examples">Cardinal numbers • Ordinal numbers • Fractions • Print-friendly</div>
+            </a>
+
+            <a href="../cardinal-numbers.html" class="card ordinal">
+                <div class="card-icon">🔢</div>
+                <div class="card-title">Cardinal Numbers</div>
+                <div class="card-description">
+                    Complete reference of all cardinal numbers from 0 to 1,000,000+. Includes all numbers 0-99 in detail plus hundreds, thousands, and millions.
+                </div>
+                <div class="card-examples">null, eins, zwei, drei... tausend, Million...</div>
+            </a>
+
             <a href="ordinal-numbers.html" class="card ordinal">
                 <div class="card-icon">🔢</div>
                 <div class="card-title">Ordinal Numbers</div>

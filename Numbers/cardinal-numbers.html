@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardinal Numbers - Grundzahlen</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+
+        /* Global Navigation Header */
+        .global-nav {
+            background-color: #1a252f;
+            padding: 10px 0;
+            margin: -20px -20px 20px -20px;
+            text-align: center;
+            border-bottom: 3px solid #34495e;
+        }
+        .global-nav a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 6px 12px;
+            border-radius: 3px;
+            transition: all 0.3s;
+            font-size: 0.95em;
+            font-weight: 500;
+        }
+        .global-nav a:hover {
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+        }
+        .global-nav .home-link {
+            font-weight: bold;
+            color: #3498db;
+        }
+        .global-nav .home-link:hover {
+            color: #5dade2;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-top: 20px;
+            font-size: 2.5em;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 1.2em;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            background-color: #3498db;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin: 30px auto 20px auto;
+            max-width: 950px;
+            box-sizing: border-box;
+        }
+
+        h3 {
+            background-color: #5dade2;
+            color: white;
+            padding: 8px;
+            margin: 20px auto 15px auto;
+            max-width: 950px;
+            box-sizing: border-box;
+        }
+
+        table {
+            width: 100%;
+            max-width: 950px;
+            border-collapse: collapse;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+
+        .number {
+            font-weight: bold;
+            color: #2c3e50;
+            width: 100px;
+        }
+
+        .german {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .note {
+            background-color: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 12px;
+            margin: 20px auto;
+            max-width: 950px;
+        }
+
+        .info-box {
+            background-color: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            margin: 20px auto;
+            max-width: 950px;
+        }
+
+        /* Print Button */
+        .print-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+            font-weight: 500;
+            display: block;
+            margin: 20px auto;
+        }
+        .print-btn:hover {
+            background-color: #2980b9;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background-color: white;
+                margin: 0;
+                padding: 5px;
+            }
+
+            .global-nav, .print-btn {
+                display: none !important;
+            }
+
+            h1, h2, h3, .subtitle {
+                color: #2c3e50;
+            }
+
+            h1 {
+                font-size: 18px;
+                margin: 5px 0;
+            }
+
+            h2 {
+                font-size: 14px;
+                padding: 5px;
+                margin: 10px auto 5px auto;
+                page-break-after: avoid !important;
+            }
+
+            h3 {
+                font-size: 12px;
+                padding: 4px;
+                margin: 8px auto 3px auto;
+                page-break-after: avoid !important;
+            }
+
+            table {
+                page-break-inside: avoid;
+                page-break-before: avoid;
+                font-size: 10px;
+                margin: 5px auto;
+            }
+
+            tr {
+                page-break-inside: avoid;
+            }
+
+            th, td {
+                padding: 4px;
+            }
+
+            .note, .info-box {
+                page-break-inside: avoid;
+                font-size: 10px;
+                margin: 5px auto;
+                padding: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="global-nav">
+        <a href="../index.html" class="home-link">&#127968; Home</a>
+        <a href="../Article/option-a/index.html">&#128221; Articles</a>
+        <a href="../Article/option-b/pronouns.html">&#127968; Pronouns</a>
+        <a href="../Prepositions/option-a/index.html">&#128506;&#65039; Prepositions</a>
+        <a href="../Numbers/option-a/index.html">&#128290; Numbers</a>
+        <a href="../Directions/option-a/index.html">&#129517; Directions</a>
+        <a href="../Time/option-a/index.html">&#9200; Time</a>
+    </div>
+
+    <h1>Cardinal Numbers - Grundzahlen</h1>
+    <p class="subtitle">Complete Reference from 0 to 1,000,000+</p>
+
+    <button class="print-btn" onclick="window.print()">&#128424; Print</button>
+
+    <div class="info-box">
+        <strong>Cardinal Numbers (Grundzahlen)</strong> are used for counting and expressing quantities: eins, zwei, drei, vier...
+        <br><br>
+        <strong>Key Rules:</strong>
+        <ul style="margin: 10px 0;">
+            <li>Numbers 13-19: base number + <strong>zehn</strong> (dreizehn, vierzehn...)</li>
+            <li>Numbers 21-99: ones + <strong>und</strong> + tens (einundzwanzig = 21)</li>
+            <li>Special forms: <strong>sechzehn</strong> (not sechszehn), <strong>siebzehn</strong> (not siebenzehn)</li>
+            <li>Multiples of ten ending in -zig: <strong>dreißig</strong> (30), but <strong>zwanzig</strong> (20)</li>
+        </ul>
+    </div>
+
+    <!-- BASIC NUMBERS 0-19 -->
+    <h2>Basic Numbers: 0-19</h2>
+    <table>
+        <tr>
+            <th>Number</th>
+            <th>German</th>
+            <th>Number</th>
+            <th>German</th>
+        </tr>
+        <tr>
+            <td class="number">0</td>
+            <td class="german">null</td>
+            <td class="number">10</td>
+            <td class="german">zehn</td>
+        </tr>
+        <tr>
+            <td class="number">1</td>
+            <td class="german">eins</td>
+            <td class="number">11</td>
+            <td class="german">elf*</td>
+        </tr>
+        <tr>
+            <td class="number">2</td>
+            <td class="german">zwei</td>
+            <td class="number">12</td>
+            <td class="german">zwölf*</td>
+        </tr>
+        <tr>
+            <td class="number">3</td>
+            <td class="german">drei</td>
+            <td class="number">13</td>
+            <td class="german">dreizehn</td>
+        </tr>
+        <tr>
+            <td class="number">4</td>
+            <td class="german">vier</td>
+            <td class="number">14</td>
+            <td class="german">vierzehn</td>
+        </tr>
+        <tr>
+            <td class="number">5</td>
+            <td class="german">fünf</td>
+            <td class="number">15</td>
+            <td class="german">fünfzehn</td>
+        </tr>
+        <tr>
+            <td class="number">6</td>
+            <td class="german">sechs</td>
+            <td class="number">16</td>
+            <td class="german">sechzehn*</td>
+        </tr>
+        <tr>
+            <td class="number">7</td>
+            <td class="german">sieben</td>
+            <td class="number">17</td>
+            <td class="german">siebzehn*</td>
+        </tr>
+        <tr>
+            <td class="number">8</td>
+            <td class="german">acht</td>
+            <td class="number">18</td>
+            <td class="german">achtzehn</td>
+        </tr>
+        <tr>
+            <td class="number">9</td>
+            <td class="german">neun</td>
+            <td class="number">19</td>
+            <td class="german">neunzehn</td>
+        </tr>
+    </table>
+
+    <!-- TENS: 20-90 -->
+    <h2>Multiples of Ten: 20-90</h2>
+    <table>
+        <tr>
+            <th>Number</th>
+            <th>German</th>
+        </tr>
+        <tr>
+            <td class="number">20</td>
+            <td class="german">zwanzig</td>
+        </tr>
+        <tr>
+            <td class="number">30</td>
+            <td class="german">dreißig*</td>
+        </tr>
+        <tr>
+            <td class="number">40</td>
+            <td class="german">vierzig</td>
+        </tr>
+        <tr>
+            <td class="number">50</td>
+            <td class="german">fünfzig</td>
+        </tr>
+        <tr>
+            <td class="number">60</td>
+            <td class="german">sechzig</td>
+        </tr>
+        <tr>
+            <td class="number">70</td>
+            <td class="german">siebzig*</td>
+        </tr>
+        <tr>
+            <td class="number">80</td>
+            <td class="german">achtzig</td>
+        </tr>
+        <tr>
+            <td class="number">90</td>
+            <td class="german">neunzig</td>
+        </tr>
+    </table>
+
+    <!-- COMPLETE SERIES: 20-99 -->
+    <h2>Complete Series: 20-99</h2>
+
+    <!-- 20-29 and 30-39 -->
+    <table>
+        <tr>
+            <th>Number</th>
+            <th>German</th>
+            <th>Number</th>
+            <th>German</th>
+        </tr>
+        <tr>
+            <td class="number">20</td>
+            <td class="german">zwanzig</td>
+            <td class="number">30</td>
+            <td class="german">dreißig</td>
+        </tr>
+        <tr>
+            <td class="number">21</td>
+            <td class="german">einundzwanzig</td>
+            <td class="number">31</td>
+            <td class="german">einunddreißig</td>
+        </tr>
+        <tr>
+            <td class="number">22</td>
+            <td class="german">zweiundzwanzig</td>
+            <td class="number">32</td>
+            <td class="german">zweiunddreißig</td>
+        </tr>
+        <tr>
+            <td class="number">23</td>
+            <td class="german">dreiundzwanzig</td>
+            <td class="number">33</td>
+            <td class="german">dreiunddreißig</td>
+        </tr>
+        <tr>
+            <td class="number">24</td>
+            <td class="german">vierundzwanzig</td>
+            <td class="number">34</td>
+            <td class="german">vierunddreißig</td>
+        </tr>
+        <tr>
+            <td class="number">25</td>
+            <td class="german">fünfundzwanzig</td>
+            <td class="number">35</td>
+            <td class="german">fünfunddreißig</td>
+        </tr>
+        <tr>
+            <td class="number">26</td>
+            <td class="german">sechsundzwanzig</td>
+            <td class="number">36</td>
+            <td class="german">sechsunddreißig</td>
+        </tr>
+        <tr>
+            <td class="number">27</td>
+            <td class="german">siebenundzwanzig</td>
+            <td class="number">37</td>
+            <td class="german">siebenunddreißig</td>
+        </tr>
+        <tr>
+            <td class="number">28</td>
+            <td class="german">achtundzwanzig</td>
+            <td class="number">38</td>
+            <td class="german">achtunddreißig</td>
+        </tr>
+        <tr>
+            <td class="number">29</td>
+            <td class="german">neunundzwanzig</td>
+            <td class="number">39</td>
+            <td class="german">neununddreißig</td>
+        </tr>
+    </table>
+
+    <!-- 40-49 and 50-59 -->
+    <table>
+        <tr>
+            <th>Number</th>
+            <th>German</th>
+            <th>Number</th>
+            <th>German</th>
+        </tr>
+        <tr>
+            <td class="number">40</td>
+            <td class="german">vierzig</td>
+            <td class="number">50</td>
+            <td class="german">fünfzig</td>
+        </tr>
+        <tr>
+            <td class="number">41</td>
+            <td class="german">einundvierzig</td>
+            <td class="number">51</td>
+            <td class="german">einundfünfzig</td>
+        </tr>
+        <tr>
+            <td class="number">42</td>
+            <td class="german">zweiundvierzig</td>
+            <td class="number">52</td>
+            <td class="german">zweiundfünfzig</td>
+        </tr>
+        <tr>
+            <td class="number">43</td>
+            <td class="german">dreiundvierzig</td>
+            <td class="number">53</td>
+            <td class="german">dreiundfünfzig</td>
+        </tr>
+        <tr>
+            <td class="number">44</td>
+            <td class="german">vierundvierzig</td>
+            <td class="number">54</td>
+            <td class="german">vierundfünfzig</td>
+        </tr>
+        <tr>
+            <td class="number">45</td>
+            <td class="german">fünfundvierzig</td>
+            <td class="number">55</td>
+            <td class="german">fünfundfünfzig</td>
+        </tr>
+        <tr>
+            <td class="number">46</td>
+            <td class="german">sechsundvierzig</td>
+            <td class="number">56</td>
+            <td class="german">sechsundfünfzig</td>
+        </tr>
+        <tr>
+            <td class="number">47</td>
+            <td class="german">siebenundvierzig</td>
+            <td class="number">57</td>
+            <td class="german">siebenundfünfzig</td>
+        </tr>
+        <tr>
+            <td class="number">48</td>
+            <td class="german">achtundvierzig</td>
+            <td class="number">58</td>
+            <td class="german">achtundfünfzig</td>
+        </tr>
+        <tr>
+            <td class="number">49</td>
+            <td class="german">neunundvierzig</td>
+            <td class="number">59</td>
+            <td class="german">neunundfünfzig</td>
+        </tr>
+    </table>
+
+    <!-- 60-69 and 70-79 -->
+    <table>
+        <tr>
+            <th>Number</th>
+            <th>German</th>
+            <th>Number</th>
+            <th>German</th>
+        </tr>
+        <tr>
+            <td class="number">60</td>
+            <td class="german">sechzig</td>
+            <td class="number">70</td>
+            <td class="german">siebzig</td>
+        </tr>
+        <tr>
+            <td class="number">61</td>
+            <td class="german">einundsechzig</td>
+            <td class="number">71</td>
+            <td class="german">einundsiebzig</td>
+        </tr>
+        <tr>
+            <td class="number">62</td>
+            <td class="german">zweiundsechzig</td>
+            <td class="number">72</td>
+            <td class="german">zweiundsiebzig</td>
+        </tr>
+        <tr>
+            <td class="number">63</td>
+            <td class="german">dreiundsechzig</td>
+            <td class="number">73</td>
+            <td class="german">dreiundsiebzig</td>
+        </tr>
+        <tr>
+            <td class="number">64</td>
+            <td class="german">vierundsechzig</td>
+            <td class="number">74</td>
+            <td class="german">vierundsiebzig</td>
+        </tr>
+        <tr>
+            <td class="number">65</td>
+            <td class="german">fünfundsechzig</td>
+            <td class="number">75</td>
+            <td class="german">fünfundsiebzig</td>
+        </tr>
+        <tr>
+            <td class="number">66</td>
+            <td class="german">sechsundsechzig</td>
+            <td class="number">76</td>
+            <td class="german">sechsundsiebzig</td>
+        </tr>
+        <tr>
+            <td class="number">67</td>
+            <td class="german">siebenundsechzig</td>
+            <td class="number">77</td>
+            <td class="german">siebenundsiebzig</td>
+        </tr>
+        <tr>
+            <td class="number">68</td>
+            <td class="german">achtundsechzig</td>
+            <td class="number">78</td>
+            <td class="german">achtundsiebzig</td>
+        </tr>
+        <tr>
+            <td class="number">69</td>
+            <td class="german">neunundsechzig</td>
+            <td class="number">79</td>
+            <td class="german">neunundsiebzig</td>
+        </tr>
+    </table>
+
+    <!-- 80-89 and 90-99 -->
+    <table>
+        <tr>
+            <th>Number</th>
+            <th>German</th>
+            <th>Number</th>
+            <th>German</th>
+        </tr>
+        <tr>
+            <td class="number">80</td>
+            <td class="german">achtzig</td>
+            <td class="number">90</td>
+            <td class="german">neunzig</td>
+        </tr>
+        <tr>
+            <td class="number">81</td>
+            <td class="german">einundachtzig</td>
+            <td class="number">91</td>
+            <td class="german">einundneunzig</td>
+        </tr>
+        <tr>
+            <td class="number">82</td>
+            <td class="german">zweiundachtzig</td>
+            <td class="number">92</td>
+            <td class="german">zweiundneunzig</td>
+        </tr>
+        <tr>
+            <td class="number">83</td>
+            <td class="german">dreiundachtzig</td>
+            <td class="number">93</td>
+            <td class="german">dreiundneunzig</td>
+        </tr>
+        <tr>
+            <td class="number">84</td>
+            <td class="german">vierundachtzig</td>
+            <td class="number">94</td>
+            <td class="german">vierundneunzig</td>
+        </tr>
+        <tr>
+            <td class="number">85</td>
+            <td class="german">fünfundachtzig</td>
+            <td class="number">95</td>
+            <td class="german">fünfundneunzig</td>
+        </tr>
+        <tr>
+            <td class="number">86</td>
+            <td class="german">sechsundachtzig</td>
+            <td class="number">96</td>
+            <td class="german">sechsundneunzig</td>
+        </tr>
+        <tr>
+            <td class="number">87</td>
+            <td class="german">siebenundachtzig</td>
+            <td class="number">97</td>
+            <td class="german">siebenundneunzig</td>
+        </tr>
+        <tr>
+            <td class="number">88</td>
+            <td class="german">achtundachtzig</td>
+            <td class="number">98</td>
+            <td class="german">achtundneunzig</td>
+        </tr>
+        <tr>
+            <td class="number">89</td>
+            <td class="german">neunundachtzig</td>
+            <td class="number">99</td>
+            <td class="german">neunundneunzig</td>
+        </tr>
+    </table>
+
+    <!-- HUNDREDS: 100-900 -->
+    <h2>Hundreds: 100-900</h2>
+    <table>
+        <tr>
+            <th>Number</th>
+            <th>German</th>
+        </tr>
+        <tr>
+            <td class="number">100</td>
+            <td class="german">einhundert / hundert</td>
+        </tr>
+        <tr>
+            <td class="number">200</td>
+            <td class="german">zweihundert</td>
+        </tr>
+        <tr>
+            <td class="number">300</td>
+            <td class="german">dreihundert</td>
+        </tr>
+        <tr>
+            <td class="number">400</td>
+            <td class="german">vierhundert</td>
+        </tr>
+        <tr>
+            <td class="number">500</td>
+            <td class="german">fünfhundert</td>
+        </tr>
+        <tr>
+            <td class="number">600</td>
+            <td class="german">sechshundert</td>
+        </tr>
+        <tr>
+            <td class="number">700</td>
+            <td class="german">siebenhundert</td>
+        </tr>
+        <tr>
+            <td class="number">800</td>
+            <td class="german">achthundert</td>
+        </tr>
+        <tr>
+            <td class="number">900</td>
+            <td class="german">neunhundert</td>
+        </tr>
+    </table>
+
+    <!-- COMBINED HUNDREDS -->
+    <h2>Combined Hundreds: 101-199</h2>
+    <div class="note">
+        <strong>Two ways to express:</strong> einhundert<strong>und</strong>eins OR einhundert<strong>eins</strong> (both are correct)
+    </div>
+    <table>
+        <tr>
+            <th>Number</th>
+            <th>German (Option 1)</th>
+            <th>German (Option 2)</th>
+        </tr>
+        <tr>
+            <td class="number">101</td>
+            <td class="german">einhundertundeins</td>
+            <td class="german">einhunderteins</td>
+        </tr>
+        <tr>
+            <td class="number">102</td>
+            <td class="german">einhundertundzwei</td>
+            <td class="german">einhundertzwei</td>
+        </tr>
+        <tr>
+            <td class="number">103</td>
+            <td class="german">einhundertunddrei</td>
+            <td class="german">einhundertdrei</td>
+        </tr>
+        <tr>
+            <td class="number">110</td>
+            <td class="german">einhundertundzehn</td>
+            <td class="german">einhundertzehn</td>
+        </tr>
+        <tr>
+            <td class="number">111</td>
+            <td class="german">einhundertundelf</td>
+            <td class="german">einhundertelf</td>
+        </tr>
+        <tr>
+            <td class="number">112</td>
+            <td class="german">einhundertundzwölf</td>
+            <td class="german">einhundertzwölf</td>
+        </tr>
+        <tr>
+            <td class="number">120</td>
+            <td class="german">einhundertundzwanzig</td>
+            <td class="german">einhundertzwanzig</td>
+        </tr>
+        <tr>
+            <td class="number">121</td>
+            <td class="german">einhunderteinundzwanzig</td>
+            <td class="german">einhunderteinundzwanzig</td>
+        </tr>
+        <tr>
+            <td class="number">130</td>
+            <td class="german">einhundertunddreißig</td>
+            <td class="german">einhundertdreißig</td>
+        </tr>
+        <tr>
+            <td class="number">131</td>
+            <td class="german">einhunderteinunddreißig</td>
+            <td class="german">einhunderteinunddreißig</td>
+        </tr>
+        <tr>
+            <td class="number">140</td>
+            <td class="german">einhundertundvierzig</td>
+            <td class="german">einhundertvierzig</td>
+        </tr>
+        <tr>
+            <td class="number">150</td>
+            <td class="german">einhundertundfünfzig</td>
+            <td class="german">einhundertfünfzig</td>
+        </tr>
+    </table>
+
+    <!-- THOUSANDS -->
+    <h2>Thousands: 1,000 - 999,999</h2>
+    <table>
+        <tr>
+            <th>Number</th>
+            <th>German</th>
+        </tr>
+        <tr>
+            <td class="number">1,000</td>
+            <td class="german">tausend / eintausend</td>
+        </tr>
+        <tr>
+            <td class="number">1,010</td>
+            <td class="german">tausendzehn</td>
+        </tr>
+        <tr>
+            <td class="number">1,100</td>
+            <td class="german">tausendeinhundert</td>
+        </tr>
+        <tr>
+            <td class="number">1,110</td>
+            <td class="german">tausendeinhundertundzehn</td>
+        </tr>
+        <tr>
+            <td class="number">1,111</td>
+            <td class="german">tausendeinhundertundelf</td>
+        </tr>
+        <tr>
+            <td class="number">1,120</td>
+            <td class="german">tausendeinhundertundzwanzig</td>
+        </tr>
+        <tr>
+            <td class="number">1,121</td>
+            <td class="german">tausendeinhunderteinundzwanzig</td>
+        </tr>
+        <tr>
+            <td class="number">10,000</td>
+            <td class="german">zehntausend</td>
+        </tr>
+        <tr>
+            <td class="number">20,000</td>
+            <td class="german">zwanzigtausend</td>
+        </tr>
+        <tr>
+            <td class="number">30,000</td>
+            <td class="german">dreißigtausend</td>
+        </tr>
+        <tr>
+            <td class="number">100,000</td>
+            <td class="german">einhunderttausend</td>
+        </tr>
+        <tr>
+            <td class="number">200,000</td>
+            <td class="german">zweihunderttausend</td>
+        </tr>
+        <tr>
+            <td class="number">300,000</td>
+            <td class="german">dreihunderttausend</td>
+        </tr>
+    </table>
+
+    <!-- MILLIONS -->
+    <h2>Millions and Beyond</h2>
+    <table>
+        <tr>
+            <th>Number</th>
+            <th>German</th>
+        </tr>
+        <tr>
+            <td class="number">1,000,000</td>
+            <td class="german">eine Million</td>
+        </tr>
+        <tr>
+            <td class="number">2,000,000</td>
+            <td class="german">zwei Millionen</td>
+        </tr>
+        <tr>
+            <td class="number">2,230,231</td>
+            <td class="german">zwei Millionen zweihundertdreißigtausendzweihunderteinunddreißig</td>
+        </tr>
+    </table>
+
+    <div class="note" style="margin-top: 40px;">
+        <strong>How to write numbers in texts:</strong>
+        <ul style="margin: 10px 0;">
+            <li>Numbers <strong>up to 12</strong> are written as words in texts</li>
+            <li>Numbers <strong>above 12</strong> are written as digits</li>
+            <li>Example: "Ich habe <strong>drei</strong> Äpfel" but "Das Jahr hat <strong>365</strong> Tage"</li>
+        </ul>
+    </div>
+
+</body>
+</html>

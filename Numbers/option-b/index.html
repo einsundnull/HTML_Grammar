@@ -83,6 +83,26 @@
 
         /* Color themes for each card */
         .numbers .card-icon { background-color: #9b59b6; }
+        .overview .card-icon { background-color: #3498db; }
+
+        /* Highlighted full-width card */
+        .card[style*="grid-column"] {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            border: 3px solid #5dade2;
+        }
+        .card[style*="grid-column"] .card-title {
+            color: white;
+        }
+        .card[style*="grid-column"] .card-description {
+            color: rgba(255,255,255,0.95);
+        }
+        .card[style*="grid-column"] .card-content-list {
+            color: rgba(255,255,255,0.9);
+        }
+        .card[style*="grid-column"] .card-content-list li {
+            color: rgba(255,255,255,0.85);
+        }
 
         .footer {
             text-align: center;
@@ -152,6 +172,32 @@
         <p class="subtitle">Combined Organization - Option B</p>
 
         <div class="cards-grid">
+            <a href="../numbers-overview.html" class="card overview" style="grid-column: 1 / -1;">
+                <div class="card-icon">📚</div>
+                <div class="card-title">⭐ Complete Overview - All Numbers at a Glance</div>
+                <div class="card-description">
+                    <strong>NEW!</strong> Comprehensive reference guide covering cardinal numbers, ordinal numbers, and fractions all on one page. Perfect for quick lookups and printing!
+                </div>
+                <ul class="card-content-list">
+                    <li><strong>Cardinal Numbers:</strong> Basic counting from 0 to 1000</li>
+                    <li><strong>Ordinal Numbers:</strong> Formation rules with declension endings</li>
+                    <li><strong>Fractions:</strong> Complete guide with special forms</li>
+                </ul>
+            </a>
+
+            <a href="../cardinal-numbers.html" class="card numbers">
+                <div class="card-icon">🔢</div>
+                <div class="card-title">Cardinal Numbers</div>
+                <div class="card-description">
+                    Complete reference of all cardinal numbers from 0 to 1,000,000+. Every number from 0-99 shown in detail, plus hundreds, thousands, and millions.
+                </div>
+                <ul class="card-content-list">
+                    <li><strong>Basic Numbers:</strong> 0-19 with special forms</li>
+                    <li><strong>Complete Series:</strong> All numbers 20-99</li>
+                    <li><strong>Larger Numbers:</strong> Hundreds, thousands, millions</li>
+                </ul>
+            </a>
+
             <a href="numbers.html" class="card numbers">
                 <div class="card-icon">🔢</div>
                 <div class="card-title">Numbers</div>
