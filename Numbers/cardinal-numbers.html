@@ -166,18 +166,19 @@
                 padding: 5px;
                 margin: 10px auto 5px auto;
                 page-break-after: avoid !important;
+       
             }
 
             h3 {
                 font-size: 12px;
                 padding: 4px;
                 margin: 8px auto 3px auto;
-                page-break-after: avoid !important;
+                /*page-break-after: avoid !important;*/
             }
 
             table {
-                page-break-inside: avoid;
-                page-break-before: avoid;
+                page-break-inside: avoid !important;
+                page-break-before: avoid !important;
                 font-size: 10px;
                 margin: 5px auto;
             }
@@ -191,7 +192,8 @@
             }
 
             .note, .info-box {
-                page-break-inside: avoid;
+                page-break-inside: avoid !important;
+                page-break-after: avoid !important;
                 font-size: 10px;
                 margin: 5px auto;
                 padding: 5px;
@@ -215,6 +217,7 @@
 
     <button class="print-btn" onclick="window.print()">&#128424; Print</button>
 
+    <!--
     <div class="info-box">
         <strong>Cardinal Numbers (Grundzahlen)</strong> are used for counting and expressing quantities: eins, zwei, drei, vier...
         <br><br>
@@ -226,6 +229,7 @@
             <li>Multiples of ten ending in -zig: <strong>dreißig</strong> (30), but <strong>zwanzig</strong> (20)</li>
         </ul>
     </div>
+    -->
 
     <!-- BASIC NUMBERS 0-19 -->
     <h2>Basic Numbers: 0-19</h2>
