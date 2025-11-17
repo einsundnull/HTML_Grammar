@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directions Table with Translations - Richtungen mit Übersetzungen</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .nav {
+            background-color: #2c3e50;
+            padding: 15px;
+            margin: 0 -20px 20px -20px;
+            text-align: center;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            font-size: 0.9em;
+        }
+        .nav a:hover {
+            background-color: #34495e;
+        }
+        .nav a.active {
+            background-color: #e67e22;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-top: 20px;
+        }
+        h2 {
+            background-color: #e67e22;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin-top: 30px;
+            width: 100%;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+            box-sizing: border-box;
+        }
+        table {
+            width: 100%;
+            max-width: 1400px;
+            table-layout: auto;
+            border-collapse: collapse;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #e67e22;
+            color: white;
+            font-weight: bold;
+        }
+        .german {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .english {
+            color: #555;
+            font-style: italic;
+        }
+
+        /* Compact Mode */
+        body.compact-mode table {
+            margin: 10px auto;
+        }
+        body.compact-mode th, body.compact-mode td {
+            padding: 6px 8px;
+            font-size: 0.9em;
+        }
+        body.compact-mode h1 {
+            font-size: 1.8em;
+            margin-top: 10px;
+        }
+        body.compact-mode h2 {
+            padding: 6px;
+            margin-top: 15px;
+            font-size: 1.2em;
+        }
+
+        /* Extra Compact Mode */
+        body.extra-compact-mode table {
+            margin: 5px auto;
+        }
+        body.extra-compact-mode th, body.extra-compact-mode td {
+            padding: 3px 5px;
+            font-size: 0.85em;
+        }
+        body.extra-compact-mode h1 {
+            font-size: 1.5em;
+            margin-top: 5px;
+        }
+        body.extra-compact-mode h2 {
+            padding: 4px;
+            margin-top: 10px;
+            font-size: 1em;
+        }
+
+        /* Book/Newspaper Style - Black & White */
+        body.newspaper-style {
+            background-color: #ffffff;
+        }
+        body.newspaper-style h1 {
+            color: #000000;
+            border-bottom: 3px solid #000000;
+            padding-bottom: 10px;
+        }
+        body.newspaper-style h2 {
+            background-color: #e67e22;
+            color: #000000;
+            border-left: 5px solid #000000;
+        }
+        body.newspaper-style th {
+            background-color: #e67e22;
+            color: #000000;
+            border: 1px solid #000000;
+        }
+        body.newspaper-style td {
+            border: 1px solid #666666;
+        }
+
+        /* Print Layout */
+        @media print {
+            body {
+                background: white;
+            }
+            .nav, .print-btn, .global-nav, div[style*="text-align: center"] a {
+                display: none !important;
+            }
+            table {
+                page-break-inside: avoid !important;
+                font-size: 10pt;
+            }
+            tr {
+                page-break-inside: avoid !important;
+            }
+            h1, h2 {
+                page-break-after: avoid !important;
+            }
+        }
+
+        /* Global Navigation Header */
+        .global-nav {
+            background-color: #1a252f;
+            padding: 10px 0;
+            margin: -20px -20px 0 -20px;
+            text-align: center;
+            border-bottom: 3px solid #34495e;
+        }
+        .global-nav a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 6px 12px;
+            border-radius: 3px;
+            transition: all 0.3s;
+            font-size: 0.95em;
+            font-weight: 500;
+        }
+        .global-nav a:hover {
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+        }
+        .global-nav .home-link {
+            font-weight: bold;
+            color: #3498db;
+        }
+        .global-nav .home-link:hover {
+            color: #5dade2;
+        }
+
+        /* Print Button */
+        .print-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+            font-weight: 500;
+            display: block;
+            margin: 15px auto;
+        }
+        .print-btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body class="extra-compact-mode">
+    <div class="global-nav">
+        <a href="../index.html" class="home-link">&#127968; Home</a>
+        <a href="../Article/option-a/index.html">&#128221; Articles</a>
+        <a href="../Article/option-b/pronouns.html">&#127968; Pronouns</a>
+        <a href="../Prepositions/option-a/index.html">&#128506;&#65039; Prepositions</a>
+        <a href="../Numbers/option-a/index.html">&#128290; Numbers</a>
+        <a href="../Directions/option-a/index.html">&#129517; Directions</a>
+        <a href="../Time/option-a/index.html">&#9200; Time</a>
+    </div>
+
+    <h1>Directions with Translations - Richtungen mit Übersetzungen</h1>
+
+    <div style="text-align: center; margin: 20px 0;">
+        <a href="option-a/index.html" style="display: inline-block; background-color: #e67e22; color: white; padding: 10px 20px; margin: 5px; border-radius: 5px; text-decoration: none; font-weight: 500;">← Back to Overview</a>
+        <a href="DirectionsTable.html" style="display: inline-block; background-color: #3498db; color: white; padding: 10px 20px; margin: 5px; border-radius: 5px; text-decoration: none; font-weight: 500;">📋 German Only Version</a>
+    </div>
+
+    <button class="print-btn" onclick="window.print()">&#128424; Print Table with Translations</button>
+
+    <!-- PRONOUNS SECTION -->
+    <h2>Lebende Dinge - Personen/Pronomen / Living Beings – People/Pronouns</h2>
+    <table>
+        <tr>
+            <th colspan="2">wohin / where to</th>
+            <th colspan="2">wo / where</th>
+            <th colspan="2">woher / where from</th>
+        </tr>
+        <tr>
+            <td class="german">zu mir</td>
+            <td class="english">to me</td>
+            <td class="german">bei mir</td>
+            <td class="english">at me</td>
+            <td class="german">von mir</td>
+            <td class="english">from me</td>
+        </tr>
+        <tr>
+            <td class="german">zu dir</td>
+            <td class="english">to you</td>
+            <td class="german">bei dir</td>
+            <td class="english">at you</td>
+            <td class="german">von dir</td>
+            <td class="english">from you</td>
+        </tr>
+        <tr>
+            <td class="german">zu ihm</td>
+            <td class="english">to him</td>
+            <td class="german">bei ihm</td>
+            <td class="english">at him</td>
+            <td class="german">von ihm</td>
+            <td class="english">from him</td>
+        </tr>
+        <tr>
+            <td class="german">zu ihr</td>
+            <td class="english">to her</td>
+            <td class="german">bei ihr</td>
+            <td class="english">at her</td>
+            <td class="german">von ihr</td>
+            <td class="english">from her</td>
+        </tr>
+        <tr>
+            <td class="german">zu uns</td>
+            <td class="english">to us</td>
+            <td class="german">bei uns</td>
+            <td class="english">at us</td>
+            <td class="german">von uns</td>
+            <td class="english">from us</td>
+        </tr>
+        <tr>
+            <td class="german">zu euch</td>
+            <td class="english">to you (pl.)</td>
+            <td class="german">bei euch</td>
+            <td class="english">at you (pl.)</td>
+            <td class="german">von euch</td>
+            <td class="english">from you (pl.)</td>
+        </tr>
+        <tr>
+            <td class="german">zu ihnen</td>
+            <td class="english">to them</td>
+            <td class="german">bei ihnen</td>
+            <td class="english">at them</td>
+            <td class="german">von ihnen</td>
+            <td class="english">from them</td>
+        </tr>
+        <tr>
+            <td class="german">zu Thomas</td>
+            <td class="english">to Thomas</td>
+            <td class="german">bei Thomas</td>
+            <td class="english">at Thomas</td>
+            <td class="german">von Thomas</td>
+            <td class="english">from Thomas</td>
+        </tr>
+        <tr>
+            <td class="german">zu Susi</td>
+            <td class="english">to Susi</td>
+            <td class="german">bei Susi</td>
+            <td class="english">at Susi</td>
+            <td class="german">von Susi</td>
+            <td class="english">from Susi</td>
+        </tr>
+    </table>
+
+    <!-- CITIES AND COUNTRIES SECTION -->
+    <h2>Städte, Orte, Länder / Cities, Places, Countries</h2>
+    <table>
+        <tr>
+            <th colspan="2">wohin / where to</th>
+            <th colspan="2">wo / where</th>
+            <th colspan="2">woher / where from</th>
+        </tr>
+        <tr>
+            <td class="german">nach Berlin</td>
+            <td class="english">to Berlin</td>
+            <td class="german">in Berlin</td>
+            <td class="english">in Berlin</td>
+            <td class="german">aus Berlin</td>
+            <td class="english">from Berlin</td>
+        </tr>
+        <tr>
+            <td class="german">nach Paris</td>
+            <td class="english">to Paris</td>
+            <td class="german">in Paris</td>
+            <td class="english">in Paris</td>
+            <td class="german">aus Paris</td>
+            <td class="english">from Paris</td>
+        </tr>
+        <tr>
+            <td class="german">nach London</td>
+            <td class="english">to London</td>
+            <td class="german">in London</td>
+            <td class="english">in London</td>
+            <td class="german">aus London</td>
+            <td class="english">from London</td>
+        </tr>
+        <tr>
+            <td class="german">nach Deutschland</td>
+            <td class="english">to Germany</td>
+            <td class="german">in Deutschland</td>
+            <td class="english">in Germany</td>
+            <td class="german">aus Deutschland</td>
+            <td class="english">from Germany</td>
+        </tr>
+        <tr>
+            <td class="german">nach Frankreich</td>
+            <td class="english">to France</td>
+            <td class="german">in Frankreich</td>
+            <td class="english">in France</td>
+            <td class="german">aus Frankreich</td>
+            <td class="english">from France</td>
+        </tr>
+        <tr>
+            <td class="german">nach England</td>
+            <td class="english">to England</td>
+            <td class="german">in England</td>
+            <td class="english">in England</td>
+            <td class="german">aus England</td>
+            <td class="english">from England</td>
+        </tr>
+        <tr>
+            <td class="german">in die Schweiz</td>
+            <td class="english">to Switzerland</td>
+            <td class="german">in der Schweiz</td>
+            <td class="english">in Switzerland</td>
+            <td class="german">aus der Schweiz</td>
+            <td class="english">from Switzerland</td>
+        </tr>
+        <tr>
+            <td class="german">in den Iran</td>
+            <td class="english">to Iran</td>
+            <td class="german">im Iran</td>
+            <td class="english">in Iran</td>
+            <td class="german">aus dem Iran</td>
+            <td class="english">from Iran</td>
+        </tr>
+        <tr>
+            <td class="german">aufs Dorf</td>
+            <td class="english">to the village</td>
+            <td class="german">im Dorf</td>
+            <td class="english">in the village</td>
+            <td class="german">vom Dorf</td>
+            <td class="english">from the village</td>
+        </tr>
+        <tr>
+            <td class="german">in die Stadt</td>
+            <td class="english">to the city</td>
+            <td class="german">in der Stadt</td>
+            <td class="english">in the city</td>
+            <td class="german">aus der Stadt</td>
+            <td class="english">from the city</td>
+        </tr>
+    </table>
+
+    <!-- PERSONS SINGULAR SECTION -->
+    <h2>Lebende Dinge - Personen/Singular / Living Beings – People/Singular</h2>
+    <table>
+        <tr>
+            <th colspan="2">wohin / where to</th>
+            <th colspan="2">wo / where</th>
+            <th colspan="2">woher / where from</th>
+        </tr>
+        <tr>
+            <td class="german">zu einem Freund</td>
+            <td class="english">to a friend</td>
+            <td class="german">bei einem Freund</td>
+            <td class="english">at/with a friend</td>
+            <td class="german">von einem Freund</td>
+            <td class="english">from a friend</td>
+        </tr>
+        <tr>
+            <td class="german">zu einer Freundin</td>
+            <td class="english">to a friend ♀</td>
+            <td class="german">bei einer Freundin</td>
+            <td class="english">at/with a friend ♀</td>
+            <td class="german">von einer Freundin</td>
+            <td class="english">from a friend ♀</td>
+        </tr>
+        <tr>
+            <td class="german">zu dem Mann</td>
+            <td class="english">to the man</td>
+            <td class="german">bei dem Mann</td>
+            <td class="english">at/with the man</td>
+            <td class="german">von dem Mann</td>
+            <td class="english">from the man</td>
+        </tr>
+        <tr>
+            <td class="german">zu der Frau</td>
+            <td class="english">to the woman</td>
+            <td class="german">bei der Frau</td>
+            <td class="english">at/with the woman</td>
+            <td class="german">von der Frau</td>
+            <td class="english">from the woman</td>
+        </tr>
+        <tr>
+            <td class="german">zu der Gruppe</td>
+            <td class="english">to the group</td>
+            <td class="german">bei der Gruppe</td>
+            <td class="english">at/with the group</td>
+            <td class="german">von der Gruppe</td>
+            <td class="english">from the group</td>
+        </tr>
+        <tr>
+            <td class="german">zu der Person</td>
+            <td class="english">to the person</td>
+            <td class="german">bei der Person</td>
+            <td class="english">at/with the person</td>
+            <td class="german">von der Person</td>
+            <td class="english">from the person</td>
+        </tr>
+        <tr>
+            <td class="german">zu dem Menschen</td>
+            <td class="english">to the human</td>
+            <td class="german">bei dem Menschen</td>
+            <td class="english">at/with the human</td>
+            <td class="german">von dem Menschen</td>
+            <td class="english">from the human</td>
+        </tr>
+    </table>
+
+    <!-- PERSONS PLURAL SECTION -->
+    <h2>Lebende Dinge - Personen/Plural / Living Beings – People/Plural</h2>
+    <table>
+        <tr>
+            <th colspan="2">wohin / where to</th>
+            <th colspan="2">wo / where</th>
+            <th colspan="2">woher / where from</th>
+        </tr>
+        <tr>
+            <td class="german">zu Freunden</td>
+            <td class="english">to friends</td>
+            <td class="german">bei Freunden</td>
+            <td class="english">at/with friends</td>
+            <td class="german">von Freunden</td>
+            <td class="english">from friends</td>
+        </tr>
+        <tr>
+            <td class="german">zu Freundinnen</td>
+            <td class="english">to friends ♀</td>
+            <td class="german">bei Freundinnen</td>
+            <td class="english">at/with friends ♀</td>
+            <td class="german">von Freundinnen</td>
+            <td class="english">from friends ♀</td>
+        </tr>
+        <tr>
+            <td class="german">zu den Männern</td>
+            <td class="english">to the men</td>
+            <td class="german">bei den Männern</td>
+            <td class="english">at/with the men</td>
+            <td class="german">von den Männern</td>
+            <td class="english">from the men</td>
+        </tr>
+        <tr>
+            <td class="german">zu den Frauen</td>
+            <td class="english">to the women</td>
+            <td class="german">bei den Frauen</td>
+            <td class="english">at/with the women</td>
+            <td class="german">von den Frauen</td>
+            <td class="english">from the women</td>
+        </tr>
+        <tr>
+            <td class="german">zu den Gruppen</td>
+            <td class="english">to the groups</td>
+            <td class="german">bei den Gruppen</td>
+            <td class="english">at/with the groups</td>
+            <td class="german">von den Gruppen</td>
+            <td class="english">from the groups</td>
+        </tr>
+        <tr>
+            <td class="german">zu den Personen</td>
+            <td class="english">to the persons</td>
+            <td class="german">bei den Personen</td>
+            <td class="english">at/with the persons</td>
+            <td class="german">von den Personen</td>
+            <td class="english">from the persons</td>
+        </tr>
+        <tr>
+            <td class="german">zu den Menschen</td>
+            <td class="english">to the people</td>
+            <td class="german">bei den Menschen</td>
+            <td class="english">at/with the people</td>
+            <td class="german">von den Menschen</td>
+            <td class="english">from the people</td>
+        </tr>
+        <tr>
+            <td class="german">zu den Leuten</td>
+            <td class="english">to the folks</td>
+            <td class="german">bei den Leuten</td>
+            <td class="english">at/with the folks</td>
+            <td class="german">von den Leuten</td>
+            <td class="english">from the folks</td>
+        </tr>
+    </table>
+
+    <!-- ANIMALS SINGULAR SECTION -->
+    <h2>Lebende Dinge - Tiere/Singular / Living Beings – Animals/Singular</h2>
+    <table>
+        <tr>
+            <th colspan="2">wohin / where to</th>
+            <th colspan="2">wo / where</th>
+            <th colspan="2">woher / where from</th>
+        </tr>
+        <tr>
+            <td class="german">zu einem/dem Hund</td>
+            <td class="english">to a/the dog</td>
+            <td class="german">bei einem/dem Hund</td>
+            <td class="english">at/with a/the dog</td>
+            <td class="german">von einem/dem Hund</td>
+            <td class="english">from a/the dog</td>
+        </tr>
+        <tr>
+            <td class="german">zu einer/der Katze</td>
+            <td class="english">to a/the cat</td>
+            <td class="german">bei einer/der Katze</td>
+            <td class="english">at/with a/the cat</td>
+            <td class="german">von einer/der Katze</td>
+            <td class="english">from a/the cat</td>
+        </tr>
+        <tr>
+            <td class="german">zu einem/dem Pferd</td>
+            <td class="english">to a/the horse</td>
+            <td class="german">bei einem/dem Pferd</td>
+            <td class="english">at/with a/the horse</td>
+            <td class="german">von einem/dem Pferd</td>
+            <td class="english">from a/the horse</td>
+        </tr>
+        <tr>
+            <td class="german">zu einer/der Kuh</td>
+            <td class="english">to a/the cow</td>
+            <td class="german">bei einer/der Kuh</td>
+            <td class="english">at/with a/the cow</td>
+            <td class="german">von einer/der Kuh</td>
+            <td class="english">from a/the cow</td>
+        </tr>
+        <tr>
+            <td class="german">zu einem/dem Hamster</td>
+            <td class="english">to a/the hamster</td>
+            <td class="german">bei einem/dem Hamster</td>
+            <td class="english">at/with a/the hamster</td>
+            <td class="german">von einem/dem Hamster</td>
+            <td class="english">from a/the hamster</td>
+        </tr>
+        <tr>
+            <td class="german">zu einem/dem Hasen</td>
+            <td class="english">to a/the rabbit</td>
+            <td class="german">bei einem/dem Hasen</td>
+            <td class="english">at/with a/the rabbit</td>
+            <td class="german">von einem/dem Hasen</td>
+            <td class="english">from a/the rabbit</td>
+        </tr>
+        <tr>
+            <td class="german">zu einem/dem Käfer</td>
+            <td class="english">to a/the beetle</td>
+            <td class="german">bei einem/dem Käfer</td>
+            <td class="english">at/with a/the beetle</td>
+            <td class="german">von einem/dem Käfer</td>
+            <td class="english">from a/the beetle</td>
+        </tr>
+        <tr>
+            <td class="german">zu einer/der Fliege</td>
+            <td class="english">to a/the fly</td>
+            <td class="german">bei einer/der Fliege</td>
+            <td class="english">at/with a/the fly</td>
+            <td class="german">von einer/der Fliege</td>
+            <td class="english">from a/the fly</td>
+        </tr>
+        <tr>
+            <td class="german">zu einem/dem Wurm</td>
+            <td class="english">to a/the worm</td>
+            <td class="german">bei einem/dem Wurm</td>
+            <td class="english">at/with a/the worm</td>
+            <td class="german">von einem/dem Wurm</td>
+            <td class="english">from a/the worm</td>
+        </tr>
+    </table>
+
+    <!-- ANIMALS PLURAL SECTION -->
+    <h2>Lebende Dinge - Tiere/Plural / Living Beings – Animals/Plural</h2>
+    <table>
+        <tr>
+            <th colspan="2">wohin / where to</th>
+            <th colspan="2">wo / where</th>
+            <th colspan="2">woher / where from</th>
+        </tr>
+        <tr>
+            <td class="german">zu den Hunden</td>
+            <td class="english">to the dogs</td>
+            <td class="german">bei den Hunden</td>
+            <td class="english">at/with the dogs</td>
+            <td class="german">von den Hunden</td>
+            <td class="english">from the dogs</td>
+        </tr>
+        <tr>
+            <td class="german">zu den Katzen</td>
+            <td class="english">to the cats</td>
+            <td class="german">bei den Katzen</td>
+            <td class="english">at/with the cats</td>
+            <td class="german">von den Katzen</td>
+            <td class="english">from the cats</td>
+        </tr>
+        <tr>
+            <td class="german">zu den Pferden</td>
+            <td class="english">to the horses</td>
+            <td class="german">bei den Pferden</td>
+            <td class="english">at/with the horses</td>
+            <td class="german">von den Pferden</td>
+            <td class="english">from the horses</td>
+        </tr>
+        <tr>
+            <td class="german">zu den Kühen</td>
+            <td class="english">to the cows</td>
+            <td class="german">bei den Kühen</td>
+            <td class="english">at/with the cows</td>
+            <td class="german">von den Kühen</td>
+            <td class="english">from the cows</td>
+        </tr>
+        <tr>
+            <td class="german">zu den Hamstern</td>
+            <td class="english">to the hamsters</td>
+            <td class="german">bei den Hamstern</td>
+            <td class="english">at/with the hamsters</td>
+            <td class="german">von den Hamstern</td>
+            <td class="english">from the hamsters</td>
+        </tr>
+        <tr>
+            <td class="german">zu den Hasen</td>
+            <td class="english">to the rabbits</td>
+            <td class="german">bei den Hasen</td>
+            <td class="english">at/with the rabbits</td>
+            <td class="german">von den Hasen</td>
+            <td class="english">from the rabbits</td>
+        </tr>
+        <tr>
+            <td class="german">zu den Käfern</td>
+            <td class="english">to the beetles</td>
+            <td class="german">bei den Käfern</td>
+            <td class="english">at/with the beetles</td>
+            <td class="german">von den Käfern</td>
+            <td class="english">from the beetles</td>
+        </tr>
+        <tr>
+            <td class="german">zu den Fliegen</td>
+            <td class="english">to the flies</td>
+            <td class="german">bei den Fliegen</td>
+            <td class="english">at/with the flies</td>
+            <td class="german">von den Fliegen</td>
+            <td class="english">from the flies</td>
+        </tr>
+        <tr>
+            <td class="german">zu den Würmern</td>
+            <td class="english">to the worms</td>
+            <td class="german">bei den Würmern</td>
+            <td class="english">at/with the worms</td>
+            <td class="german">von den Würmern</td>
+            <td class="english">from the worms</td>
+        </tr>
+    </table>
+
+    <!-- PLANTS SINGULAR SECTION -->
+    <h2>Lebende Dinge - Pflanzen/Singular / Living Beings – Plants/Singular</h2>
+    <table>
+        <tr>
+            <th colspan="2">wohin / where to</th>
+            <th colspan="2">wo / where</th>
+            <th colspan="2">woher / where from</th>
+        </tr>
+        <tr>
+            <td class="german">zu einer/der Wiese</td>
+            <td class="english">to a/the meadow</td>
+            <td class="german">bei einer/der Wiese</td>
+            <td class="english">at/with a/the meadow</td>
+            <td class="german">von einer/der Wiese</td>
+            <td class="english">from a/the meadow</td>
+        </tr>
+        <tr>
+            <td class="german">zu einem/dem Baum</td>
+            <td class="english">to a/the tree</td>
+            <td class="german">bei einem/dem Baum</td>
+            <td class="english">at/with a/the tree</td>
+            <td class="german">von einem/dem Baum</td>
+            <td class="english">from a/the tree</td>
+        </tr>
+        <tr>
+            <td class="german">zu einer/der Blume</td>
+            <td class="english">to a/the flower</td>
+            <td class="german">bei einer/der Blume</td>
+            <td class="english">at/with a/the flower</td>
+            <td class="german">von einer/der Blume</td>
+            <td class="english">from a/the flower</td>
+        </tr>
+        <tr>
+            <td class="german">zu einem/dem Busch</td>
+            <td class="english">to a/the bush</td>
+            <td class="german">bei einem/dem Busch</td>
+            <td class="english">at/with a/the bush</td>
+            <td class="german">von einem/dem Busch</td>
+            <td class="english">from a/the bush</td>
+        </tr>
+        <tr>
+            <td class="german">zu einer/der Hecke</td>
+            <td class="english">to a/the hedge</td>
+            <td class="german">bei einer/der Hecke</td>
+            <td class="english">at/with a/the hedge</td>
+            <td class="german">von einer/der Hecke</td>
+            <td class="english">from a/the hedge</td>
+        </tr>
+    </table>
+
+    <!-- PLANTS PLURAL SECTION -->
+    <h2>Lebende Dinge - Pflanzen/Plural / Living Beings – Plants/Plural</h2>
+    <table>
+        <tr>
+            <th colspan="2">wohin / where to</th>
+            <th colspan="2">wo / where</th>
+            <th colspan="2">woher / where from</th>
+        </tr>
+        <tr>
+            <td class="german">zu den Wiesen</td>
+            <td class="english">to the meadows</td>
+            <td class="german">bei den Wiesen</td>
+            <td class="english">at/with the meadows</td>
+            <td class="german">von den Wiesen</td>
+            <td class="english">from the meadows</td>
+        </tr>
+        <tr>
+            <td class="german">zu den Bäumen</td>
+            <td class="english">to the trees</td>
+            <td class="german">bei den Bäumen</td>
+            <td class="english">at/with the trees</td>
+            <td class="german">von den Bäumen</td>
+            <td class="english">from the trees</td>
+        </tr>
+        <tr>
+            <td class="german">zu den Blumen</td>
+            <td class="english">to the flowers</td>
+            <td class="german">bei den Blumen</td>
+            <td class="english">at/with the flowers</td>
+            <td class="german">von den Blumen</td>
+            <td class="english">from the flowers</td>
+        </tr>
+        <tr>
+            <td class="german">zu den Büschen</td>
+            <td class="english">to the bushes</td>
+            <td class="german">bei den Büschen</td>
+            <td class="english">at/with the bushes</td>
+            <td class="german">von den Büschen</td>
+            <td class="english">from the bushes</td>
+        </tr>
+        <tr>
+            <td class="german">zu den Hecken</td>
+            <td class="english">to the hedges</td>
+            <td class="german">bei den Hecken</td>
+            <td class="english">at/with the hedges</td>
+            <td class="german">von den Hecken</td>
+            <td class="english">from the hedges</td>
+        </tr>
+    </table>
+
+    <!-- GENERAL COLLOQUIAL SECTION -->
+    <h2>Allgemein (verkürzte Umgangssprache) / General (Colloquial)</h2>
+    <table>
+        <tr>
+            <th colspan="2">wohin / where to</th>
+            <th colspan="2">wo / where</th>
+            <th colspan="2">woher / where from</th>
+        </tr>
+        <tr>
+            <td class="german">nach Hause</td>
+            <td class="english">home (going)</td>
+            <td class="german">Zuhause</td>
+            <td class="english">at home</td>
+            <td class="german">von Zuhause</td>
+            <td class="english">from home</td>
+        </tr>
+        <tr>
+            <td class="german">zur Arbeit</td>
+            <td class="english">to work</td>
+            <td class="german">bei der Arbeit</td>
+            <td class="english">at work</td>
+            <td class="german">von der Arbeit</td>
+            <td class="english">from work</td>
+        </tr>
+        <tr>
+            <td class="german">zum Meer</td>
+            <td class="english">to the sea</td>
+            <td class="german">am Meer</td>
+            <td class="english">at/by the sea</td>
+            <td class="german">vom Meer</td>
+            <td class="english">from the sea</td>
+        </tr>
+        <tr>
+            <td class="german">zum See</td>
+            <td class="english">to the lake</td>
+            <td class="german">am See</td>
+            <td class="english">at/by the lake</td>
+            <td class="german">vom See</td>
+            <td class="english">from the lake</td>
+        </tr>
+        <tr>
+            <td class="german">zum Teich</td>
+            <td class="english">to the pond</td>
+            <td class="german">am Teich</td>
+            <td class="english">at/by the pond</td>
+            <td class="german">vom Teich</td>
+            <td class="english">from the pond</td>
+        </tr>
+        <tr>
+            <td class="german">zum Fluss</td>
+            <td class="english">to the river</td>
+            <td class="german">am Fluss</td>
+            <td class="english">at/by the river</td>
+            <td class="german">vom Fluss</td>
+            <td class="english">from the river</td>
+        </tr>
+        <tr>
+            <td class="german">zum Wasser</td>
+            <td class="english">to the water</td>
+            <td class="german">am Wasser</td>
+            <td class="english">at/by the water</td>
+            <td class="german">vom Wasser</td>
+            <td class="english">from the water</td>
+        </tr>
+        <tr>
+            <td class="german">zum Park</td>
+            <td class="english">to the park</td>
+            <td class="german">im Park</td>
+            <td class="english">in the park</td>
+            <td class="german">vom Park</td>
+            <td class="english">from the park</td>
+        </tr>
+        <tr>
+            <td class="german">zur Natur</td>
+            <td class="english">to nature</td>
+            <td class="german">in der Natur</td>
+            <td class="english">in nature</td>
+            <td class="german">von der Natur</td>
+            <td class="english">from nature</td>
+        </tr>
+        <tr>
+            <td class="german">zum Berg</td>
+            <td class="english">to the mountain</td>
+            <td class="german">auf dem Berg</td>
+            <td class="english">on the mountain</td>
+            <td class="german">vom Berg</td>
+            <td class="english">from the mountain</td>
+        </tr>
+        <tr>
+            <td class="german">zum Garten</td>
+            <td class="english">to the garden</td>
+            <td class="german">im Garten</td>
+            <td class="english">in the garden</td>
+            <td class="german">vom Garten</td>
+            <td class="english">from the garden</td>
+        </tr>
+        <tr>
+            <td class="german">zum Wald</td>
+            <td class="english">to the forest</td>
+            <td class="german">im Wald</td>
+            <td class="english">in the forest</td>
+            <td class="german">vom Wald</td>
+            <td class="english">from the forest</td>
+        </tr>
+        <tr>
+            <td class="german">zum Markt</td>
+            <td class="english">to the market</td>
+            <td class="german">auf dem Markt</td>
+            <td class="english">at the market</td>
+            <td class="german">vom Markt</td>
+            <td class="english">from the market</td>
+        </tr>
+        <tr>
+            <td class="german">zur Straße</td>
+            <td class="english">to the street</td>
+            <td class="german">auf der Straße</td>
+            <td class="english">on the street</td>
+            <td class="german">von der Straße</td>
+            <td class="english">from the street</td>
+        </tr>
+        <tr>
+            <td class="german">zu einer Party</td>
+            <td class="english">to a party</td>
+            <td class="german">auf einer Party</td>
+            <td class="english">at a party</td>
+            <td class="german">von einer Party</td>
+            <td class="english">from a party</td>
+        </tr>
+        <tr>
+            <td class="german">zu einer Versammlung</td>
+            <td class="english">to a meeting</td>
+            <td class="german">auf einer Versammlung</td>
+            <td class="english">at a meeting</td>
+            <td class="german">von einer Versammlung</td>
+            <td class="english">from a meeting</td>
+        </tr>
+        <tr>
+            <td class="german">zur Wiese</td>
+            <td class="english">to the meadow</td>
+            <td class="german">auf der Wiese</td>
+            <td class="english">on the meadow</td>
+            <td class="german">von der Wiese</td>
+            <td class="english">from the meadow</td>
+        </tr>
+        <tr>
+            <td class="german">zur Schule</td>
+            <td class="english">to school</td>
+            <td class="german">in der Schule</td>
+            <td class="english">at school</td>
+            <td class="german">von der Schule</td>
+            <td class="english">from school</td>
+        </tr>
+        <tr>
+            <td class="german">zur Uni</td>
+            <td class="english">to university</td>
+            <td class="german">an der Uni</td>
+            <td class="english">at university</td>
+            <td class="german">von der Uni</td>
+            <td class="english">from university</td>
+        </tr>
+        <tr>
+            <td class="german">zum Krankenhaus</td>
+            <td class="english">to the hospital</td>
+            <td class="german">im Krankenhaus</td>
+            <td class="english">in the hospital</td>
+            <td class="german">vom Krankenhaus</td>
+            <td class="english">from the hospital</td>
+        </tr>
+        <tr>
+            <td class="german">an die Kasse</td>
+            <td class="english">to the checkout</td>
+            <td class="german">an der Kasse</td>
+            <td class="english">at the checkout</td>
+            <td class="german">von der Kasse</td>
+            <td class="english">from the checkout</td>
+        </tr>
+        <tr>
+            <td class="german">an den Ausgang</td>
+            <td class="english">to the exit</td>
+            <td class="german">am Ausgang</td>
+            <td class="english">at the exit</td>
+            <td class="german">vom Ausgang</td>
+            <td class="english">from the exit</td>
+        </tr>
+        <tr>
+            <td class="german">an den Eingang</td>
+            <td class="english">to the entrance</td>
+            <td class="german">am Eingang</td>
+            <td class="english">at the entrance</td>
+            <td class="german">vom Eingang</td>
+            <td class="english">from the entrance</td>
+        </tr>
+    </table>
+
+    <!-- EXACT FORMS SECTION -->
+    <h2>Exakt (mit Präposition + Artikel) / Exact (with Preposition + Article)</h2>
+    <table>
+        <tr>
+            <th colspan="2">wohin / where to</th>
+            <th colspan="2">wo / where</th>
+            <th colspan="2">woher / where from</th>
+        </tr>
+        <tr>
+            <td class="german">an das / ans Meer</td>
+            <td class="english">to the sea</td>
+            <td class="german">an dem / am Meer</td>
+            <td class="english">at/by the sea</td>
+            <td class="german">von dem / vom Meer</td>
+            <td class="english">from the sea</td>
+        </tr>
+        <tr>
+            <td class="german">an den See</td>
+            <td class="english">to the lake</td>
+            <td class="german">an dem / am See</td>
+            <td class="english">at/by the lake</td>
+            <td class="german">von dem / vom See</td>
+            <td class="english">from the lake</td>
+        </tr>
+        <tr>
+            <td class="german">an den Teich</td>
+            <td class="english">to the pond</td>
+            <td class="german">an dem / am Teich</td>
+            <td class="english">at/by the pond</td>
+            <td class="german">von dem / vom Teich</td>
+            <td class="english">from the pond</td>
+        </tr>
+        <tr>
+            <td class="german">an den Fluss</td>
+            <td class="english">to the river</td>
+            <td class="german">an dem / am Fluss</td>
+            <td class="english">at/by the river</td>
+            <td class="german">von dem / vom Fluss</td>
+            <td class="english">from the river</td>
+        </tr>
+        <tr>
+            <td class="german">an das / ans Wasser</td>
+            <td class="english">to the water</td>
+            <td class="german">an dem / am Wasser</td>
+            <td class="english">at/by the water</td>
+            <td class="german">von dem / vom Wasser</td>
+            <td class="english">from the water</td>
+        </tr>
+        <tr>
+            <td class="german">in den Park</td>
+            <td class="english">to the park</td>
+            <td class="german">in dem / im Park</td>
+            <td class="english">in the park</td>
+            <td class="german">von dem / vom Park</td>
+            <td class="english">from the park</td>
+        </tr>
+        <tr>
+            <td class="german">in den Garten</td>
+            <td class="english">to the garden</td>
+            <td class="german">in dem / im Garten</td>
+            <td class="english">in the garden</td>
+            <td class="german">von dem / vom Garten</td>
+            <td class="english">from the garden</td>
+        </tr>
+        <tr>
+            <td class="german">in den Wald</td>
+            <td class="english">to the forest</td>
+            <td class="german">in dem / im Wald</td>
+            <td class="english">in the forest</td>
+            <td class="german">aus dem Wald</td>
+            <td class="english">from the forest</td>
+        </tr>
+        <tr>
+            <td class="german">in die Natur</td>
+            <td class="english">to nature</td>
+            <td class="german">in der Natur</td>
+            <td class="english">in nature</td>
+            <td class="german">aus der Natur</td>
+            <td class="english">from nature</td>
+        </tr>
+        <tr>
+            <td class="german">in die Berge</td>
+            <td class="english">to the mountains</td>
+            <td class="german">in den Bergen</td>
+            <td class="english">in the mountains</td>
+            <td class="german">aus den Bergen</td>
+            <td class="english">from the mountains</td>
+        </tr>
+        <tr>
+            <td class="german">auf den Markt</td>
+            <td class="english">to the market</td>
+            <td class="german">auf dem Markt</td>
+            <td class="english">at the market</td>
+            <td class="german">von dem / vom Markt</td>
+            <td class="english">from the market</td>
+        </tr>
+        <tr>
+            <td class="german">auf die Straße</td>
+            <td class="english">to the street</td>
+            <td class="german">auf der Straße</td>
+            <td class="english">on the street</td>
+            <td class="german">von der Straße</td>
+            <td class="english">from the street</td>
+        </tr>
+        <tr>
+            <td class="german">auf eine Party</td>
+            <td class="english">to a party</td>
+            <td class="german">auf einer Party</td>
+            <td class="english">at a party</td>
+            <td class="german">von einer Party</td>
+            <td class="english">from a party</td>
+        </tr>
+        <tr>
+            <td class="german">auf eine Versammlung</td>
+            <td class="english">to a meeting</td>
+            <td class="german">auf einer Versammlung</td>
+            <td class="english">at a meeting</td>
+            <td class="german">von einer Versammlung</td>
+            <td class="english">from a meeting</td>
+        </tr>
+        <tr>
+            <td class="german">auf die Wiese</td>
+            <td class="english">to the meadow</td>
+            <td class="german">auf der Wiese</td>
+            <td class="english">on the meadow</td>
+            <td class="german">von der Wiese</td>
+            <td class="english">from the meadow</td>
+        </tr>
+    </table>
+
+    <!-- ACTIVITIES SECTION -->
+    <h2>Tätigkeiten / Activities</h2>
+    <table>
+        <tr>
+            <th colspan="2">wohin / where to</th>
+            <th colspan="2">wo / where</th>
+            <th colspan="2">woher / where from</th>
+        </tr>
+        <tr>
+            <td class="german">zum Training</td>
+            <td class="english">to training</td>
+            <td class="german">beim Training</td>
+            <td class="english">at training</td>
+            <td class="german">vom Training</td>
+            <td class="english">from training</td>
+        </tr>
+        <tr>
+            <td class="german">zum Sport</td>
+            <td class="english">to sports</td>
+            <td class="german">beim Sport</td>
+            <td class="english">at sports</td>
+            <td class="german">vom Sport</td>
+            <td class="english">from sports</td>
+        </tr>
+        <tr>
+            <td class="german">zum Essen</td>
+            <td class="english">to eat</td>
+            <td class="german">beim Essen</td>
+            <td class="english">while eating</td>
+            <td class="german">vom Essen</td>
+            <td class="english">from eating</td>
+        </tr>
+        <tr>
+            <td class="german">zum Trinken</td>
+            <td class="english">to drink</td>
+            <td class="german">beim Trinken</td>
+            <td class="english">while drinking</td>
+            <td class="german">vom Trinken</td>
+            <td class="english">from drinking</td>
+        </tr>
+        <tr>
+            <td class="german">zum Tanzen</td>
+            <td class="english">to dance</td>
+            <td class="german">beim Tanzen</td>
+            <td class="english">while dancing</td>
+            <td class="german">vom Tanzen</td>
+            <td class="english">from dancing</td>
+        </tr>
+        <tr>
+            <td class="german">zum Schwimmen</td>
+            <td class="english">to swim</td>
+            <td class="german">beim Schwimmen</td>
+            <td class="english">while swimming</td>
+            <td class="german">vom Schwimmen</td>
+            <td class="english">from swimming</td>
+        </tr>
+        <tr>
+            <td class="german">zum Einkaufen</td>
+            <td class="english">to shop</td>
+            <td class="german">beim Einkaufen</td>
+            <td class="english">while shopping</td>
+            <td class="german">vom Einkaufen</td>
+            <td class="english">from shopping</td>
+        </tr>
+    </table>
+
+    <!-- DIRECTIONS BASIC SECTION -->
+    <h2>Richtungen / Directions</h2>
+    <table>
+        <tr>
+            <th colspan="2">wohin / where to</th>
+            <th colspan="2">wo / where</th>
+            <th colspan="2">woher / where from</th>
+        </tr>
+        <tr>
+            <td class="german">nach vorn(e)</td>
+            <td class="english">forward</td>
+            <td class="german">vorn</td>
+            <td class="english">in front</td>
+            <td class="german">von vorn</td>
+            <td class="english">from the front</td>
+        </tr>
+        <tr>
+            <td class="german">nach hinten</td>
+            <td class="english">backward</td>
+            <td class="german">hinten</td>
+            <td class="english">behind/back</td>
+            <td class="german">von hinten</td>
+            <td class="english">from behind</td>
+        </tr>
+        <tr>
+            <td class="german">nach links</td>
+            <td class="english">to the left</td>
+            <td class="german">links</td>
+            <td class="english">on the left</td>
+            <td class="german">von links</td>
+            <td class="english">from the left</td>
+        </tr>
+        <tr>
+            <td class="german">nach rechts</td>
+            <td class="english">to the right</td>
+            <td class="german">rechts</td>
+            <td class="english">on the right</td>
+            <td class="german">von rechts</td>
+            <td class="english">from the right</td>
+        </tr>
+        <tr>
+            <td class="german">zum Rand / an den Rand</td>
+            <td class="english">to the edge</td>
+            <td class="german">am Rand</td>
+            <td class="english">at the edge</td>
+            <td class="german">vom Rand</td>
+            <td class="english">from the edge</td>
+        </tr>
+        <tr>
+            <td class="german">zur Seite / an die Seite</td>
+            <td class="english">to the side</td>
+            <td class="german">an der Seite</td>
+            <td class="english">at the side</td>
+            <td class="german">von der Seite</td>
+            <td class="english">from the side</td>
+        </tr>
+        <tr>
+            <td class="german">zur Mitte</td>
+            <td class="english">to the middle</td>
+            <td class="german">in der Mitte</td>
+            <td class="english">in the middle</td>
+            <td class="german">aus der Mitte</td>
+            <td class="english">from the middle</td>
+        </tr>
+        <tr>
+            <td class="german">zum Ende</td>
+            <td class="english">to the end</td>
+            <td class="german">am Ende</td>
+            <td class="english">at the end</td>
+            <td class="german">vom Ende</td>
+            <td class="english">from the end</td>
+        </tr>
+        <tr>
+            <td class="german">zum Schluss</td>
+            <td class="english">to the end/finish</td>
+            <td class="german">am Schluss</td>
+            <td class="english">at the end</td>
+            <td class="german">vom Schluss</td>
+            <td class="english">from the end</td>
+        </tr>
+        <tr>
+            <td class="german">zum Anfang</td>
+            <td class="english">to the beginning</td>
+            <td class="german">am Anfang</td>
+            <td class="english">at the beginning</td>
+            <td class="german">vom Anfang</td>
+            <td class="english">from the beginning</td>
+        </tr>
+    </table>
+
+    <!-- DIRECTIONAL PREPOSITIONS SECTION -->
+    <h2>Richtungen (Präpositionen) / Directions (Prepositions)</h2>
+    <table>
+        <tr>
+            <th colspan="2">wohin / where to</th>
+            <th colspan="2">wo / where</th>
+            <th colspan="2">woher / where from</th>
+        </tr>
+        <tr>
+            <td class="german">über (übers)</td>
+            <td class="english">over/across</td>
+            <td class="german">über</td>
+            <td class="english">over/above</td>
+            <td class="german">über ... weg / von</td>
+            <td class="english">from over</td>
+        </tr>
+        <tr>
+            <td class="german">unter (unters)</td>
+            <td class="english">under</td>
+            <td class="german">unter</td>
+            <td class="english">under/below</td>
+            <td class="german">unter ... hervor</td>
+            <td class="english">from under</td>
+        </tr>
+        <tr>
+            <td class="german">zwischen</td>
+            <td class="english">between</td>
+            <td class="german">zwischen</td>
+            <td class="english">between</td>
+            <td class="german">zwischen ... weg</td>
+            <td class="english">from between</td>
+        </tr>
+        <tr>
+            <td class="german">an (ans)</td>
+            <td class="english">to/at</td>
+            <td class="german">an (am)</td>
+            <td class="english">at/on</td>
+            <td class="german">von (vom)</td>
+            <td class="english">from</td>
+        </tr>
+        <tr>
+            <td class="german">neben (nebens)</td>
+            <td class="english">next to</td>
+            <td class="german">neben</td>
+            <td class="english">next to/beside</td>
+            <td class="german">neben ... weg / von</td>
+            <td class="english">from beside</td>
+        </tr>
+        <tr>
+            <td class="german">in (ins)</td>
+            <td class="english">into</td>
+            <td class="german">in (im)</td>
+            <td class="english">in</td>
+            <td class="german">aus / aus ... heraus</td>
+            <td class="english">out of</td>
+        </tr>
+        <tr>
+            <td class="german">vor (vors)</td>
+            <td class="english">in front of</td>
+            <td class="german">vor (vorm)</td>
+            <td class="english">in front of</td>
+            <td class="german">vor ... weg</td>
+            <td class="english">from in front</td>
+        </tr>
+        <tr>
+            <td class="german">hinter (hinters)</td>
+            <td class="english">behind</td>
+            <td class="german">hinter (hinterm)</td>
+            <td class="english">behind</td>
+            <td class="german">hinter ... hervor</td>
+            <td class="english">from behind</td>
+        </tr>
+        <tr>
+            <td class="german">rein / nach drinnen</td>
+            <td class="english">inside/in</td>
+            <td class="german">drinnen / innerhalb</td>
+            <td class="english">inside</td>
+            <td class="german">von drinnen</td>
+            <td class="english">from inside</td>
+        </tr>
+        <tr>
+            <td class="german">raus / nach draußen</td>
+            <td class="english">outside/out</td>
+            <td class="german">draußen / außerhalb</td>
+            <td class="english">outside</td>
+            <td class="german">von draußen</td>
+            <td class="english">from outside</td>
+        </tr>
+    </table>
+
+    <div style="text-align: center; margin: 30px 0; padding: 20px; background-color: white; border-radius: 10px;">
+        <p><strong>Complete Directions Table with English Translations</strong></p>
+        <p>Alle Richtungsangaben im Deutschen mit englischen Übersetzungen</p>
+        <p>All German Directional Expressions with English Translations</p>
+    </div>
+
+</body>
+</html>
