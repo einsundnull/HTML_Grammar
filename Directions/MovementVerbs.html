@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verben der Bewegung - Movement Verbs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .nav {
+            background-color: #2c3e50;
+            padding: 15px;
+            margin: 0 -20px 20px -20px;
+            text-align: center;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            font-size: 0.9em;
+        }
+        .nav a:hover {
+            background-color: #34495e;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-top: 20px;
+        }
+        h2 {
+            background-color: #3498db;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin-top: 30px;
+            width: 100%;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+            box-sizing: border-box;
+        }
+        h3 {
+            background-color: #5dade2;
+            color: white;
+            padding: 8px;
+            text-align: center;
+            margin-top: 20px;
+            width: 100%;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+            box-sizing: border-box;
+        }
+        table {
+            width: 100%;
+            max-width: 1400px;
+            table-layout: auto;
+            border-collapse: collapse;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+        .verb {
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 1.1em;
+        }
+        .trennbar {
+            color: #e74c3c;
+            font-weight: bold;
+            font-size: 0.8em;
+            background-color: #ffebee;
+            padding: 2px 6px;
+            border-radius: 3px;
+            margin-left: 5px;
+        }
+        .unregelmaessig {
+            color: #9b59b6;
+            font-weight: bold;
+            font-size: 0.8em;
+            background-color: #f3e5f5;
+            padding: 2px 6px;
+            border-radius: 3px;
+            margin-left: 5px;
+        }
+        .beide {
+            color: #f39c12;
+            font-weight: bold;
+            font-size: 0.8em;
+            background-color: #fff3e0;
+            padding: 2px 6px;
+            border-radius: 3px;
+            margin-left: 5px;
+        }
+        .english {
+            color: #555;
+            font-style: italic;
+        }
+        .example {
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+        .perfekt {
+            color: #27ae60;
+            font-weight: 500;
+        }
+        .legend {
+            text-align: center;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            max-width: 1400px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .legend-item {
+            display: inline-block;
+            margin: 10px 20px;
+        }
+        .info-box {
+            background-color: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 20px auto;
+            max-width: 1400px;
+            border-radius: 5px;
+        }
+
+        /* Compact Mode */
+        body.compact-mode table {
+            margin: 10px auto;
+        }
+        body.compact-mode th, body.compact-mode td {
+            padding: 6px 8px;
+            font-size: 0.9em;
+        }
+        body.compact-mode h1 {
+            font-size: 1.8em;
+            margin-top: 10px;
+        }
+        body.compact-mode h2 {
+            padding: 6px;
+            margin-top: 15px;
+            font-size: 1.2em;
+        }
+
+        /* Extra Compact Mode */
+        body.extra-compact-mode table {
+            margin: 5px auto;
+        }
+        body.extra-compact-mode th, body.extra-compact-mode td {
+            padding: 3px 5px;
+            font-size: 0.85em;
+        }
+        body.extra-compact-mode h1 {
+            font-size: 1.5em;
+            margin-top: 5px;
+        }
+        body.extra-compact-mode h2, body.extra-compact-mode h3 {
+            padding: 4px;
+            margin-top: 10px;
+            font-size: 1em;
+        }
+
+        /* Print Layout */
+        @media print {
+            body {
+                background: white;
+            }
+            .nav, .print-btn, .global-nav, div[style*="text-align: center"] a {
+                display: none !important;
+            }
+            table {
+                page-break-inside: avoid !important;
+            }
+            tr {
+                page-break-inside: avoid !important;
+            }
+            h1, h2, h3 {
+                page-break-after: avoid !important;
+            }
+        }
+
+        /* Global Navigation Header */
+        .global-nav {
+            background-color: #1a252f;
+            padding: 10px 0;
+            margin: -20px -20px 0 -20px;
+            text-align: center;
+            border-bottom: 3px solid #34495e;
+        }
+        .global-nav a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 6px 12px;
+            border-radius: 3px;
+            transition: all 0.3s;
+            font-size: 0.95em;
+            font-weight: 500;
+        }
+        .global-nav a:hover {
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+        }
+        .global-nav .home-link {
+            font-weight: bold;
+            color: #3498db;
+        }
+        .global-nav .home-link:hover {
+            color: #5dade2;
+        }
+
+        /* Print Button */
+        .print-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+            font-weight: 500;
+            display: block;
+            margin: 15px auto;
+        }
+        .print-btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body class="extra-compact-mode">
+    <div class="global-nav">
+        <a href="../index.html" class="home-link">&#127968; Home</a>
+        <a href="../Article/option-a/index.html">&#128221; Articles</a>
+        <a href="../Article/option-b/pronouns.html">&#127968; Pronouns</a>
+        <a href="../Prepositions/option-a/index.html">&#128506;&#65039; Prepositions</a>
+        <a href="../Numbers/option-a/index.html">&#128290; Numbers</a>
+        <a href="../Directions/option-a/index.html">&#129517; Directions</a>
+        <a href="../Time/option-a/index.html">&#9200; Time</a>
+    </div>
+
+    <h1>Verben der Bewegung - Movement Verbs</h1>
+
+    <div style="text-align: center; margin: 20px 0;">
+        <a href="option-a/index.html" style="display: inline-block; background-color: #e67e22; color: white; padding: 10px 20px; margin: 5px; border-radius: 5px; text-decoration: none; font-weight: 500;">← Back to Directions Overview</a>
+    </div>
+
+    <button class="print-btn" onclick="window.print()">&#128424; Print Movement Verbs</button>
+
+    <div class="legend">
+        <h3 style="background-color: transparent; color: #2c3e50; margin-top: 0;">Legende / Legend</h3>
+        <div class="legend-item">
+            <span class="trennbar">TRENNBAR</span> = Separable verb (z.B. "aufstehen" → "Ich stehe auf")
+        </div>
+        <div class="legend-item">
+            <span class="unregelmaessig">UNREG.</span> = Irregular verb (strong verb with vowel change)
+        </div>
+        <div class="legend-item">
+            <span class="beide">BEIDE</span> = Both separable AND irregular
+        </div>
+    </div>
+
+    <div class="info-box">
+        <strong>💡 Wichtige Regel:</strong> Alle diese Verben bilden das <strong>Perfekt mit "sein"</strong>!<br>
+        <strong>💡 Important Rule:</strong> All these verbs form the <strong>perfect tense with "sein"</strong>!<br>
+        Beispiel: <em>ich bin gegangen, du bist gefahren, er ist gelaufen</em>
+    </div>
+
+    <!-- BEWEGUNGSVERBEN - NORMAL SPEED -->
+    <h2>1. Bewegungsverben - Normale Geschwindigkeit / Movement Verbs - Normal Speed</h2>
+    <table>
+        <tr>
+            <th>Infinitiv</th>
+            <th>Präteritum</th>
+            <th>Perfekt</th>
+            <th>English</th>
+            <th>Beispiel / Example</th>
+        </tr>
+        <tr>
+            <td><span class="verb">gehen</span> <span class="unregelmaessig">UNREG.</span></td>
+            <td>ging</td>
+            <td class="perfekt">ist gegangen</td>
+            <td class="english">to go, to walk</td>
+            <td class="example">Ich bin zur Schule gegangen.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">kommen</span> <span class="unregelmaessig">UNREG.</span></td>
+            <td>kam</td>
+            <td class="perfekt">ist gekommen</td>
+            <td class="english">to come</td>
+            <td class="example">Er ist spät gekommen.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">laufen</span> <span class="unregelmaessig">UNREG.</span></td>
+            <td>lief</td>
+            <td class="perfekt">ist gelaufen</td>
+            <td class="english">to walk, to run</td>
+            <td class="example">Sie ist zum Bus gelaufen.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">spazieren</span></td>
+            <td>spazierte</td>
+            <td class="perfekt">ist spaziert</td>
+            <td class="english">to stroll</td>
+            <td class="example">Wir sind im Park spaziert.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">wandern</span></td>
+            <td>wanderte</td>
+            <td class="perfekt">ist gewandert</td>
+            <td class="english">to hike</td>
+            <td class="example">Sie sind in den Bergen gewandert.</td>
+        </tr>
+    </table>
+
+    <!-- SLOW MOVEMENT -->
+    <h3>Langsame Bewegung / Slow Movement</h3>
+    <table>
+        <tr>
+            <th>Infinitiv</th>
+            <th>Präteritum</th>
+            <th>Perfekt</th>
+            <th>English</th>
+            <th>Beispiel / Example</th>
+        </tr>
+        <tr>
+            <td><span class="verb">schlendern</span></td>
+            <td>schlenderte</td>
+            <td class="perfekt">ist geschlendert</td>
+            <td class="english">to saunter, to amble</td>
+            <td class="example">Er ist durch die Stadt geschlendert.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">schreiten</span> <span class="unregelmaessig">UNREG.</span></td>
+            <td>schritt</td>
+            <td class="perfekt">ist geschritten</td>
+            <td class="english">to stride</td>
+            <td class="example">Er ist stolz über die Bühne geschritten.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">stolzieren</span></td>
+            <td>stolzierte</td>
+            <td class="perfekt">ist stolziert</td>
+            <td class="english">to strut</td>
+            <td class="example">Sie ist durch den Raum stolziert.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">wandeln</span></td>
+            <td>wandelte</td>
+            <td class="perfekt">ist gewandelt</td>
+            <td class="english">to walk slowly</td>
+            <td class="example">Er ist durch den Garten gewandelt.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">schleichen</span> <span class="unregelmaessig">UNREG.</span></td>
+            <td>schlich</td>
+            <td class="perfekt">ist geschlichen</td>
+            <td class="english">to sneak, to creep</td>
+            <td class="example">Die Katze ist ums Haus geschlichen.</td>
+        </tr>
+    </table>
+
+    <!-- FAST MOVEMENT -->
+    <h2>2. Schnelle Bewegung / Fast Movement</h2>
+    <table>
+        <tr>
+            <th>Infinitiv</th>
+            <th>Präteritum</th>
+            <th>Perfekt</th>
+            <th>English</th>
+            <th>Beispiel / Example</th>
+        </tr>
+        <tr>
+            <td><span class="verb">rennen</span> <span class="unregelmaessig">UNREG.</span></td>
+            <td>rannte</td>
+            <td class="perfekt">ist gerannt</td>
+            <td class="english">to run (fast)</td>
+            <td class="example">Ich bin schnell nach Hause gerannt.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">eilen</span></td>
+            <td>eilte</td>
+            <td class="perfekt">ist geeilt</td>
+            <td class="english">to hurry, to rush</td>
+            <td class="example">Sie ist zur Arbeit geeilt.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">hetzen</span></td>
+            <td>hetzte</td>
+            <td class="perfekt">ist gehetzt</td>
+            <td class="english">to rush, to hurry</td>
+            <td class="example">Er ist durch die Stadt gehetzt.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">jagen</span></td>
+            <td>jagte</td>
+            <td class="perfekt">ist gejagt</td>
+            <td class="english">to chase, to hunt</td>
+            <td class="example">Der Hund ist hinter dem Ball gejagt.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">fliehen</span> <span class="unregelmaessig">UNREG.</span></td>
+            <td>floh</td>
+            <td class="perfekt">ist geflohen</td>
+            <td class="english">to flee</td>
+            <td class="example">Die Diebe sind geflohen.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">flüchten</span></td>
+            <td>flüchtete</td>
+            <td class="perfekt">ist geflüchtet</td>
+            <td class="english">to escape, to flee</td>
+            <td class="example">Sie sind aus dem Land geflüchtet.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">rasen</span></td>
+            <td>raste</td>
+            <td class="perfekt">ist gerast</td>
+            <td class="english">to race, to speed</td>
+            <td class="example">Das Auto ist um die Ecke gerast.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">flitzen</span></td>
+            <td>flitzte</td>
+            <td class="perfekt">ist geflitzt</td>
+            <td class="english">to dart, to whiz</td>
+            <td class="example">Die Kinder sind durchs Haus geflitzt.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">sausen</span></td>
+            <td>sauste</td>
+            <td class="perfekt">ist gesaust</td>
+            <td class="english">to whiz, to zoom</td>
+            <td class="example">Er ist mit dem Rad vorbei gesaust.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">marschieren</span></td>
+            <td>marschierte</td>
+            <td class="perfekt">ist marschiert</td>
+            <td class="english">to march</td>
+            <td class="example">Die Soldaten sind marschiert.</td>
+        </tr>
+    </table>
+
+    <!-- SPORTS & ATHLETIC -->
+    <h2>3. Sport & Athletische Bewegungen / Sports & Athletic Movements</h2>
+    <table>
+        <tr>
+            <th>Infinitiv</th>
+            <th>Präteritum</th>
+            <th>Perfekt</th>
+            <th>English</th>
+            <th>Beispiel / Example</th>
+        </tr>
+        <tr>
+            <td><span class="verb">joggen</span></td>
+            <td>joggte</td>
+            <td class="perfekt">ist gejoggt</td>
+            <td class="english">to jog</td>
+            <td class="example">Ich bin heute 5 km gejoggt.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">springen</span> <span class="unregelmaessig">UNREG.</span></td>
+            <td>sprang</td>
+            <td class="perfekt">ist gesprungen</td>
+            <td class="english">to jump</td>
+            <td class="example">Er ist über den Zaun gesprungen.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">hüpfen</span></td>
+            <td>hüpfte</td>
+            <td class="perfekt">ist gehüpft</td>
+            <td class="english">to hop, to skip</td>
+            <td class="example">Das Kind ist fröhlich gehüpft.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">hopsen</span></td>
+            <td>hopste</td>
+            <td class="perfekt">ist gehopst</td>
+            <td class="english">to bounce, to hop</td>
+            <td class="example">Der Ball ist gehopst.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">tanzen</span></td>
+            <td>tanzte</td>
+            <td class="perfekt">ist getanzt</td>
+            <td class="english">to dance</td>
+            <td class="example">Sie sind die ganze Nacht getanzt.</td>
+        </tr>
+    </table>
+
+    <!-- CLIMBING & TERRAIN -->
+    <h2>4. Klettern & Gelände / Climbing & Terrain</h2>
+    <table>
+        <tr>
+            <th>Infinitiv</th>
+            <th>Präteritum</th>
+            <th>Perfekt</th>
+            <th>English</th>
+            <th>Beispiel / Example</th>
+        </tr>
+        <tr>
+            <td><span class="verb">klettern</span></td>
+            <td>kletterte</td>
+            <td class="perfekt">ist geklettert</td>
+            <td class="english">to climb</td>
+            <td class="example">Sie ist auf den Baum geklettert.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">steigen</span> <span class="unregelmaessig">UNREG.</span></td>
+            <td>stieg</td>
+            <td class="perfekt">ist gestiegen</td>
+            <td class="english">to climb, to rise</td>
+            <td class="example">Wir sind auf den Berg gestiegen.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">kriechen</span> <span class="unregelmaessig">UNREG.</span></td>
+            <td>kroch</td>
+            <td class="perfekt">ist gekrochen</td>
+            <td class="english">to crawl, to creep</td>
+            <td class="example">Die Schlange ist ins Gras gekrochen.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">robben</span></td>
+            <td>robbte</td>
+            <td class="perfekt">ist gerobbt</td>
+            <td class="english">to crawl (on belly)</td>
+            <td class="example">Der Soldat ist durch den Schlamm gerobbt.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">krabbeln</span></td>
+            <td>krabbelte</td>
+            <td class="perfekt">ist gekrabbelt</td>
+            <td class="english">to crawl (baby/insect)</td>
+            <td class="example">Das Baby ist über den Boden gekrabbelt.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">treten</span> <span class="unregelmaessig">UNREG.</span></td>
+            <td>trat</td>
+            <td class="perfekt">ist getreten</td>
+            <td class="english">to step, to kick</td>
+            <td class="example">Er ist auf die Bremse getreten.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">stolpern</span></td>
+            <td>stolperte</td>
+            <td class="perfekt">ist gestolpert</td>
+            <td class="english">to stumble, to trip</td>
+            <td class="example">Sie ist über den Stein gestolpert.</td>
+        </tr>
+    </table>
+
+    <!-- TRANSPORT - LAND -->
+    <h2>5. Fortbewegungsmittel - Land / Means of Transport - Land</h2>
+    <table>
+        <tr>
+            <th>Infinitiv</th>
+            <th>Präteritum</th>
+            <th>Perfekt</th>
+            <th>English</th>
+            <th>Beispiel / Example</th>
+        </tr>
+        <tr>
+            <td><span class="verb">fahren</span> <span class="unregelmaessig">UNREG.</span></td>
+            <td>fuhr</td>
+            <td class="perfekt">ist gefahren</td>
+            <td class="english">to drive, to travel</td>
+            <td class="example">Ich bin mit dem Auto gefahren.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">radeln</span></td>
+            <td>radelte</td>
+            <td class="perfekt">ist geradelt</td>
+            <td class="english">to cycle, to bike</td>
+            <td class="example">Wir sind zur Arbeit geradelt.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">reisen</span></td>
+            <td>reiste</td>
+            <td class="perfekt">ist gereist</td>
+            <td class="english">to travel</td>
+            <td class="example">Sie ist nach Italien gereist.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">verreisen</span> <span class="trennbar">TRENNBAR</span></td>
+            <td>verreiste</td>
+            <td class="perfekt">ist verreist</td>
+            <td class="english">to go on a trip</td>
+            <td class="example">Er ist für zwei Wochen verreist.</td>
+        </tr>
+    </table>
+
+    <!-- TRANSPORT - WATER -->
+    <h3>Fortbewegungsmittel - Wasser / Means of Transport - Water</h3>
+    <table>
+        <tr>
+            <th>Infinitiv</th>
+            <th>Präteritum</th>
+            <th>Perfekt</th>
+            <th>English</th>
+            <th>Beispiel / Example</th>
+        </tr>
+        <tr>
+            <td><span class="verb">schwimmen</span> <span class="unregelmaessig">UNREG.</span></td>
+            <td>schwamm</td>
+            <td class="perfekt">ist geschwommen</td>
+            <td class="english">to swim</td>
+            <td class="example">Er ist zum Ufer geschwommen.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">tauchen</span></td>
+            <td>tauchte</td>
+            <td class="perfekt">ist getaucht</td>
+            <td class="english">to dive</td>
+            <td class="example">Sie ist tief getaucht.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">sinken</span> <span class="unregelmaessig">UNREG.</span></td>
+            <td>sank</td>
+            <td class="perfekt">ist gesunken</td>
+            <td class="english">to sink</td>
+            <td class="example">Das Schiff ist gesunken.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">rudern</span></td>
+            <td>ruderte</td>
+            <td class="perfekt">ist gerudert</td>
+            <td class="english">to row</td>
+            <td class="example">Wir sind über den See gerudert.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">segeln</span></td>
+            <td>segelte</td>
+            <td class="perfekt">ist gesegelt</td>
+            <td class="english">to sail</td>
+            <td class="example">Sie sind nach Griechenland gesegelt.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">paddeln</span></td>
+            <td>paddelte</td>
+            <td class="perfekt">ist gepaddelt</td>
+            <td class="english">to paddle</td>
+            <td class="example">Er ist mit dem Kanu gepaddelt.</td>
+        </tr>
+    </table>
+
+    <!-- TRANSPORT - AIR -->
+    <h3>Fortbewegungsmittel - Luft / Means of Transport - Air</h3>
+    <table>
+        <tr>
+            <th>Infinitiv</th>
+            <th>Präteritum</th>
+            <th>Perfekt</th>
+            <th>English</th>
+            <th>Beispiel / Example</th>
+        </tr>
+        <tr>
+            <td><span class="verb">fliegen</span> <span class="unregelmaessig">UNREG.</span></td>
+            <td>flog</td>
+            <td class="perfekt">ist geflogen</td>
+            <td class="english">to fly</td>
+            <td class="example">Ich bin nach Paris geflogen.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">landen</span></td>
+            <td>landete</td>
+            <td class="perfekt">ist gelandet</td>
+            <td class="english">to land</td>
+            <td class="example">Das Flugzeug ist gelandet.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">starten</span></td>
+            <td>startete</td>
+            <td class="perfekt">ist gestartet</td>
+            <td class="english">to take off, to start</td>
+            <td class="example">Die Rakete ist gestartet.</td>
+        </tr>
+    </table>
+
+    <!-- TRANSPORT - RIDING -->
+    <h3>Reiten / Riding</h3>
+    <table>
+        <tr>
+            <th>Infinitiv</th>
+            <th>Präteritum</th>
+            <th>Perfekt</th>
+            <th>English</th>
+            <th>Beispiel / Example</th>
+        </tr>
+        <tr>
+            <td><span class="verb">reiten</span> <span class="unregelmaessig">UNREG.</span></td>
+            <td>ritt</td>
+            <td class="perfekt">ist geritten</td>
+            <td class="english">to ride (horse)</td>
+            <td class="example">Sie ist durch den Wald geritten.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">traben</span></td>
+            <td>trabte</td>
+            <td class="perfekt">ist getrabt</td>
+            <td class="english">to trot</td>
+            <td class="example">Das Pferd ist getrabt.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">galoppieren</span></td>
+            <td>galoppierte</td>
+            <td class="perfekt">ist galoppiert</td>
+            <td class="english">to gallop</td>
+            <td class="example">Das Pferd ist über die Wiese galoppiert.</td>
+        </tr>
+    </table>
+
+    <!-- DIRECTIONAL CHANGES -->
+    <h2>6. Richtungsänderungen / Directional Changes</h2>
+    <table>
+        <tr>
+            <th>Infinitiv</th>
+            <th>Präteritum</th>
+            <th>Perfekt</th>
+            <th>English</th>
+            <th>Beispiel / Example</th>
+        </tr>
+        <tr>
+            <td><span class="verb">abbiegen</span> <span class="beide">BEIDE</span></td>
+            <td>bog ab</td>
+            <td class="perfekt">ist abgebogen</td>
+            <td class="english">to turn off</td>
+            <td class="example">Er ist nach links abgebogen.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">ausweichen</span> <span class="beide">BEIDE</span></td>
+            <td>wich aus</td>
+            <td class="perfekt">ist ausgewichen</td>
+            <td class="english">to dodge, to avoid</td>
+            <td class="example">Sie ist dem Auto ausgewichen.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">folgen</span></td>
+            <td>folgte</td>
+            <td class="perfekt">ist gefolgt</td>
+            <td class="english">to follow</td>
+            <td class="example">Er ist mir nach Hause gefolgt.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">ziehen</span> <span class="unregelmaessig">UNREG.</span></td>
+            <td>zog</td>
+            <td class="perfekt">ist gezogen</td>
+            <td class="english">to move (relocate)</td>
+            <td class="example">Wir sind nach Berlin gezogen.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">zurückkehren</span> <span class="trennbar">TRENNBAR</span></td>
+            <td>kehrte zurück</td>
+            <td class="perfekt">ist zurückgekehrt</td>
+            <td class="english">to return</td>
+            <td class="example">Er ist nach Hause zurückgekehrt.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">weggehen</span> <span class="beide">BEIDE</span></td>
+            <td>ging weg</td>
+            <td class="perfekt">ist weggegangen</td>
+            <td class="english">to go away</td>
+            <td class="example">Sie ist einfach weggegangen.</td>
+        </tr>
+    </table>
+
+    <!-- FALLING & STUMBLING -->
+    <h2>7. Fallen & Stürzen / Falling & Stumbling</h2>
+    <table>
+        <tr>
+            <th>Infinitiv</th>
+            <th>Präteritum</th>
+            <th>Perfekt</th>
+            <th>English</th>
+            <th>Beispiel / Example</th>
+        </tr>
+        <tr>
+            <td><span class="verb">fallen</span> <span class="unregelmaessig">UNREG.</span></td>
+            <td>fiel</td>
+            <td class="perfekt">ist gefallen</td>
+            <td class="english">to fall</td>
+            <td class="example">Er ist vom Baum gefallen.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">stürzen</span></td>
+            <td>stürzte</td>
+            <td class="perfekt">ist gestürzt</td>
+            <td class="english">to plunge, to crash</td>
+            <td class="example">Sie ist die Treppe gestürzt.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">umfallen</span> <span class="beide">BEIDE</span></td>
+            <td>fiel um</td>
+            <td class="perfekt">ist umgefallen</td>
+            <td class="english">to fall over</td>
+            <td class="example">Der Baum ist umgefallen.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">kippen</span></td>
+            <td>kippte</td>
+            <td class="perfekt">ist gekippt</td>
+            <td class="english">to tip over</td>
+            <td class="example">Das Glas ist gekippt.</td>
+        </tr>
+    </table>
+
+    <!-- OBJECT/ANIMAL MOVEMENT -->
+    <h2>8. Objekt-/Tierbewegungen / Object/Animal Movement</h2>
+    <table>
+        <tr>
+            <th>Infinitiv</th>
+            <th>Präteritum</th>
+            <th>Perfekt</th>
+            <th>English</th>
+            <th>Beispiel / Example</th>
+        </tr>
+        <tr>
+            <td><span class="verb">rollen</span></td>
+            <td>rollte</td>
+            <td class="perfekt">ist gerollt</td>
+            <td class="english">to roll</td>
+            <td class="example">Der Ball ist die Straße gerollt.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">gleiten</span> <span class="unregelmaessig">UNREG.</span></td>
+            <td>glitt</td>
+            <td class="perfekt">ist geglitten</td>
+            <td class="english">to glide, to slide</td>
+            <td class="example">Das Boot ist über das Wasser geglitten.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">rutschen</span></td>
+            <td>rutschte</td>
+            <td class="perfekt">ist gerutscht</td>
+            <td class="english">to slide, to slip</td>
+            <td class="example">Er ist auf dem Eis gerutscht.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">fließen</span> <span class="unregelmaessig">UNREG.</span></td>
+            <td>floss</td>
+            <td class="perfekt">ist geflossen</td>
+            <td class="english">to flow</td>
+            <td class="example">Der Fluss ist ins Meer geflossen.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">watscheln</span></td>
+            <td>watschelte</td>
+            <td class="perfekt">ist gewatschelt</td>
+            <td class="english">to waddle</td>
+            <td class="example">Die Ente ist zum Teich gewatschelt.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">flattern</span></td>
+            <td>flatterte</td>
+            <td class="perfekt">ist geflattert</td>
+            <td class="english">to flutter</td>
+            <td class="example">Der Schmetterling ist geflattert.</td>
+        </tr>
+    </table>
+
+    <!-- CHANGE OF STATE -->
+    <h2>9. Zustandsveränderungen / Change of State</h2>
+    <table>
+        <tr>
+            <th>Infinitiv</th>
+            <th>Präteritum</th>
+            <th>Perfekt</th>
+            <th>English</th>
+            <th>Beispiel / Example</th>
+        </tr>
+        <tr>
+            <td><span class="verb">aufstehen</span> <span class="beide">BEIDE</span></td>
+            <td>stand auf</td>
+            <td class="perfekt">ist aufgestanden</td>
+            <td class="english">to get up, to stand up</td>
+            <td class="example">Ich bin früh aufgestanden.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">aufwachen</span> <span class="trennbar">TRENNBAR</span></td>
+            <td>wachte auf</td>
+            <td class="perfekt">ist aufgewacht</td>
+            <td class="english">to wake up</td>
+            <td class="example">Er ist um 6 Uhr aufgewacht.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">einschlafen</span> <span class="beide">BEIDE</span></td>
+            <td>schlief ein</td>
+            <td class="perfekt">ist eingeschlafen</td>
+            <td class="english">to fall asleep</td>
+            <td class="example">Sie ist schnell eingeschlafen.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">sterben</span> <span class="unregelmaessig">UNREG.</span></td>
+            <td>starb</td>
+            <td class="perfekt">ist gestorben</td>
+            <td class="english">to die</td>
+            <td class="example">Er ist im Alter von 90 Jahren gestorben.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">wachsen</span> <span class="unregelmaessig">UNREG.</span></td>
+            <td>wuchs</td>
+            <td class="perfekt">ist gewachsen</td>
+            <td class="english">to grow</td>
+            <td class="example">Das Kind ist 10 cm gewachsen.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">werden</span> <span class="unregelmaessig">UNREG.</span></td>
+            <td>wurde</td>
+            <td class="perfekt">ist geworden</td>
+            <td class="english">to become</td>
+            <td class="example">Er ist Arzt geworden.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">entstehen</span> <span class="beide">BEIDE</span></td>
+            <td>entstand</td>
+            <td class="perfekt">ist entstanden</td>
+            <td class="english">to arise, to emerge</td>
+            <td class="example">Ein neues Gebäude ist entstanden.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">verschwinden</span> <span class="unregelmaessig">UNREG.</span></td>
+            <td>verschwand</td>
+            <td class="perfekt">ist verschwunden</td>
+            <td class="english">to disappear</td>
+            <td class="example">Der Schlüssel ist verschwunden.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">explodieren</span></td>
+            <td>explodierte</td>
+            <td class="perfekt">ist explodiert</td>
+            <td class="english">to explode</td>
+            <td class="example">Die Bombe ist explodiert.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">platzen</span></td>
+            <td>platzte</td>
+            <td class="perfekt">ist geplatzt</td>
+            <td class="english">to burst</td>
+            <td class="example">Der Luftballon ist geplatzt.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">gefrieren</span> <span class="unregelmaessig">UNREG.</span></td>
+            <td>gefror</td>
+            <td class="perfekt">ist gefroren</td>
+            <td class="english">to freeze</td>
+            <td class="example">Das Wasser ist gefroren.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">tauen</span></td>
+            <td>taute</td>
+            <td class="perfekt">ist getaut</td>
+            <td class="english">to thaw</td>
+            <td class="example">Der Schnee ist getaut.</td>
+        </tr>
+    </table>
+
+    <!-- SPECIAL VERBS -->
+    <h2>10. Besondere Verben / Special Verbs</h2>
+    <table>
+        <tr>
+            <th>Infinitiv</th>
+            <th>Präteritum</th>
+            <th>Perfekt</th>
+            <th>English</th>
+            <th>Beispiel / Example</th>
+        </tr>
+        <tr>
+            <td><span class="verb">sein</span> <span class="unregelmaessig">UNREG.</span></td>
+            <td>war</td>
+            <td class="perfekt">ist gewesen</td>
+            <td class="english">to be</td>
+            <td class="example">Ich bin gestern in Berlin gewesen.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">bleiben</span> <span class="unregelmaessig">UNREG.</span></td>
+            <td>blieb</td>
+            <td class="perfekt">ist geblieben</td>
+            <td class="english">to stay, to remain</td>
+            <td class="example">Wir sind zu Hause geblieben.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">geschehen</span> <span class="unregelmaessig">UNREG.</span></td>
+            <td>geschah</td>
+            <td class="perfekt">ist geschehen</td>
+            <td class="english">to happen, to occur</td>
+            <td class="example">Ein Unfall ist geschehen.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">passieren</span></td>
+            <td>passierte</td>
+            <td class="perfekt">ist passiert</td>
+            <td class="english">to happen</td>
+            <td class="example">Was ist passiert?</td>
+        </tr>
+        <tr>
+            <td><span class="verb">gelingen</span> <span class="unregelmaessig">UNREG.</span></td>
+            <td>gelang</td>
+            <td class="perfekt">ist gelungen</td>
+            <td class="english">to succeed</td>
+            <td class="example">Das Experiment ist gelungen.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">misslingen</span> <span class="unregelmaessig">UNREG.</span></td>
+            <td>misslang</td>
+            <td class="perfekt">ist misslungen</td>
+            <td class="english">to fail</td>
+            <td class="example">Der Versuch ist misslungen.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">begegnen</span></td>
+            <td>begegnete</td>
+            <td class="perfekt">ist begegnet</td>
+            <td class="english">to encounter, to meet</td>
+            <td class="example">Ich bin ihm auf der Straße begegnet.</td>
+        </tr>
+        <tr>
+            <td><span class="verb">eintreffen</span> <span class="beide">BEIDE</span></td>
+            <td>traf ein</td>
+            <td class="perfekt">ist eingetroffen</td>
+            <td class="english">to arrive</td>
+            <td class="example">Der Zug ist pünktlich eingetroffen.</td>
+        </tr>
+    </table>
+
+    <div style="text-align: center; margin: 30px 0; padding: 20px; background-color: white; border-radius: 10px;">
+        <p><strong>📚 Gesamt: 100+ Verben der Bewegung und Zustandsveränderung</strong></p>
+        <p><strong>Total: 100+ Verbs of Movement and Change of State</strong></p>
+        <p style="margin-top: 15px; color: #27ae60; font-weight: bold;">
+            Alle bilden das Perfekt mit "sein" • All form the perfect tense with "sein"
+        </p>
+    </div>
+
+</body>
+</html>
