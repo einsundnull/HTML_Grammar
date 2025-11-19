@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Temporal Prepositions - Zeitpräpositionen</title>
+    <title>Miscellaneous Prepositions - Verschiedene Präpositionen</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -28,7 +28,7 @@
             background-color: #34495e;
         }
         .nav a.active {
-            background-color: #cccccc;
+            background-color: #27ae60;
         }
         h1 {
             text-align: center;
@@ -36,21 +36,28 @@
             margin-top: 20px;
         }
         h2 {
-            background-color: #cecece;
+            background-color: #e0e0e0;
             color: black;
             padding: 10px;
             text-align: left;
-            font-size: smaller;
             margin-top: 30px;
             width: 100%;
             max-width: 950px;
             margin-left: auto;
             margin-right: auto;
             box-sizing: border-box;
-            font-size: small;
         }
-        .type {
+        h3 {
+            background-color: #e0e0e0;
             color: black;
+            padding: 8px;
+            text-align: left;
+            margin-top: 25px;
+            width: 100%;
+            max-width: 950px;
+            margin-left: auto;
+            margin-right: auto;
+            box-sizing: border-box;
         }
         table {
             width: 100%;
@@ -60,7 +67,6 @@
             margin: 20px auto;
             background-color: white;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            font-size: small;
         }
         th, td {
             border: 1px solid #ddd;
@@ -69,7 +75,7 @@
         }
         th {
             background-color: #cccccc;
-            color: white;
+            color: black;
             font-weight: bold;
         }
         .case-gen {
@@ -81,14 +87,19 @@
         .case-akk {
             background-color: #f9f9f9;
         }
-        .contracted {
-            color: #e74c3c;
-            font-weight: bold;
-        }
         .german {
             font-weight: bold;
             color: #2c3e50;
         }
+        .note {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 12px;
+            margin: 20px auto;
+            max-width: 950px;
+            font-style: italic;
+        }
+
         /* Compact Mode */
         body.compact-mode table {
             margin: 10px auto;
@@ -168,7 +179,7 @@
             padding-bottom: 10px;
         }
         body.newspaper-style h2 {
-            background-color: #cccccc;
+            background-color: #27ae60;
             color: #000000;
             border-left: 5px solid #000000;
             width: 100%;
@@ -178,7 +189,7 @@
             box-sizing: border-box;
         }
         body.newspaper-style h3 {
-            background-color: #f8f8f8;
+            background-color: #52be80;
             color: #000000;
             border-left: 3px solid #666666;
         }
@@ -203,7 +214,7 @@
             background-color: #2c2c2c;
         }
         body.newspaper-style .nav a.active {
-            background-color: #cccccc;
+            background-color: #27ae60;
         }
         body.newspaper-style .case-gen {
             background-color: #eeeeee;
@@ -333,7 +344,7 @@
             background-color: white;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-            h2 {
+            h2, h3 {
                 page-break-after: avoid;
                 page-break-inside: avoid;
             }
@@ -342,6 +353,19 @@
             }
         }
 
+        table {
+            width: 100%;
+            max-width: 950px;
+            table-layout: auto;
+            border-collapse: collapse;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h2, h3 {
+            page-break-after: avoid;
+        }
+    
         /* Enhanced print layout - keep related elements together */
         h1, h2, h3 {
             page-break-after: avoid;
@@ -404,7 +428,7 @@
             padding-bottom: 10px;
         }
         body.newspaper-style h2 {
-            background-color: #cccccc;
+            background-color: #27ae60;
             color: #000000;
             border-left: 5px solid #000000;
             width: 100%;
@@ -414,7 +438,7 @@
             box-sizing: border-box;
         }
         body.newspaper-style h3 {
-            background-color: #f8f8f8;
+            background-color: #52be80;
             color: #000000;
             border-left: 3px solid #666666;
         }
@@ -439,7 +463,7 @@
             background-color: #2c2c2c;
         }
         body.newspaper-style .nav a.active {
-            background-color: #cccccc;
+            background-color: #27ae60;
         }
         body.newspaper-style .case-gen {
             background-color: #eeeeee;
@@ -531,7 +555,6 @@
                 page-break-inside: avoid !important;
                 break-inside: avoid-page !important;
                 table-layout: fixed !important;
-                font-size: small;
             }
 
             tr {
@@ -543,7 +566,6 @@
                 page-break-after: avoid !important;
                 break-after: avoid-page !important;
                 page-break-inside: avoid !important;
-                font-size: small;
             }
             h2, h3 {
                 margin-left: 0 !important;
@@ -589,7 +611,7 @@
             background-color: #2980b9;
         }
         .print-btn.compact {
-            background-color: #cccccc;
+            background-color: #27ae60;
         }
         .print-btn.compact:hover {
             background-color: #229954;
@@ -605,7 +627,6 @@
                 page-break-inside: avoid !important;
                 break-inside: avoid-page !important;
                 table-layout: fixed !important;
-                font-size: small;
             }
 
             tr {
@@ -617,13 +638,12 @@
                 page-break-after: avoid !important;
                 break-after: avoid-page !important;
                 page-break-inside: avoid !important;
-                font-size: small;
             }
             .print-buttons {
                 display: none !important;
             }
             
-            .print-btn {
+                   .print-btn {
                 display: none !important;
             }
         }
@@ -641,92 +661,230 @@
     </div>
     <div class="nav">
         <a href="index.html">Home</a>
-        <a href="local-prepositions.html">Local Prepositions</a>        <a href="temporal-prepositions.html">Temporal Prepositions</a>
-        <a href="miscellaneous.html">Miscellaneous</a>
+        <a href="local-prepositions.html">Local Prepositions</a>
+        <a href="temporal-prepositions.html">Temporal Prepositions</a>
+        <a href="miscellaneous.html" class="active">Miscellaneous</a>
         <a href="reference-guide.html">Reference</a>
     </div>
 
-    <h1>Temporal Prepositions - Zeitpräpositionen</h1>
+    <h1>Miscellaneous Prepositions</h1>
     <div style="text-align: center; margin: 15px 0;">
         <button class="print-btn" onclick="window.print()">&#128424; Print</button>
     </div>
-    <p style="text-align: center; color: #7f8c8d;">Prepositions indicating time, duration, or sequence</p>
+    <p style="text-align: center; color: #7f8c8d;">Quantifiers, Causal, Instrumental, and Other Prepositions</p>
 
+    <h2 class = "type">QUANTIFIERS - MENGENANGABEN</h2>
+    <p style="text-align: center; color: #7f8c8d; font-style: italic;">Prepositions for expressing quantities and amounts</p>
 
+    <h3 class = "type">Genitive & Dative Forms</h3>
     <table>
         <tr>
-            <th class ="type">Contracted</th>
-            <th class ="type">Preposition</th>
-            <th class ="type">English</th>
-            <th class ="type">Case</th>
-            <th class ="type">Example</th>
+            <th>Preposition</th>
+            <th>English</th>
+            <th>Case</th>
+            <th>Example</th>
         </tr>
         <tr class="case-gen">
-            <td>—</td>
-            <td class="german">während</td>
-            <td>during</td>
+            <td class="german">einige (der)</td>
+            <td>some of</td>
             <td>+ Gen. / + Dat.</td>
-            <td>während des Tages / während dem Tag</td>
+            <td>einige der Studenten / einige von den Studenten</td>
+        </tr>
+        <tr class="case-gen">
+            <td class="german">ein paar der/von</td>
+            <td>some of / a few of</td>
+            <td>+ Gen. / + Dat.*</td>
+            <td>ein paar der Bücher / ein paar von den Äpfeln</td>
         </tr>
         <tr class="case-dat">
-            <td class="contracted">im</td>
-            <td class="german">in</td>
-            <td>in / during</td>
-            <td>+ Dat. (m)</td>
-            <td>im Sommer / im Jahr 2023</td>
-        </tr>
-        <tr class="case-dat">
-            <td>—</td>
-            <td class="german">nach</td>
-            <td>after</td>
+            <td class="german">mehr von</td>
+            <td>more of</td>
             <td>+ Dat.</td>
-            <td>nach dem Essen</td>
+            <td>mehr von dem Kuchen</td>
         </tr>
         <tr class="case-dat">
-            <td class="contracted">am</td>
-            <td class="german">an</td>
-            <td>on (the)</td>
-            <td>+ Dat. (m)</td>
-            <td>am Montag / am 5. Mai</td>
-        </tr>
-        <tr class="case-dat">
-            <td>—</td>
-            <td class="german">seit</td>
-            <td>since</td>
+            <td class="german">wenige von</td>
+            <td>few of</td>
             <td>+ Dat.</td>
-            <td>seit einem Jahr</td>
-        </tr>
-        <tr class="case-dat">
-            <td class="contracted">vom</td>
-            <td class="german">von</td>
-            <td>from</td>
-            <td>+ Dat. (m)</td>
-            <td>vom Morgen bis zum Abend</td>
-        </tr>
-        <tr class="case-dat">
-            <td class="contracted">vom ... bis...</td>
-            <td class="german">von ... bis...</td>
-            <td>from ... until...</td>
-            <td>+ Dat.</td>
-            <td>vom Montag bis Freitag</td>
-        </tr>
-        <tr class="case-dat">
-            <td class="contracted">vorm</td>
-            <td class="german">vor</td>
-            <td>before / ago</td>
-            <td>+ Dat. (m)</td>
-            <td>vor dem Abendessen / vor zwei Jahren</td>
+            <td>wenige von den Schülern</td>
         </tr>
         <tr class="case-akk">
-            <td>—</td>
-            <td class="german">um</td>
-            <td>at (time) / around</td>
+            <td class="german">einige von</td>
+            <td>some of</td>
             <td>+ Akk.</td>
-            <td>um 8 Uhr / um Mitternacht</td>
+            <td>einige von euch</td>
         </tr>
-      
     </table>
 
+    <div class="note">
+        <strong>Note:</strong> * These prepositions are commonly used with the plural.
+    </div>
+
+    <h2 class = "type">CAUSAL PREPOSITIONS - KAUSALE PRÄPOSITIONEN</h2>
+    <p style="text-align: center; color: #7f8c8d; font-style: italic;">Prepositions expressing cause, reason, or result</p>
+
+    <h3>Genitive Forms</h3>
+    <table>
+        <tr>
+            <th>Preposition</th>
+            <th>English</th>
+            <th>Case</th>
+            <th>Example</th>
+        </tr>
+        <tr class="case-gen">
+            <td class="german">aufgrund</td>
+            <td>due to</td>
+            <td>+ Gen.</td>
+            <td>aufgrund des Wetters</td>
+        </tr>
+        <tr class="case-gen">
+            <td class="german">infolge</td>
+            <td>as a result of</td>
+            <td>+ Gen.</td>
+            <td>infolge des Unfalls</td>
+        </tr>
+        <tr class="case-gen">
+            <td class="german">mit Hilfe</td>
+            <td>with the help of</td>
+            <td>+ Gen.</td>
+            <td>mit Hilfe des Computers</td>
+        </tr>
+        <tr class="case-gen">
+            <td class="german">mittels</td>
+            <td>by means of</td>
+            <td>+ Gen.</td>
+            <td>mittels eines Hebels</td>
+        </tr>
+    </table>
+
+    <h3>Genitive or Dative Forms</h3>
+    <table>
+        <tr>
+            <th>Preposition</th>
+            <th>English</th>
+            <th>Case</th>
+            <th>Example</th>
+        </tr>
+        <tr class="case-gen">
+            <td class="german">wegen</td>
+            <td>because of</td>
+            <td>+ Gen. / + Dat.</td>
+            <td>wegen des Regens / wegen dem Regen</td>
+        </tr>
+        <tr class="case-gen">
+            <td class="german">dank</td>
+            <td>thanks to</td>
+            <td>+ Gen. / + Dat.</td>
+            <td>dank der Hilfe / dank dem Lehrer</td>
+        </tr>
+    </table>
+
+    <h2 class = "type">INSTRUMENTAL & OTHER PREPOSITIONS</h2>
+    <p style="text-align: center; color: #7f8c8d; font-style: italic;">Prepositions expressing means, company, exception, and purpose</p>
+
+    <h3>Dative Forms - Companion & Exception</h3>
+    <table>
+        <tr>
+            <th>Preposition</th>
+            <th>English</th>
+            <th>Case</th>
+            <th>Example</th>
+        </tr>
+        <tr class="case-dat">
+            <td class="german">mit</td>
+            <td>with</td>
+            <td>+ Dat.</td>
+            <td>mit dem Auto / mit einem Freund</td>
+        </tr>
+        <tr class="case-dat">
+            <td class="german">außer</td>
+            <td>except / besides</td>
+            <td>+ Dat.</td>
+            <td>außer mir / außer dem Chef</td>
+        </tr>
+    </table>
+
+    <h3 class = "type">Accusative Forms - Means & Purpose</h3>
+    <table>
+        <tr>
+            <th>Preposition</th>
+            <th>English</th>
+            <th>Case</th>
+            <th>Example</th>
+        </tr>
+                <tr class="case-akk">
+            <td class="german">ohne</td>
+            <td>ohne</td>
+            <td>+ Akk.</td>
+            <td>ohne dich / ohne meinen Vater</td>
+        </tr>
+        <tr class="case-akk">
+            <td class="german">durch</td>
+            <td>by (means of) / through</td>
+            <td>+ Akk.</td>
+            <td>durch einen Zufall / durch harte Arbeit</td>
+        </tr>
+        <tr class="case-akk">
+            <td class="german">für</td>
+            <td>for</td>
+            <td>+ Akk.</td>
+            <td>für dich / für die Zukunft</td>
+        </tr>
+    </table>
+
+    <h2 class = "type">Combined Usage Examples</h2>
+    <table>
+        <tr>
+            <th>German</th>
+            <th>English</th>
+            <th>Category</th>
+        </tr>
+        <tr>
+            <td>Einige <strong>der</strong> Studenten sind krank.</td>
+            <td>Some of the students are sick.</td>
+            <td>Quantifier</td>
+        </tr>
+        <tr>
+            <td>Ich möchte mehr <strong>von</strong> diesem Wein.</td>
+            <td>I would like more of this wine.</td>
+            <td>Quantifier</td>
+        </tr>
+        <tr>
+            <td><strong>Aufgrund</strong> des Wetters bleibt die Schule geschlossen.</td>
+            <td>Due to the weather, the school remains closed.</td>
+            <td>Causal</td>
+        </tr>
+        <tr>
+            <td><strong>Wegen</strong> des Staus komme ich zu spät.</td>
+            <td>Because of the traffic, I'm late.</td>
+            <td>Causal</td>
+        </tr>
+        <tr>
+            <td><strong>Dank</strong> deiner Hilfe habe ich es geschafft.</td>
+            <td>Thanks to your help, I made it.</td>
+            <td>Causal</td>
+        </tr>
+        <tr>
+            <td>Ich fahre <strong>mit</strong> dem Bus.</td>
+            <td>I'm going by bus.</td>
+            <td>Instrumental</td>
+        </tr>
+        <tr>
+            <td>Alle sind da, <strong>außer</strong> Tom.</td>
+            <td>Everyone is here except Tom.</td>
+            <td>Exception</td>
+        </tr>
+        <tr>
+            <td><strong>Durch</strong> harte Arbeit erreichte er sein Ziel.</td>
+            <td>Through hard work he reached his goal.</td>
+            <td>Instrumental</td>
+        </tr>
+        <tr>
+            <td>Dieses Geschenk ist <strong>für</strong> dich.</td>
+            <td>This gift is for you.</td>
+            <td>Purpose</td>
+        </tr>
+    </table>
 
     <script>
                          else {
@@ -762,5 +920,6 @@
             // Print
             window.print();
         }
-</script></body>
+</script>
+</body>
 </html>

@@ -4,30 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>German Learning Hub</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; }
-        .container { max-width: 1400px; margin: 0 auto; }
-        h1 { text-align: center; color: white; font-size: 3em; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
-        .subtitle { text-align: center; color: rgba(255,255,255,0.9); font-size: 1.3em; margin-bottom: 50px; }
-        .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin-top: 30px; }
-        .card { background: white; border-radius: 15px; padding: 35px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); transition: transform 0.3s, box-shadow 0.3s; }
-        .card:hover { transform: translateY(-8px); box-shadow: 0 15px 40px rgba(0,0,0,0.3); }
-        .card-icon { width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 40px; margin-bottom: 20px; color: white; margin-left: auto; margin-right: auto; }
-        .card-title { font-size: 2em; font-weight: bold; margin-bottom: 15px; color: #2c3e50; text-align: center; }
-        .card-description { color: #7f8c8d; line-height: 1.7; font-size: 1.05em; margin-bottom: 25px; text-align: center; }
-        .option-buttons { display: flex; gap: 12px; margin-top: 25px; flex-direction: column; }
-        .option-btn { display: block; padding: 15px 25px; text-align: center; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 1.05em; transition: all 0.3s; border: 2px solid transparent; }
-        .option-btn-a { background-color: #ecf0f1; color: #2c3e50; border-color: #bdc3c7; }
-        .option-btn-a:hover { background-color: #bdc3c7; transform: scale(1.02); }
-        .option-btn-b { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; font-size: 1.15em; padding: 18px 25px; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4); }
-        .option-btn-b:hover { transform: scale(1.05); box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6); }
-        .articles .card-icon { background: linear-gradient(135deg, #3498db, #2980b9); }
-        .prepositions .card-icon { background: linear-gradient(135deg, #27ae60, #229954); }
-        .numbers .card-icon { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
-        .directions .card-icon { background: linear-gradient(135deg, #e67e22, #d35400); }
-        .time .card-icon { background: linear-gradient(135deg, #e74c3c, #c0392b); }
-        .footer { text-align: center; color: rgba(255,255,255,0.9); margin-top: 60px; padding: 30px; }
-    </style>
+
+      <link rel="stylesheet" href="index.css" />
+
 </head>
 <body>
     <div class="container">
@@ -35,16 +14,16 @@
         <p class="subtitle">Comprehensive German Grammar Reference</p>
         <div class="cards-grid">
             <div class="card articles">
-                <div class="card-icon">📝</div>
+              
                 <div class="card-title">Articles & Pronouns</div>
                 <div class="card-description">Articles, determiners, and all types of pronouns (demonstrative, possessive, personal, reflexive)</div>
                 <div class="option-buttons">
-                    <a href="Article/option-b/index.html" class="option-btn option-btn-b">&#11088; Option B - Kompakt (Empfohlen)</a>
-                    <a href="Article/option-a/index.html" class="option-btn option-btn-a">Option A - Thematisch</a>
+                    <!--<a href="Article/option-b/index.html" class="option-btn option-btn-b">&#11088; Option B - Kompakt (Empfohlen)</a>-->
+                    <a href="Article/option-a/index.html" class="option-btn option-btn-a">All Articles</a>
                 </div>
             </div>
             <div class="card prepositions">
-                <div class="card-icon">🗺️</div>
+                
                 <div class="card-title">Prepositions</div>
                 <div class="card-description">Local (Wo/Woher/Wohin), temporal, quantifiers, causal, instrumental, and reference guide</div>
                 <div class="option-buttons">
@@ -53,7 +32,7 @@
                 </div>
             </div>
             <div class="card numbers">
-                <div class="card-icon">🔢</div>
+              
                 <div class="card-title">Numbers</div>
                 <div class="card-description">Ordinal numbers (first, second, third...) and fractions (half, third, quarter...)</div>
                 <div class="option-buttons">
@@ -62,7 +41,7 @@
                 </div>
             </div>
             <div class="card directions">
-                <div class="card-icon">🧭</div>
+           
                 <div class="card-title">Directions</div>
                 <div class="card-description">Directional expressions for persons, animals, plants, and places (zu/bei/von)</div>
                 <div class="option-buttons">
@@ -71,7 +50,7 @@
                 </div>
             </div>
             <div class="card time">
-                <div class="card-icon">⏰</div>
+              
                 <div class="card-title">Time</div>
                 <div class="card-description">Time vocabulary, clock expressions, calendar, seasons, and months</div>
                 <div class="option-buttons">
@@ -81,7 +60,7 @@
             </div>
         </div>
         <div class="footer">
-            <p><strong>📚 Complete German Grammar Reference</strong></p>
+            <p><strong> Complete German Grammar Reference</strong></p>
             <p>All pages feature: 3-level compact mode • Print-friendly layout • Organized tables • Clear examples</p>
         </div>
     </div>
